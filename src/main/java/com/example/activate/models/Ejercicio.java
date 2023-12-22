@@ -9,10 +9,10 @@ public class Ejercicio {
     private String nombre;
     private int dificultad;
 
-    public ArrayList<Ejercicio> listarEjercicios(){
+//     public ArrayList<Ejercicio> listarEjercicios(){
 
-    }
+//     }
 
-    public Ejercicio obtenerEjercicioPorId(id){}
+//     public Ejercicio obtenerEjercicioPorId(id){}
     
 } 

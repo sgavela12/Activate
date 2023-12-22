@@ -12,7 +12,7 @@ public class Rutina {
     private int objetivo;
 
 
-    public Rutina generarRutina(){}
+//     public Rutina generarRutina(){}
 
 
 }

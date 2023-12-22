@@ -46,9 +46,9 @@ public class Entrenador {
     private String contraseña;
 
 
-    public ArrayList<Usuario> verClientesAsignados(){
+    // public ArrayList<Usuario> verClientesAsignados(){
 
-    }
+    // }
 
     public void enviarMensajeCliente(Usuario usuario){
 

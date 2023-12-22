@@ -1,0 +1,252 @@
+[
+    {
+      "idAlimento": "1",
+      "nombre": "Manzana",
+      "calorias": "52"
+    },
+    {
+      "idAlimento": "2",
+      "nombre": "Plátano",
+      "calorias": "96"
+    },
+    {
+      "idAlimento": "3",
+      "nombre": "Zanahoria",
+      "calorias": "41"
+    },
+    {
+      "idAlimento": "4",
+      "nombre": "Lechuga",
+      "calorias": "14"
+    },
+    {
+      "idAlimento": "5",
+      "nombre": "Pollo",
+      "calorias": "165"
+    },
+    {
+      "idAlimento": "6",
+      "nombre": "Arroz",
+      "calorias": "130"
+    },
+    {
+      "idAlimento": "7",
+      "nombre": "Frijoles",
+      "calorias": "127"
+    },
+    {
+      "idAlimento": "8",
+      "nombre": "Pan",
+      "calorias": "265"
+    },
+    {
+      "idAlimento": "9",
+      "nombre": "Huevo",
+      "calorias": "155"
+    },
+    {
+      "idAlimento": "10",
+      "nombre": "Pescado",
+      "calorias": "206"
+    },
+    {
+      "idAlimento": "11",
+      "nombre": "Papa",
+      "calorias": "77"
+    },
+    {
+      "idAlimento": "12",
+      "nombre": "Cebolla",
+      "calorias": "40"
+    },
+    {
+      "idAlimento": "13",
+      "nombre": "Tomate",
+      "calorias": "18"
+    },
+    {
+      "idAlimento": "14",
+      "nombre": "Naranja",
+      "calorias": "43"
+    },
+    {
+      "idAlimento": "15",
+      "nombre": "Mango",
+      "calorias": "60"
+    },
+    {
+      "idAlimento": "16",
+      "nombre": "Sandía",
+      "calorias": "30"
+    },
+    {
+      "idAlimento": "17",
+      "nombre": "Atún",
+      "calorias": "116"
+    },
+    {
+      "idAlimento": "18",
+      "nombre": "Queso",
+      "calorias": "402"
+    },
+    {
+      "idAlimento": "19",
+      "nombre": "Yogurt",
+      "calorias": "59"
+    },
+    {
+      "idAlimento": "20",
+      "nombre": "Cereal",
+      "calorias": "363"
+    },
+    {
+      "idAlimento": "21",
+      "nombre": "Café",
+      "calorias": "1"
+    },
+    {
+      "idAlimento": "22",
+      "nombre": "Té",
+      "calorias": "1"
+    },
+    {
+      "idAlimento": "23",
+      "nombre": "Agua",
+      "calorias": "0"
+    },
+    {
+      "idAlimento": "24",
+      "nombre": "Galletas",
+      "calorias": "502"
+    },
+    {
+      "idAlimento": "25",
+      "nombre": "Chocolate",
+      "calorias": "546"
+    },
+    {
+      "idAlimento": "26",
+      "nombre": "Helado",
+      "calorias": "207"
+    },
+    {
+      "idAlimento": "27",
+      "nombre": "Pizza",
+      "calorias": "267"
+    },
+    {
+      "idAlimento": "28",
+      "nombre": "Hamburguesa",
+      "calorias": "250"
+    },
+    {
+      "idAlimento": "29",
+      "nombre": "Hot Dog",
+      "calorias": "150"
+    },
+    {
+      "idAlimento": "30",
+      "nombre": "Pasta",
+      "calorias": "131"
+    },
+    {
+      "idAlimento": "31",
+      "nombre": "Sopa",
+      "calorias": "32"
+    },
+    {
+      "idAlimento": "32",
+      "nombre": "Ensalada",
+      "calorias": "50"
+    },
+    {
+      "idAlimento": "33",
+      "nombre": "Tacos",
+      "calorias": "217"
+    },
+    {
+      "idAlimento": "34",
+      "nombre": "Burritos",
+      "calorias": "294"
+    },
+    {
+      "idAlimento": "35",
+      "nombre": "Sushi",
+      "calorias": "134"
+    },
+    {
+      "idAlimento": "36",
+      "nombre": "Ceviche",
+      "calorias": "60"
+    },
+    {
+      "idAlimento": "37",
+      "nombre": "Tortilla",
+      "calorias": "218"
+    },
+    {
+      "idAlimento": "38",
+      "nombre": "Chips",
+      "calorias": "536"
+    },
+    {
+      "idAlimento": "39",
+      "nombre": "Caramelo",
+      "calorias": "394"
+    },
+    {
+      "idAlimento": "40",
+      "nombre": "Miel",
+      "calorias": "304"
+    },
+    {
+      "idAlimento": "41",
+      "nombre": "Mantequilla",
+      "calorias": "717"
+    },
+    {
+      "idAlimento": "42",
+      "nombre": "Aceite",
+      "calorias": "884"
+    },
+    {
+      "idAlimento": "43",
+      "nombre": "Vinagre",
+      "calorias": "14"
+    },
+    {
+      "idAlimento": "44",
+      "nombre": "Salsa",
+      "calorias": "60"
+    },
+    {
+      "idAlimento": "45",
+      "nombre": "Mostaza",
+      "calorias": "66"
+    },
+    {
+      "idAlimento": "46",
+      "nombre": "Mayonesa",
+      "calorias": "680"
+    },
+    {
+      "idAlimento": "47",
+      "nombre": "Ketchup",
+      "calorias": "97"
+    },
+    {
+      "idAlimento": "48",
+      "nombre": "Soda",
+      "calorias": "41"
+    },
+    {
+      "idAlimento": "49",
+      "nombre": "Cerveza",
+      "calorias": "43"
+    },
+    {
+      "idAlimento": "50",
+      "nombre": "Vino",
+      "calorias": "83"
+    }
+  ]
