@@ -1,0 +1,34 @@
+#mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Centra el formulario en el centro de la pantalla */
+    border-radius: 10px; /* Esquinas redondeadas */
+    margin-top: 100px;
+  }
+  
+  form {
+    width: 40%;
+    text-align: center; /* Centra el contenido del formulario */
+    padding: 30px;
+    background: linear-gradient(rgb(81, 130, 189),rgb(138, 153, 172));
+    border-radius: 10px; /* Esquinas redondeadas para el formulario */
+    max-width: 400px; /* Reduce el ancho del formulario */
+    margin: 0 20px; /* Agrega un poco de margen alrededor del formulario */
+    
+  }
+  
+
+ form input{
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    border-color: rgb(37, 51, 65);
+    width: 40%;
+    margin: 5px;
+
+
+ }
+ #enviarButton{
+    margin-top: 10px;
+ }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actívate-Registrarse</title>
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+  </head>
+  <body>
+    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+    <div id="mainContainer">
+      <form
+        method="post"
+        th:action="@{/activate/registrarse/enviar}"
+        th:object="${usuario}"
+      >
+        <h1>Crear Usuario</h1>
+        <br>
+        <input
+          th:field="*{nombre}"
+          type="text"
+          name="nombre"
+          id="nombreForm"
+          placeholder="Nombre"
+        />
+        <br />
+        <input
+          th:field="*{apellidos}"
+          type="text"
+          name="apellidos"
+          id="apellidosForm"
+          placeholder="Apellidos"
+        />
+        <br />
+
+        <input
+          th:field="*{email}"
+          type="email"
+          name="email"
+          id="emailForm"
+          placeholder="Email"
+        />
+        <br />
+        <input
+          th:field="*{fechaNacimiento}"
+          type="date"
+          name="fechaNacimiento"
+          id="fechaNacimientoForm"
+          placeholder="Fecha de Nacimiento"
+        />
+        <br />
+        <input
+        th:field="*{contraseña}"
+        type="password"
+        name="contraseña"
+        id="contraseñaForm"
+        placeholder="Contraseña"
+      />
+      <br />
+
+        <input type="submit" value="Enviar" id="enviarButton" />
+        <h3 th:text="${mensajeCreacion}"></h3>
+      </form>
+      <br />
+    </div>
+  </body>
+</html>

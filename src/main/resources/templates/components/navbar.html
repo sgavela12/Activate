@@ -1,0 +1,25 @@
+<nav th:fragment="navBar">
+    <ul class="menu">
+      <li>
+        <a href="/activate/inicio">
+          <img id="logo" src="/img/logo.png" alt="Logo de la aplicación" />
+        </a>
+      </li>
+      <li class="menu-item inicio active">
+        <a href="/activate/inicio">Inicio</a>
+      </li>
+      <li class="menu-item perfil"><a href="/activate/perfil">Perfil</a></li>
+      <li class="menu-item servicios">
+        <a href="/activate/servicios">Servicios</a>
+      </li>
+      <li class="menu-item contacto" id="contacto">
+        <a href="/activate/contacto">Contacto</a>
+      </li>
+      <div class="auth-button">
+        <a href="/activate/iniciarSesion" id="iniciarSesion">Iniciar Sesión</a>
+      </div>
+      <div class="auth-button registrarse">
+        <a href="/activate/registrarse" id="registrarse">Registrarse</a>
+      </div>
+    </ul>
+  </nav>

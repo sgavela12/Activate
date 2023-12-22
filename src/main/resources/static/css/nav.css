@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #005796, #000d21); /* Volver al fondo original */
+    color: #fff;
+}
+
+
+nav {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.menu li {
+    margin-left: 20px;
+    justify-content: center;
+}
+
+.menu li a {
+    color: #ffffff;
+    font-size: 130%;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.menu {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  1fr  1fr 1fr 1fr ;
+    
+}
+
+#iniciarSesion{
+    
+    float: right;
+
+}
+
+#registrarse{
+margin-right: 4%;
+}
+
+
+#logo{
+width: 200px;
+}
+
+.auth-button {
+    text-align: right;
+}
+
+.auth-button a {
+    color: #fff;
+    border: none;
+}
+
+.auth-button.registrarse a {
+    background-color: #FFD600;
+    border: 2px solid #FFD600;
+    color: #002d1c;
+    border-radius: 15px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#contacto{
+    margin-right: 200px;
+}

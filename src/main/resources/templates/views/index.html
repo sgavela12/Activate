@@ -1,0 +1,40 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/nav.css">
+    <script src="/js/index.js"></script>
+    <title>Actívate-Inicio</title>
+  </head>
+
+  <body cz-shortcut-listen="true">
+
+    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+    <h1 th:text = "${mensajeFecha}"></h1>
+    <div class="noticias-container">
+      <a href="" class="container rutinas">
+        <h2>Rutinas</h2>
+      </a>
+      <a href="" class="container dietas"> <h2>Dietas</h2></a>
+
+      <a href="" class="container calcular-kcal"> <h2>Calcular Kcal</h2></a>
+
+      <a href="/activate/entrenadores" class="container entrenadores">
+        <h2>Entrenadores Personales</h2> 
+      </a>
+    </div>
+    <div class="noticia" style="display: block">
+      <h3>Noticia 1</h3>
+      <p>Descripción de la noticia 1.</p>3
+    </div>
+    <div class="noticia" style="display: none">
+      <h3>Noticia 2</h3>
+      <p>Descripción de la noticia 2.</p>
+    </div>
+    <div class="navegacion-noticias">
+      <span class="flecha-izquierda">◁</span>
+      <span class="flecha-derecha">▷</span>
+    </div>
+  </body>
+</html>
