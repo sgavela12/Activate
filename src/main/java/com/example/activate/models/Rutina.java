@@ -1,6 +1,5 @@
 package com.example.activate.models;
 
-import java.util.ArrayList;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
