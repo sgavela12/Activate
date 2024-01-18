@@ -104,7 +104,7 @@ header h1 {
 }
 
 .noticia {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("../img/Activate.gif"); 
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
