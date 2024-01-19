@@ -27,7 +27,7 @@ nav {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr  1fr  1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr  1fr  1fr 1fr ;
     
 }
 
@@ -39,6 +39,7 @@ nav {
 
 #registrarse{
 margin-right: 4%;
+font-weight: bold;
 }
 
 
@@ -63,8 +64,10 @@ width: 200px;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
+    float: right;
 }
 
 #contacto{
-    margin-right: 200px;
+    margin-right: 100%;
+    
 }
