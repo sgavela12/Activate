@@ -1,75 +1,7 @@
 
-header {
-    background-color: transparent;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 36px;
-    margin: 0;
-}
 
 
 
-
-/* Estilo para enlaces activos */
-.menu-item.active a {
-    color: #FFD600; /* Amarillo */
-    text-decoration: underline 3px; /* Subrayado con un ancho de 3px */
-    font-size: 140%; /* Tamaño de fuente aumentado a 28px */
-}
-
-
-
-.menu li a:hover {
-    font-size: 150%;
-}
-
-
-.menu li:first-child img {
-    width: 50px;
-    height: auto;
-    margin-right: 20px;
-}
-
-
-
-.auth-button a:hover {
-    background-color: transparent;
-    color: #FFD600;
-}
-
-
-
-
-
-.noticias-container {
-    text-align: center;
-    margin-top: 20px;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px; /* Espacio pequeño entre contenedores */
-    color: #000d21;
-}
-
-
-
-.container {
-    height: 400px; /* Aumentar la altura a 400px o el valor que prefieras */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    font-size: 24px;
-    border-radius: 10px; /* Esquinas redondeadas */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    text-decoration: none;
-}
 
 
 
@@ -80,28 +12,6 @@ header h1 {
         
 }
 
-
-#contacto{
-    text-align: left;
-}
-
-
-
-.rutinas {
-    background-image: url('../img/rutinas.jpg');
-}
-
-.dietas {
-    background-image: url('../img/dietas.jpg');
-}
-
-.calcular-kcal {
-    background-image: url('../img/calcular-kcal.png');
-}
-
-.entrenadores {
-    background-image: url('../img/entrenadores.jpg');
-}
 
 .noticia {
     background-image: url("../img/Activate.gif");

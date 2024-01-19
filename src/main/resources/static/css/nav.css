@@ -9,13 +9,13 @@ body {
 
 nav {
     text-align: center;
-    padding-top: 10px;
+    margin-bottom: 2%;
 }
 
 .menu li {
-    margin-left: 20px;
-    justify-content: center;
+    text-align: center; /* Alinea el texto en el centro */
 }
+
 
 .menu li a {
     color: #ffffff;
@@ -27,8 +27,9 @@ nav {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr  1fr  1fr 1fr ;
-    
+    grid-template-columns: repeat(6, 1fr); /* Utiliza repeat para simplificar la definición de columnas */
+    background-color: #2B2E38;
+    align-items: center; /* Alinea los elementos verticalmente en el contenedor */
 }
 
 #iniciarSesion{
