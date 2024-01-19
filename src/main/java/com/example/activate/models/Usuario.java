@@ -26,10 +26,8 @@ public class Usuario {
     private Long id;
 
     @NotNull
-    private String nombre;
+    private String nombreCompleto;
 
-    @NotNull
-    private String apellidos;
 
     @Email
     @NotNull
@@ -45,7 +43,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario [nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + ", fechaNacimiento="
+        return "Usuario [nombre=" + nombreCompleto +  ", email=" + email + ", fechaNacimiento="
                 + fechaNacimiento + ", contraseña=" + contraseña + "]";
     }
 
