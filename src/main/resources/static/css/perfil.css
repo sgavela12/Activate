@@ -36,10 +36,24 @@ header h1 {
 
 
 
-.auth-button a:hover {
-    background-color: transparent;
-    color: #FFD600;
+
+
+.container:hover {
+    border-radius: 10px;
+    color: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    -webkit-transform: scale(1.015, 1.015); /* Reducí el valor de escala */
+    -moz-transform: scale(1.015, 1.015);
+    -ms-transform: scale(1.015, 1.015);
+    -o-transform: scale(1.015, 1.015);
+    transform: scale(1.015, 1.015);
+    -webkit-transition: all 0.15s linear; /* Reducí la duración de la transición */
+    -moz-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
 }
+
 
 
 
@@ -73,33 +87,32 @@ header h1 {
 
 
 
-.noticias-container a:hover{
-    
-    font-size: 170%;
-    background-size: 110%;
-        
-}
 
 
 #contacto{
     text-align: left;
+    
 }
 
 
 
 .rutinas {
+    margin-left: 10px;
     background-image: url('../img/rutinas.jpg');
 }
 
 .dietas {
+    margin-right: 10px;
     background-image: url('../img/dietas.jpg');
 }
 
 .calcular-kcal {
+    margin-left: 10px;
     background-image: url('../img/calcular-kcal.png');
 }
 
 .entrenadores {
+    margin-right: 10px;
     background-image: url('../img/entrenadores.jpg');
 }
 

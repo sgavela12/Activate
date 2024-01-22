@@ -1,25 +1,42 @@
+#mainBody {
+    height: 80%;
+    background-image: url("../img/main.jpeg");
+    background-repeat: no-repeat;
+    /* Evitar que el fondo se repita */
+    background-size: cover;
+    /* Hacer que la imagen de fondo cubra todo el div */
+    background-position: center;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
 
 
 
 
 
+.noticias-container a:hover {
 
-
-.noticias-container a:hover{
-    
     font-size: 170%;
     background-size: 110%;
-        
+
 }
 
 
 .noticia {
     background-image: url("../img/Activate.gif");
-    background-repeat: no-repeat; /* Evitar que el fondo se repita */
-    background-size: cover; /* Hacer que la imagen de fondo cubra todo el div */
+    background-repeat: no-repeat;
+    /* Evitar que el fondo se repita */
+    background-size: cover;
+    /* Hacer que la imagen de fondo cubra todo el div */
     background-position: center;
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
     border-radius: 10px;
     display: none;
     height: 30%;
@@ -51,5 +68,3 @@
 .flecha-derecha:hover {
     color: #FFD600;
 }
-
-
