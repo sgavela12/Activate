@@ -1,6 +1,6 @@
 ul.menu{
-    height: 5%;
-    padding: 17px;
+    height: 35px;
+    padding: 35px;
 }
 body {
     font-family: Arial, sans-serif;
@@ -35,6 +35,11 @@ nav {
     grid-template-columns: repeat(6, 1fr); /* Utiliza repeat para simplificar la definición de columnas */
     background-color: #2B2E38;
 
+}
+.menu-item.active a {
+    color: #FFD600; /* Amarillo */
+    text-decoration: underline 3px; /* Subrayado con un ancho de 3px */
+    font-size: 140%; /* Tamaño de fuente aumentado a 28px */
 }
 
 #iniciarSesion{

@@ -24,7 +24,7 @@ p {
 h4 {
   font-weight: 600;
 }
-h6 span{
+h4 span{
   padding: 0 20px;
   font-weight: 700;
 }
@@ -202,5 +202,14 @@ display: none;
     transform: translate3d(0, -50%, 35px) perspective(100px);
     z-index: 20;
     display: block;
+  }
+  
+
+
+#loginTab:hover ,#signupTab:hover {
+
+    color: #FFD600;
+    font-size: 1.1em; /* Ajusta el tamaño según tus preferencias */
+    transition: color 0.2s, font-size 0.2s;
   }
   

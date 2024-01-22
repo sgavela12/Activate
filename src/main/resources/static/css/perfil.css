@@ -1,39 +1,4 @@
 
-header {
-    background-color: transparent;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
-
-
-
-/* Estilo para enlaces activos */
-.menu-item.active a {
-    color: #FFD600; /* Amarillo */
-    text-decoration: underline 3px; /* Subrayado con un ancho de 3px */
-    font-size: 140%; /* Tamaño de fuente aumentado a 28px */
-}
-
-
-
-.menu li a:hover {
-    font-size: 150%;
-}
-
-
-.menu li:first-child img {
-    width: 50px;
-    height: auto;
-    margin-right: 20px;
-}
-
 
 
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/registarse2.css">
+  <link rel="stylesheet" href="/css/registarse.css">
   <link rel="stylesheet" href="/css/nav.css" />
 </head>
 <body>
@@ -16,9 +16,9 @@
       <div class="row full-height justify-content-center">
         <div class="col-12 text-center align-self-center py-5">
           <div class="section pb-5 pt-5 pt-sm-2 text-center">
-            <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+            <h4 class="mb-0 pb-3"><span id="loginTab">Log In </span><span id="signupTab">Sign Up</span></h4>
             <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-            <label for="reg-log"></label>
+            <label class="arrow-label" for="reg-log"></label>
             <div class="card-3d-wrap mx-auto">
               <div class="card-3d-wrapper">
                 <div class="card-front">
@@ -77,5 +77,43 @@
       </div>
     </div>
   </div>
+  <script>
+  
+ document.addEventListener('DOMContentLoaded', function () {
+  var loginTab = document.getElementById('loginTab');
+  var signupTab = document.getElementById('signupTab');
+  var regLogCheckbox = document.getElementById('reg-log');
+  var cardWrapper = document.querySelector('.card-3d-wrapper');
+  var arrowLabel = document.querySelector('.arrow-label');
+
+  function showLoginForm() {
+    cardWrapper.style.transform = 'rotateY(0deg)';
+
+  }
+
+  function showSignupForm() {
+    cardWrapper.style.transform = 'rotateY(180deg)';
+   
+  }
+
+  loginTab.addEventListener('click', function () {
+    showLoginForm();
+    regLogCheckbox.checked = false;
+  });
+
+  signupTab.addEventListener('click', function () {
+    showSignupForm();
+    regLogCheckbox.checked = true;
+  });
+
+  regLogCheckbox.addEventListener('change', function () {
+    if (regLogCheckbox.checked) {
+      showSignupForm();
+    } else {
+      showLoginForm();
+    }
+  });
+});
+</script>
 </body>
 </html>
