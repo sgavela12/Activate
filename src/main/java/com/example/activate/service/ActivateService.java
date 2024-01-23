@@ -5,11 +5,9 @@ import java.util.Calendar;
 
 import org.springframework.stereotype.Service;
 
-import com.example.activate.models.Usuario;
-
 @Service
 public class ActivateService {
-    ArrayList<Usuario> usuarios = new ArrayList<>();
+    
 
     ArrayList<String> entrenadores = new ArrayList<String>() {
         {
@@ -38,22 +36,8 @@ public class ActivateService {
         return entrenadores;
     }
 
-       public void creaUsuario(Usuario usuario){
-        usuarios.add(usuario);
-        
-    }
+       
 
-    public Usuario comprobarUsuario(String email,String contraseña){
-        for(Usuario usuario:usuarios){
-            if (usuario.getEmail() == email && usuario.getContraseña() == contraseña) {
-                return usuario;
-            }
-        }
-        return null;
-    }
-
-    public ArrayList<Usuario> getUsuarios() {
-        return usuarios;
-    }
+   
 
 }

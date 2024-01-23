@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.activate.models.Usuario;
 import com.example.activate.service.ActivateService;
+import com.example.activate.service.UsuarioDBServiceImpl;
 
 import jakarta.validation.Valid;
 
@@ -21,6 +22,9 @@ public class MainController {
 
     @Autowired
     ActivateService activateService;
+
+    @Autowired
+    UsuarioDBServiceImpl usuarioDBServiceImpl;
 
     @GetMapping("/inicio")
     public String showHome(Model model) {
@@ -68,8 +72,8 @@ public class MainController {
     public String showRegistrarseEnviar(@Valid Usuario usuario, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors())
             return "redirect:/activate/error";
-        activateService.creaUsuario(usuario);
-        System.out.println(activateService.getUsuarios());
+        usuarioDBServiceImpl.añadir(usuario);
+        System.out.println((usuarioDBServiceImpl.obtenerTodos()));
         return "redirect:/activate/registrarse?msg=okay";
     }
 
@@ -85,5 +89,13 @@ public class MainController {
         
         return "views/inciarSesion";
     }
+
+
+    @GetMapping("/check")
+    public String getMethodName(Model model) {
+        model.addAttribute("usuarios", usuarioDBServiceImpl.obtenerTodos());
+        return "views/checkUsers.html";
+    }
+    
 
 }
