@@ -49,8 +49,22 @@ public class MainController {
     }
 
     @GetMapping("/iniciarSesion")
-    public String showIniciarSesion() {
-        return "forms/iniciarSesion";
+    public String showIniciarSesion(@RequestParam(required = false) String msg, Model model) {
+        if (msg != null) {
+            model.addAttribute("mensajeCreacion", "Sesión iniciada correctamente.");
+        }
+        //Hacer dto para coger email y contraseña del registro de datos y luego comprobar si estan 
+        model.addAttribute("usuario", new Usuario());
+        return "forms/registrarse";
+    }
+
+    @GetMapping("/iniciarSesion/enviar")
+    public String showIniciarSesionEnviar(@Valid Usuario usuario, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors())
+            return "redirect:/activate/error";
+        usuarioDBServiceImpl.añadir(usuario);
+        System.out.println((usuarioDBServiceImpl.obtenerTodos()));
+        return "redirect:/activate/iniciarSesion?msg=okay";
     }
 
     @GetMapping("/entrenadores")
@@ -92,10 +106,17 @@ public class MainController {
 
 
     @GetMapping("/check")
-    public String getMethodName(Model model) {
+    public String checkUsers(Model model) {
         model.addAttribute("usuarios", usuarioDBServiceImpl.obtenerTodos());
         return "views/checkUsers.html";
     }
+
+
+    
+    }
+
+
+
     
 
-}
+
