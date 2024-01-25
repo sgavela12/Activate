@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/registarse.css">
   <link rel="stylesheet" href="/css/nav.css" />
+  <script src="/js/registrarse.js" defer></script>
 </head>
 <body>
   <nav th:replace="~{components/navbar.html :: navBar}"></nav>
@@ -34,7 +35,7 @@
                           <input type="password" class="form-style" placeholder="Contraseña">
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <button type="submit" class="btn mt-4">INICIAR SESIÓN</button>
+                        <button type="submit" id="iniciar-sesion" class="btn mt-4">INICIAR SESIÓN</button>
                         <p class="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code" class="link">Olvidaste la contraseña?</a></p>
                       </form>
                     </div>
@@ -44,7 +45,7 @@
                   <div class="center-wrap">
                     <div class="section text-center">
                       <h4 class="mb-3 pb-3">Registrarse</h4>
-                      <form action="#" th:action="@{/activate/registrarse/enviar}" th:object="${usuario}" method="post">
+                      <form action="#" th:action="@{/activate/registrarse/enviar}" id="formulario-registro" th:object="${usuario}" method="post">
                         <div class="form-group">
                           <input type="text" th:field="*{nombreCompleto}" class="form-style" placeholder="Nombre Completo">
                           <i class="input-icon uil uil-user"></i>
@@ -62,14 +63,14 @@
                           <i class="input-icon uil uil-at"></i>
                         </div>
                         <div class="form-group mt-2">
-                          <input type="password" class="form-style" th:field="*{contraseña}" placeholder="Contraseña">
+                          <input type="password" class="form-style" id="contraseña" th:field="*{contraseña}" placeholder="Contraseña">
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
                         <div class="form-group mt-2">
-                          <input type="password" class="form-style"  placeholder="Confirmar Contraseña">
+                          <input type="password" class="form-style" id="confirmar-contraseña" placeholder="Confirmar Contraseña">
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <button type="submit" class="btn mt-4">REGISTRAR</button>
+                        <button id="registrarse" type="submit" class="btn mt-4">REGISTRAR</button>
                       </form>
                     </div>
                   </div>
@@ -82,43 +83,5 @@
     </div>
   </div>
   <h3 th:text="${mensajeCreacion}"></h3>
-  <script>
-  
- document.addEventListener('DOMContentLoaded', function () {
-  var loginTab = document.getElementById('loginTab');
-  var signupTab = document.getElementById('signupTab');
-  var regLogCheckbox = document.getElementById('reg-log');
-  var cardWrapper = document.querySelector('.card-3d-wrapper');
-  var arrowLabel = document.querySelector('.arrow-label');
-
-  function showLoginForm() {
-    cardWrapper.style.transform = 'rotateY(0deg)';
-
-  }
-
-  function showSignupForm() {
-    cardWrapper.style.transform = 'rotateY(180deg)';
-   
-  }
-
-  loginTab.addEventListener('click', function () {
-    showLoginForm();
-    regLogCheckbox.checked = false;
-  });
-
-  signupTab.addEventListener('click', function () {
-    showSignupForm();
-    regLogCheckbox.checked = true;
-  });
-
-  regLogCheckbox.addEventListener('change', function () {
-    if (regLogCheckbox.checked) {
-      showSignupForm();
-    } else {
-      showLoginForm();
-    }
-  });
-});
-</script>
 </body>
 </html>
