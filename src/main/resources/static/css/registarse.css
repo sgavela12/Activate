@@ -213,3 +213,11 @@ display: none;
     transition: color 0.2s, font-size 0.2s;
   }
   
+  .card-3d-wrap {
+    height: 450px; /* Puedes ajustar la altura según tus necesidades */
+}
+
+.card-3d-wrapper {
+    height: 100%;
+}
+

@@ -21,10 +21,10 @@ public class Ejercicio {
     @NotNull
     private int dificultad;
 
-//     public ArrayList<Ejercicio> listarEjercicios(){
+    // public ArrayList<Ejercicio> listarEjercicios(){
 
-//     }
+    // }
 
-//     public Ejercicio obtenerEjercicioPorId(id){}
-    
-} 
+    // public Ejercicio obtenerEjercicioPorId(id){}
+
+}
