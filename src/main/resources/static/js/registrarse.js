@@ -1,4 +1,4 @@
-let registrarse = document.getElementById("registrarse")
+let registrarse = document.getElementById("registrarse-button")
 
 document.addEventListener('DOMContentLoaded', function () {
 let loginTab = document.getElementById('loginTab');
