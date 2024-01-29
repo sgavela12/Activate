@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -44,6 +45,9 @@ public class Usuario {
 
     @NotNull
     private String contraseña;
+
+    @OneToOne
+    private Dieta dieta;
 
     @Override
     public String toString() {
