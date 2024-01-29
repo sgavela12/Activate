@@ -3,6 +3,7 @@ package com.example.activate.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,9 @@ public class Ejercicio {
     private String nombre;
     @NotNull
     private int dificultad;
+
+    @ManyToOne
+    private Rutina rutina;
 
     // public ArrayList<Ejercicio> listarEjercicios(){
 

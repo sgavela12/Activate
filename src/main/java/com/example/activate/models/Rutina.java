@@ -24,6 +24,7 @@ public class Rutina {
     @NotNull
     private int objetivo;
 
+
     // public Rutina generarRutina(){}
 
 }
