@@ -1,77 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Webleb</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/registarse.css">
-  <link rel="stylesheet" href="/css/nav.css" />
-  <script src="/js/registrarse.js" defer></script>
-</head>
-<body>
-  <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-  <div class="section">
-    <div class="container">
-      <div class="row full-height justify-content-center">
-        <div class="col-12 text-center align-self-center py-5">
-          <div class="section pb-5 pt-5 pt-sm-2 text-center">
-            <h4 class="mb-0 pb-3"><span id="loginTab">Iniciar Sesión </span><span id="signupTab">Registrarse</span></h4>
-            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-            <label class="arrow-label" for="reg-log"></label>
-            <div class="card-3d-wrap mx-auto">
-              <div class="card-3d-wrapper">
-                <div class="card-front">
-                  <div class="center-wrap">
-                    <div class="section text-center">
-                      <h4 class="mb-4 pb-3">Iniciar Sesión</h4>
-                      <form action="#" th:action="@{/activate/iniciarSesion/enviar}" method="post">
-                        <div class="form-group">
-                          <input type="email" class="form-style" placeholder="Email">
-                          <i class="input-icon uil uil-at"></i>
-                        </div>  
-                        <div class="form-group mt-2">
-                          <input type="password" class="form-style" placeholder="Contraseña">
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                        <button type="submit" id="iniciar-sesion" class="btn mt-4">INICIAR SESIÓN</button>
-                        <p class="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code" class="link">Olvidaste la contraseña?</a></p>
-                      </form>
+  <head>
+    <title>Webleb</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/registarse.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <script src="/js/registrarse.js" defer></script>
+  </head>
+  <body>
+    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+    <div class="section">
+      <div class="container">
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <h4 class="mb-0 pb-3">
+                <span id="loginTab">Iniciar Sesión </span
+                ><span id="signupTab">Registrarse</span>
+              </h4>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="reg-log"
+                name="reg-log"
+              />
+              <label class="arrow-label" for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Iniciar Sesión</h4>
+                        <form
+                          action="#"
+                          th:action="@{/activate/iniciarSesion/enviar}"
+                          method="post"
+                        >
+                          <div class="form-group">
+                            <input
+                              type="email"
+                              class="form-style"
+                              placeholder="Email"
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              class="form-style"
+                              placeholder="Contraseña"
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <button
+                            type="submit"
+                            id="iniciar-sesion"
+                            class="btn mt-4"
+                          >
+                            INICIAR SESIÓN
+                          </button>
+                          <p class="mb-0 mt-4 text-center">
+                            <a href="https://www.web-leb.com/code" class="link"
+                              >Olvidaste la contraseña?</a
+                            >
+                          </p>
+                        </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card-back">
-                  <div class="center-wrap">
-                    <div class="section text-center">
-                      <h4 class="mb-3 pb-3">Registrarse</h4>
-                      <form action="#" th:action="@{/activate/registrarse/enviar}" id="formulario-registro" th:object="${usuario}" method="post">
-                        <div class="form-group">
-                          <input type="text" th:field="*{nombreCompleto}" class="form-style" placeholder="Nombre Completo">
-                          <i class="input-icon uil uil-user"></i>
-                        </div>  
-                        <div class="form-group mt-2">
-                          <input type="tel" class="form-style" th:field="*{telefono}" placeholder="Número de Telefono">
-                          <i class="input-icon uil uil-phone"></i>
-                        </div>  
-						<div class="form-group mt-2">
-							<i class="input-icon uil uil-calendar-alt" style="color: #ffffff;"></i>
-							<input type="date" class="form-style" th:field="*{fechaNacimiento}" placeholder="Birthday">
-						  </div>						  
-                        <div class="form-group mt-2">
-                          <input type="email" class="form-style" th:field="*{email}" placeholder="Email">
-                          <i class="input-icon uil uil-at"></i>
-                        </div>
-                        <div class="form-group mt-2">
-                          <input type="password" class="form-style" id="contraseña" th:field="*{contraseña}" placeholder="Contraseña">
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                        <div class="form-group mt-2">
-                          <input type="password" class="form-style" id="confirmar-contraseña" placeholder="Confirmar Contraseña">
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                        <button id="registrarse-button" type="submit" class="btn mt-4">REGISTRAR</button>
-                      </form>
+                  <div class="card-back">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-3 pb-3">Registrarse</h4>
+                        <form
+                          action="#"
+                          th:action="@{/activate/registrarse/enviar}"
+                          id="formulario-registro"
+                          th:object="${usuario}"
+                          method="post"
+                        >
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              th:field="*{nombreCompleto}"
+                              class="form-style"
+                              placeholder="Nombre Completo"
+                            />
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="tel"
+                              class="form-style"
+                              th:field="*{telefono}"
+                              placeholder="Número de Telefono"
+                            />
+                            <i class="input-icon uil uil-phone"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <i
+                              class="input-icon uil uil-calendar-alt"
+                              style="color: #ffffff"
+                            ></i>
+                            <input
+                              type="date"
+                              class="form-style"
+                              th:field="*{fechaNacimiento}"
+                              placeholder="Birthday"
+                            />
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="email"
+                              class="form-style"
+                              th:field="*{email}"
+                              placeholder="Email"
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              class="form-style"
+                              id="contraseña"
+                              th:field="*{contraseña}"
+                              placeholder="Contraseña"
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              class="form-style"
+                              id="confirmar-contraseña"
+                              placeholder="Confirmar Contraseña"
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <button
+                            id="registrarse-button"
+                            type="submit"
+                            class="btn mt-4"
+                          >
+                            REGISTRAR
+                          </button>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -81,7 +167,7 @@
         </div>
       </div>
     </div>
-  </div>
-  <h3 th:text="${mensajeCreacion}"></h3>
-</body>
+    <h3 th:text="${mensajeCreacion}"></h3>
+    <footer th:replace="~{components/footer.html :: footer}"></footer>
+  </body>
 </html>
