@@ -49,6 +49,9 @@ public class Usuario {
     @OneToOne
     private Dieta dieta;
 
+    @OneToOne
+    private Rutina rutina;
+
     @Override
     public String toString() {
         return "Usuario [nombre=" + nombreCompleto +  ", email=" + email + ", fechaNacimiento="

@@ -25,10 +25,6 @@ public class Ejercicio {
     @ManyToOne
     private Rutina rutina;
 
-    // public ArrayList<Ejercicio> listarEjercicios(){
 
-    // }
-
-    // public Ejercicio obtenerEjercicioPorId(id){}
 
 }
