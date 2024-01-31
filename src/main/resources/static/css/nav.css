@@ -1,5 +1,5 @@
 ul.menu{
-    height: 35px;
+    height: 60px;
     padding: 20px;
 }
 body {
@@ -15,12 +15,12 @@ body {
 
 nav {
     text-align: center;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     
 }
 
 .menu li {
-    text-align: center; /* Alinea el texto en el centro */
+    text-align: center; 
 }
 
 
@@ -35,7 +35,7 @@ nav {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Utiliza repeat para simplificar la definición de columnas */
+    grid-template-columns: repeat(6, 1fr);
     background-color: #2B2E38;
 
 }

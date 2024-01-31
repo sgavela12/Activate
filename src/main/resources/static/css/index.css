@@ -1,10 +1,7 @@
 #mainBody {
-    height: 80%;
     background-image: url("../img/main.jpeg");
     background-repeat: no-repeat;
-    /* Evitar que el fondo se repita */
     background-size: cover;
-    /* Hacer que la imagen de fondo cubra todo el div */
     background-position: center;
     border-radius: 10px;
     margin: 10px;
@@ -12,13 +9,16 @@
     text-align: center;
     justify-content: center;
     flex-direction: column;
-
+    min-height: 100%;
+    max-width: 100%;
+    height: auto;
 
 }
 
 
-
-
+#activate-mensaje{
+    margin-top: -570px; /* Adjust this value to your preference */
+}
 
 .noticias-container a:hover {
 
@@ -31,9 +31,7 @@
 .noticia {
     background-image: url("../img/Activate.gif");
     background-repeat: no-repeat;
-    /* Evitar que el fondo se repita */
     background-size: cover;
-    /* Hacer que la imagen de fondo cubra todo el div */
     background-position: center;
     padding: 20px;
     margin: 10px;
@@ -68,3 +66,5 @@
 .flecha-derecha:hover {
     color: #FFD600;
 }
+
+
