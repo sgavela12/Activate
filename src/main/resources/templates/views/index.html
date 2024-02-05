@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -5,16 +6,16 @@
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/nav.css" />
     <script src="/js/index.js"></script>
-
     <title>Actívate-Inicio</title>
   </head>
-
   <body cz-shortcut-listen="true">
     <header>
       <nav th:replace="~{components/navbar.html :: navBar}"></nav>
     </header>
     <main id="mainBody">
-      <h1 id="activate-mensaje">Activate con nosotros</h1>
+      <a href="/activate/registrarse">
+      <video id="video" src="../img/activate.mp4" autoplay></video>
+    </a>
     </main>
     <div class="noticia" style="display: block">
       <h1>Noticia 1</h1>

@@ -59,12 +59,11 @@ function comprobarClave() {
   let clave1 = document.getElementById("contraseña").value;
   let clave2 = document.getElementById("confirmar-contraseña").value;
 
-  if (clave1 === clave2) {
-      alert("Las dos claves son iguales...\nRealizaríamos las acciones del caso positivo");
+  if (clave1 === clave2 && !(clave1.trim() === '')) {
 
       validacionExitosa = true;
   } else {
-      alert("Las dos claves son distintas...\nRealizaríamos las acciones del caso negativo");
+      alert("Las dos claves son distintas...\nRealizaríamos las acciones del caso negativo"); 
       validacionExitosa = false;
   }
 }
