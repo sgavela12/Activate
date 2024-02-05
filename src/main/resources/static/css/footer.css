@@ -1,5 +1,15 @@
-footer{
+footer {
     background-color: #2B2E38;
     padding: 1vh;
     margin-top: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+div#redes-sociales {
+    margin-right: auto;
+}
+
+div#derechos {
+    margin-left: auto; /* Mueve #derechos a la derecha */
 }
