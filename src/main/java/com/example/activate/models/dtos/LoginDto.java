@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 public class LoginDto {
     @NotBlank
-    private String username;
+    private String email;
 
 
     @NotBlank

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.activate.models.Usuario;
+import com.example.activate.models.dtos.LoginDto;
 import com.example.activate.service.ActivateService;
 import com.example.activate.service.UsuarioDBServiceImpl;
 
@@ -52,9 +53,12 @@ public class MainController {
     public String showIniciarSesion(@RequestParam(required = false) String msg, Model model) {
         if (msg != null) {
             model.addAttribute("mensajeCreacion", "Sesión iniciada correctamente.");
+
         }
         //Hacer dto para coger email y contraseña del registro de datos y luego comprobar si estan 
         model.addAttribute("usuario", new Usuario());
+        
+
         return "forms/registrarse";
     }
 
