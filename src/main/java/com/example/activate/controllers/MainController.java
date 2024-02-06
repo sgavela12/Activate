@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.activate.models.Usuario;
-import com.example.activate.models.dtos.LoginDto;
 import com.example.activate.service.ActivateService;
 import com.example.activate.service.UsuarioDBServiceImpl;
 
