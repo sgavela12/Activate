@@ -47,6 +47,12 @@ public class MainController {
     public String showContact() {
         return "views/contacto";
     }
+    
+
+    @GetMapping("/calcularKcal")
+    public String showCalcularkcal(){
+        return "views/calcularKcal";
+    }
 
     @GetMapping("/iniciarSesion")
     public String showIniciarSesion(@RequestParam(required = false) String msg, Model model) {
