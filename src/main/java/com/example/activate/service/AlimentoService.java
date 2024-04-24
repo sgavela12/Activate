@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.activate.models.Alimento;
 
 public interface AlimentoService {
-        public Alimento añadir(Alimento alimento);
+    public Alimento añadir(Alimento alimento);
 
     public List<Alimento> obtenerTodos();
 
