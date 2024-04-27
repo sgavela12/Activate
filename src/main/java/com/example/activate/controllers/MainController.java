@@ -28,35 +28,42 @@ public class MainController {
 
     @GetMapping("/inicio")
     public String showHome(Model model) {
-        model.addAttribute("mensajeFecha", activateService.mensajeFecha());
+        model.addAttribute("navActual", "inicio");
         return "views/index";
     }
 
     @GetMapping("/perfil")
     public String showProfile(Model model) {
+        model.addAttribute("navActual", "perfil");
 
         return "views/perfil";
     }
 
     @GetMapping("/servicios")
-    public String showServices() {
+    public String showServices(Model model) {
+        model.addAttribute("navActual", "servicios");
         return "views/servicios";
     }
 
     @GetMapping("/contacto")
-    public String showContact() {
+    public String showContact(Model model) {
+        model.addAttribute("navActual", "contacto");
         return "views/contacto";
     }
     
 
     @GetMapping("/calcularKcal")
-    public String showCalcularkcal(){
+    public String showCalcularkcal(Model model){
+        model.addAttribute("navActual", "perfil");
+
         return "views/calcularKcal";
     }
 
     @GetMapping("/iniciarSesion")
     public String showIniciarSesion(@RequestParam(required = false) String msg, Model model) {
         if (msg != null) {
+        model.addAttribute("navActual", "iniciarSesion");
+
             model.addAttribute("mensajeCreacion", "Sesión iniciada correctamente.");
 
         }
@@ -78,6 +85,8 @@ public class MainController {
 
     @GetMapping("/entrenadores")
     public String showEntrenadores(Model model) {
+        model.addAttribute("navActual", "perfil");
+
         model.addAttribute("entrenadores", activateService.devuelveEntrenadores());
         return "views/entrenadores";
     }
@@ -88,6 +97,8 @@ public class MainController {
             model.addAttribute("mensajeCreacion", "Usuario creado correctamente.");
         }
         model.addAttribute("usuario", new Usuario());
+        model.addAttribute("navActual", "inciarSesion");
+
         return "forms/registrarse";
     }
 

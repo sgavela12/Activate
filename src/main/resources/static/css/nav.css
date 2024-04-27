@@ -55,7 +55,7 @@ nav {
 .menu-item.active a {
     color: #FFD600;
     text-decoration: underline 3px;
-    font-size: 140%;
+    font-size: 1.5em;
 }
 
 #iniciarSesion {
@@ -151,4 +151,10 @@ nav {
     background-color: #000000;
     color: #FFD600;
     box-shadow: 0 8px 24px 0 (16, 39, 112, .2);
+}
+
+.menu-item a:hover {
+    color: #FFD600;
+    font-size: 1.5em; /* Ajusta el tamaño según tus preferencias */
+    transition: color 0.2s, font-size 0.2s;
 }

@@ -6,19 +6,20 @@
           <img id="logo" src="/img/logo.png" alt="Logo de la aplicación" />
         </a>
       </li>
-      <li class="menu-item inicio active">
+      <li id="inicio"  class="menu-item inicio">
     <a href="/activate/inicio">Inicio</a>
       </li>
-      <li class="menu-item perfil"><a href="/activate/perfil">Perfil</a></li>
-      <li class="menu-item servicios">
+      <li id="perfil" class="menu-item perfil"><a href="/activate/perfil">Perfil</a></li>
+      <li id="servicios" class="menu-item servicios">
         <a href="/activate/servicios">Servicios</a>
       </li>
-      <li class="menu-item contacto" id="contacto">
+      <li id="contacto"  class="menu-item contacto">
         <a href="/activate/contacto">Contacto</a>
       </li>
-      <div class="auth-button registrarse">
+      <div id="registrarse" class="auth-button registrarse">
         <a href="/activate/registrarse" id="registrarse">Iniciar Sesión/Registrarse</a>
       </div>
     </ul>
   </nav>
+  <h3 th:text="${navActual}"></h3>
   </div>

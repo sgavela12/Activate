@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let noticias = document.querySelectorAll(".noticia");
     let index = 0;
@@ -10,3 +12,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(mostrarNoticia, 7000); // Cambiar cada 7 segundos (7000 ms)
 });
+
+
