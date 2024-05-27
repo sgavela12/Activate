@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.activate.models.CalculoCaloriasForm;
 import com.example.activate.models.Usuario;
 import com.example.activate.service.ActivateService;
-import com.example.activate.service.CalcularKcalService;
 import com.example.activate.service.CalcularKcalServiceImpl;
 import com.example.activate.service.UsuarioDBServiceImpl;
 
@@ -24,13 +23,13 @@ import jakarta.validation.Valid;
 public class MainController {
 
     @Autowired
-    ActivateService activateService;
+    private ActivateService activateService;
 
     @Autowired
-    CalcularKcalServiceImpl calcularKcalService;
+    private CalcularKcalServiceImpl calcularKcalService;
 
     @Autowired
-    UsuarioDBServiceImpl usuarioDBServiceImpl;
+    private UsuarioDBServiceImpl usuarioDBServiceImpl;
 
     @GetMapping("/inicio")
     public String showHome(Model model) {
@@ -40,7 +39,6 @@ public class MainController {
 
     @GetMapping("/perfil")
     public String showProfile(Model model) {
-
         return "views/perfil";
     }
 
@@ -53,9 +51,8 @@ public class MainController {
     public String showContact() {
         return "views/contacto";
     }
-    
-    // CALCULO DE CALORIAS
 
+    // Calculo de Calorías
     @GetMapping("/calcularKcal")
     public String showCalcularkcal(Model model) {
         model.addAttribute("calculoCalorias", new CalculoCaloriasForm());
@@ -69,50 +66,36 @@ public class MainController {
             return "forms/calcularKcal";
         }
 
-        // Convertir el formulario a los tipos esperados por el servicio
-        CalcularKcalServiceImpl.Sexo sexo = (calculoCaloriasForm.getSexo().equals("HOMBRE")) ? CalcularKcalServiceImpl.Sexo.HOMBRE : CalcularKcalServiceImpl.Sexo.MUJER;
+        CalcularKcalServiceImpl.Sexo sexo = (calculoCaloriasForm.getSexo().equalsIgnoreCase("HOMBRE")) 
+            ? CalcularKcalServiceImpl.Sexo.HOMBRE : CalcularKcalServiceImpl.Sexo.MUJER;
         CalcularKcalServiceImpl.NivelActividad nivelActividad = CalcularKcalServiceImpl.NivelActividad.valueOf(calculoCaloriasForm.getNivelActividad());
 
-        // Calcular las calorías
-        double calorias = calcularKcalService.calcularCalorias(sexo,
-                calculoCaloriasForm.getEdad(), calculoCaloriasForm.getPeso(), calculoCaloriasForm.getAltura(),
-                nivelActividad);
-
-        // Agregar el resultado al modelo
+        double calorias = calcularKcalService.calcularCalorias(sexo, calculoCaloriasForm.getEdad(), calculoCaloriasForm.getPeso(), calculoCaloriasForm.getAltura(), nivelActividad);
         model.addAttribute("calculoCaloriasResultado", calorias);
 
         return "forms/calcularKcal";
     }
 
-
-
-// INICIAR SESION
+    // Iniciar Sesión
     @GetMapping("/iniciarSesion")
     public String showIniciarSesion(@RequestParam(required = false) String msg, Model model) {
         if (msg != null) {
             model.addAttribute("mensajeCreacion", "Sesión iniciada correctamente.");
-
         }
-        //Hacer dto para coger email y contraseña del registro de datos y luego comprobar si estan 
         model.addAttribute("usuario", new Usuario());
-        
-
-        return "forms/registrarse";
+        return "forms/iniciarSesion";
     }
 
-    @GetMapping("/iniciarSesion/enviar")
-    public String showIniciarSesionEnviar(@Valid Usuario usuario, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors())
-            return "redirect:/activate/error";
+    @PostMapping("/iniciarSesion/enviar")
+    public String showIniciarSesionEnviar(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "forms/iniciarSesion";
+        }
         usuarioDBServiceImpl.añadir(usuario);
-        System.out.println((usuarioDBServiceImpl.obtenerTodos()));
         return "redirect:/activate/iniciarSesion?msg=okay";
     }
 
-
-
-    // REGISTRARSE
-
+    // Registrarse
     @GetMapping("/registrarse")
     public String showRegistrarse(@RequestParam(required = false) String msg, Model model) {
         if (msg != null) {
@@ -123,51 +106,36 @@ public class MainController {
     }
 
     @PostMapping("/registrarse/enviar")
-    public String showRegistrarseEnviar(@Valid Usuario usuario, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors())
-            return "redirect:/activate/error";
+    public String showRegistrarseEnviar(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "forms/registrarse";
+        }
         usuarioDBServiceImpl.añadir(usuario);
-        System.out.println((usuarioDBServiceImpl.obtenerTodos()));
         return "redirect:/activate/registrarse?msg=okay";
     }
 
-
-    // ENTRENADORES 
-
+    // Entrenadores
     @GetMapping("/entrenadores")
     public String showEntrenadores(Model model) {
         model.addAttribute("entrenadores", activateService.devuelveEntrenadores());
         return "views/entrenadores";
     }
 
-   
-    // ERROR
+    // Error
     @GetMapping("/error")
     public String showError() {
-
         return "views/error";
     }
 
-    // NUEVOENTRENADOR
+    // Nuevo Entrenador
     @GetMapping("/nuevoEntrenador")
     public String showFormEntrenadores() {
-        
         return "views/inciarSesion";
     }
-
 
     @GetMapping("/check")
     public String checkUsers(Model model) {
         model.addAttribute("usuarios", usuarioDBServiceImpl.obtenerTodos());
-        return "views/checkUsers.html";
+        return "views/checkUsers";
     }
-
 }
-    
-
-
-
-
-    
-
-
