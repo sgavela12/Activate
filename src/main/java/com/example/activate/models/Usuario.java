@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -27,6 +28,8 @@ public class Usuario {
     @GeneratedValue
     private Long id;
 
+    private Rol rol;
+
     @NotNull
     private String nombreCompleto;
 
@@ -36,6 +39,7 @@ public class Usuario {
 
     @Email
     @NotNull
+    @Column(unique = true)
     private String email;
 
     @Past

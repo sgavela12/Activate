@@ -1,8 +1,11 @@
 package com.example.activate.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.example.activate.models.Usuario;
 import com.example.activate.repositories.UsuarioRepository;
 
@@ -12,8 +15,15 @@ public class UsuarioDBServiceImpl implements UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @Override
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     public Usuario añadir(Usuario usuario) {
+
+        if (usuarioRepository.findByEmail(usuario.getEmail()) != null)
+            return null; // ya existe ese nombre de usuario
+        String passCrypted = passwordEncoder.encode(usuario.getContraseña());
+        usuario.setContraseña(passCrypted);
         return usuarioRepository.save(usuario);
     }
 
