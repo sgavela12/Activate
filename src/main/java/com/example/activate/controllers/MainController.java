@@ -27,7 +27,7 @@ public class MainController {
     ActivateService activateService;
 
     @Autowired
-    CalcularKcalService calcularKcalService;
+    CalcularKcalServiceImpl calcularKcalService;
 
     @Autowired
     UsuarioDBServiceImpl usuarioDBServiceImpl;
@@ -74,7 +74,7 @@ public class MainController {
         CalcularKcalServiceImpl.NivelActividad nivelActividad = CalcularKcalServiceImpl.NivelActividad.valueOf(calculoCaloriasForm.getNivelActividad());
 
         // Calcular las calorías
-        double calorias = calcularKcalService.calcularKcal(sexo,
+        double calorias = calcularKcalService.calcularCalorias(sexo,
                 calculoCaloriasForm.getEdad(), calculoCaloriasForm.getPeso(), calculoCaloriasForm.getAltura(),
                 nivelActividad);
 

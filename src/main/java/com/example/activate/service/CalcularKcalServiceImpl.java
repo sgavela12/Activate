@@ -1,6 +1,9 @@
 package com.example.activate.service;
 
-public class CalcularKcalServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class CalcularKcalServiceImpl implements CalcularKcalService {
 
     public enum Sexo {
         HOMBRE,
@@ -15,6 +18,7 @@ public class CalcularKcalServiceImpl {
         MUY_ACTIVO
     }
 
+    @Override
     public double calcularCalorias(Sexo sexo, int edad, double peso, double altura, NivelActividad nivelActividad) {
         double factorActividad = obtenerFactorActividad(nivelActividad);
         double metabolismoBasal = calcularMetabolismoBasal(sexo, edad, peso, altura);
@@ -44,5 +48,5 @@ public class CalcularKcalServiceImpl {
             default:
                 throw new IllegalArgumentException("Nivel de actividad no válido");
         }
-}
+    }
 }
