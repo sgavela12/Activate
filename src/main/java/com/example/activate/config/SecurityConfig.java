@@ -46,6 +46,7 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/public/home", true)
                         .permitAll())
                 .logout(logout -> logout
+                
                         .logoutSuccessUrl("/public/home")
                         .permitAll())
                 // .csrf(csrf -> csrf.disable())
