@@ -28,6 +28,7 @@ public class Usuario {
     @GeneratedValue
     private Long id;
 
+
     private Rol rol;
 
     @NotNull
@@ -43,7 +44,7 @@ public class Usuario {
     private String email;
 
     @Past
-   @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     @NotNull
     private LocalDate fechaNacimiento;
 
@@ -55,6 +56,18 @@ public class Usuario {
 
     @OneToOne
     private Rutina rutina;
+
+    
+
+  public Usuario(String nombreCompleto, Rol rol, String contraseña, LocalDate fechaNacimiento) {
+        this.nombreCompleto = nombreCompleto;
+        this.rol = rol;
+        this.contraseña = contraseña;
+        // Se asignan valores predeterminados para los demás campos
+        this.telefono = "";
+        this.email = "";
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
     @Override
     public String toString() {

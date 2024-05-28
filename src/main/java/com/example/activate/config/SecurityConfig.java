@@ -43,11 +43,11 @@ public class SecurityConfig {
                 .permitAll() // para rutas: /css, /js /images
                 .anyRequest().authenticated())
                 .formLogin(formLogin -> formLogin
-                        .defaultSuccessUrl("/public/home", true)
+                        .defaultSuccessUrl("/activate/inicio", true)
                         .permitAll())
                 .logout(logout -> logout
                 
-                        .logoutSuccessUrl("/public/home")
+                        .logoutSuccessUrl("/activate/inicio")
                         .permitAll())
                 // .csrf(csrf -> csrf.disable())
                 .httpBasic(Customizer.withDefaults());

@@ -3,6 +3,7 @@ package com.example.activate.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +20,15 @@ public class UsuarioDBServiceImpl implements UsuarioService {
     private PasswordEncoder passwordEncoder;
 
     public Usuario añadir(Usuario usuario) {
-
-        if (usuarioRepository.findByEmail(usuario.getEmail()) != null)
-            return null; // ya existe ese nombre de usuario
         String passCrypted = passwordEncoder.encode(usuario.getContraseña());
         usuario.setContraseña(passCrypted);
-        return usuarioRepository.save(usuario);
+        try {
+            return usuarioRepository.save(usuario);
+
+        } catch (DataIntegrityViolationException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
@@ -37,10 +41,11 @@ public class UsuarioDBServiceImpl implements UsuarioService {
         return usuarioRepository.findById(id).orElse(null);
     }
 
-    @Override
     public Usuario editar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
+        String passCrypted = passwordEncoder.encode(usuario.getContraseña());
+        usuario.setContraseña(passCrypted);
+        try { return usuarioRepository.save(usuario); }
+        catch (DataIntegrityViolationException e) {e.printStackTrace(); return null;} }
 
     @Override
     public void borrar(Long id) {
