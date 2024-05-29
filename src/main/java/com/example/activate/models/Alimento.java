@@ -1,5 +1,7 @@
 package com.example.activate.models;
 
+import com.example.activate.models.enums.TipoAlimento;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,13 +16,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Alimento {
-    @Id
+     @Id
     @GeneratedValue
     private Long idComida;
+    
     @NotNull
     private String nombre;
+    
     @NotNull
     private int calorias;
-    @ManyToOne
-    private Dieta dieta;
+    
+    @NotNull
+    private TipoAlimento tipoAlimento; 
 }

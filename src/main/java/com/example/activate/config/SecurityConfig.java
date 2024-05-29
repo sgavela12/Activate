@@ -31,26 +31,26 @@ public class SecurityConfig {
         }
 
         @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-            http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
-            http.authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/activate/inicio").permitAll()
-                    .requestMatchers("/activate/iniciarSesion").permitAll()
-                    .requestMatchers("/activate/registrarse", "/activate/registrarse/enviar", "/activate/iniciarSesion/enviar").permitAll()
-                    .requestMatchers("/activate/check").hasAnyRole("ADMIN")
-                    .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                    .anyRequest().authenticated())
-                    .formLogin(formLogin -> formLogin
-                            .loginPage("/activate/iniciarSesion") // Página de inicio de sesión personalizada
-                            .loginProcessingUrl("/login") // URL de procesamiento del inicio de sesión
-                            .defaultSuccessUrl("/activate/inicio", true)
-                            .permitAll())
-                    .logout(logout -> logout
-                            .logoutUrl("/activate/cerrarSesion") // URL de cierre de sesión personalizada
-                            .logoutSuccessUrl("/activate/inicio")
-                            .permitAll())
-                    .httpBasic(Customizer.withDefaults());
-            http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/accessError"));
-            return http.build();
-        }
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
+        http.authorizeHttpRequests(auth -> auth
+                .requestMatchers("/activate/inicio").permitAll()
+                .requestMatchers("/activate/iniciarSesion").permitAll()
+                .requestMatchers("/activate/registrarse", "/activate/registrarse/enviar", "/activate/iniciarSesion/enviar").permitAll()
+                .requestMatchers("/activate/check").hasAnyRole("ADMIN")
+                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                .anyRequest().authenticated())
+            .formLogin(formLogin -> formLogin
+                .loginPage("/activate/iniciarSesion")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/activate/inicio", true)
+                .permitAll())
+            .logout(logout -> logout
+                .logoutUrl("/activate/cerrarSesion")
+                .logoutSuccessUrl("/activate/inicio")
+                .permitAll())
+            .httpBasic(Customizer.withDefaults());
+        http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/accessError"));
+        return http.build();
+    }
 }

@@ -12,7 +12,10 @@
     <script src="/js/registrarse.js" defer></script>
 </head>
 <body>
-<nav th:replace="~{components/navbar.html :: navBar}"></nav>
+<nav th:replace="~{components/navbar.html :: navBar}">
+    <!-- Otros elementos de navegación -->
+    <li><a href="/activate/cerrarSesion" th:if="${#httpServletRequest.remoteUser != null}">Cerrar Sesión</a></li>
+</nav>
 <div class="section">
     <div class="container">
         <div class="row full-height justify-content-center">
