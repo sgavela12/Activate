@@ -18,40 +18,39 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-    @Bean
-    public AuthenticationManager authenticationManager(
-            AuthenticationConfiguration authenticationConfiguration)
-            throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
+        @Bean
+        public AuthenticationManager authenticationManager(
+                        AuthenticationConfiguration authenticationConfiguration)
+                        throws Exception {
+                return authenticationConfiguration.getAuthenticationManager();
+        }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+        @Bean
+        public PasswordEncoder passwordEncoder() {
+                return new BCryptPasswordEncoder();
+        }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.headers(
-                headersConfigurer -> headersConfigurer
-                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
-        http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/").permitAll() 
-                .requestMatchers("/activate/check").hasAnyRole("ADMIN") // configurarpermisosreales
-           
-                .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
-                .permitAll() // para rutas: /css, /js /images
-                .anyRequest().authenticated())
-                .formLogin(formLogin -> formLogin
-                        .defaultSuccessUrl("/activate/inicio", true)
-                        .permitAll())
-                .logout(logout -> logout
-                
-                        .logoutSuccessUrl("/activate/inicio")
-                        .permitAll())
-                // .csrf(csrf -> csrf.disable())
-                .httpBasic(Customizer.withDefaults());
-        http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/accessError"));
-        return http.build();
-    }
+        @Bean
+        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+            http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
+            http.authorizeHttpRequests(auth -> auth
+                    .requestMatchers("/activate/inicio").permitAll()
+                    .requestMatchers("/activate/iniciarSesion").permitAll()
+                    .requestMatchers("/activate/registrarse", "/activate/registrarse/enviar", "/activate/iniciarSesion/enviar").permitAll()
+                    .requestMatchers("/activate/check").hasAnyRole("ADMIN")
+                    .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                    .anyRequest().authenticated())
+                    .formLogin(formLogin -> formLogin
+                            .loginPage("/activate/iniciarSesion") // Página de inicio de sesión personalizada
+                            .loginProcessingUrl("/login") // URL de procesamiento del inicio de sesión
+                            .defaultSuccessUrl("/activate/inicio", true)
+                            .permitAll())
+                    .logout(logout -> logout
+                            .logoutUrl("/activate/cerrarSesion") // URL de cierre de sesión personalizada
+                            .logoutSuccessUrl("/activate/inicio")
+                            .permitAll())
+                    .httpBasic(Customizer.withDefaults());
+            http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/accessError"));
+            return http.build();
+        }
 }

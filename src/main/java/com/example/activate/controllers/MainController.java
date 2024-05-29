@@ -83,13 +83,13 @@ public class MainController {
             model.addAttribute("mensajeCreacion", "Sesión iniciada correctamente.");
         }
         model.addAttribute("usuario", new Usuario());
-        return "forms/iniciarSesion";
+        return "forms/registrarse";
     }
 
     @PostMapping("/iniciarSesion/enviar")
     public String showIniciarSesionEnviar(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "forms/iniciarSesion";
+            return "forms/registrarse";
         }
         usuarioDBServiceImpl.añadir(usuario);
         return "redirect:/activate/iniciarSesion?msg=okay";
@@ -113,6 +113,13 @@ public class MainController {
         usuarioDBServiceImpl.añadir(usuario);
         return "redirect:/activate/registrarse?msg=okay";
     }
+
+       // Cerrar Sesión
+       @GetMapping("/cerrarSesion")
+       public String showCerrarSesion() {
+          
+           return "forms/cerrarSesion";
+       }
 
     // Entrenadores
     @GetMapping("/entrenadores")
