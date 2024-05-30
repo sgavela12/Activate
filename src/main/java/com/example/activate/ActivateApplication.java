@@ -14,7 +14,7 @@ public class ActivateApplication {
 	//   @Bean
     // public CommandLineRunner agregarUsuario(UsuarioService usuarioService) {
     //     return args -> {
-    //         // Añadir un nuevo usuario al inicio de la aplicación
+           
     //         usuarioService.añadir(new Usuario("admin", Rol.ADMIN, "1234",LocalDate.of(1990, Month.JANUARY, 1)));
     //     };
 	

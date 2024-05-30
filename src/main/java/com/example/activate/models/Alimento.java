@@ -5,7 +5,6 @@ import com.example.activate.models.enums.TipoAlimento;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Alimento {
-     @Id
+    @Id
     @GeneratedValue
     private Long idComida;
     
@@ -25,6 +24,15 @@ public class Alimento {
     
     @NotNull
     private int calorias;
+
+    @NotNull
+    private int proteinas;
+
+    @NotNull
+    private int hidratos;
+
+    @NotNull
+    private int grasas;
     
     @NotNull
     private TipoAlimento tipoAlimento; 

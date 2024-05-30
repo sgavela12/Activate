@@ -63,26 +63,26 @@
 
 .rutinas {
     margin-left: 10px;
-    background-image: url('../img/rutinas.jpg');
+    background-image: url('../images/rutinas.jpg');
 }
 
 .dietas {
     margin-right: 10px;
-    background-image: url('../img/dietas.jpg');
+    background-image: url('../images/dietas.jpg');
 }
 
 .calcular-kcal {
     margin-left: 10px;
-    background-image: url('../img/calcular-kcal.png');
+    background-image: url('../images/calcular-kcal.png');
 }
 
 .entrenadores {
     margin-right: 10px;
-    background-image: url('../img/entrenadores.jpg');
+    background-image: url('../images/entrenadores.jpg');
 }
 
 .noticia {
-    background-image: url("../img/Activate.gif");
+    background-image: url("../images/Activate.gif");
     background-repeat: no-repeat; /* Evitar que el fondo se repita */
     background-size: cover; /* Hacer que la imagen de fondo cubra todo el div */
     background-position: center;

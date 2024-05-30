@@ -35,6 +35,7 @@ public class SecurityConfig {
         http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers("/activate/inicio").permitAll()
+                .requestMatchers("/activate/perfil").permitAll()
                 .requestMatchers("/activate/iniciarSesion").permitAll()
                 .requestMatchers("/activate/registrarse", "/activate/registrarse/enviar", "/activate/iniciarSesion/enviar").permitAll()
                 .requestMatchers("/activate/check").hasAnyRole("ADMIN")
