@@ -1,24 +1,26 @@
 <div th:fragment="navBar">
   <nav>
-    <ul class="menu" >
-      <li id="li-logo">
+    <div class="logo" style="display: flex;align-items: center;">
+      
         <a href="/activate/inicio">
           <img id="logo" src="/images/logo.png" alt="Logo de la aplicación" />
         </a>
-      </li>
-      <li class="menu-item inicio active">
-    <a href="/activate/inicio">Inicio</a>
-      </li>
-      <li class="menu-item perfil"><a href="/activate/perfil">Perfil</a></li>
-      <li class="menu-item servicios">
-        <a href="/activate/servicios">Servicios</a>
-      </li>
-      <li class="menu-item contacto" id="contacto">
-        <a href="/activate/contacto">Contacto</a>
-      </li>
-      <div class="auth-button registrarse">
-        <a href="/activate/registrarse" id="registrarse">Iniciar Sesión/Registrarse</a>
-      </div>
+      
+    </div>
+    <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="/activate/inicio">Inicio</a></li>
+        <li><a href="/activate/perfil">Perfil</a></li>
+        <li><a href="/activate/servicios">Services</a></li>
+        <li><a href="/activate/contacto">Contacto</a></li>
+        <li><button class="login-button" href="/activate/registrarse">Iniciar Sesión/Registrarse</button></li>
     </ul>
-  </nav>
+</nav>
+<script src="/js/nav.js"></script>
   </div>
+
+  
