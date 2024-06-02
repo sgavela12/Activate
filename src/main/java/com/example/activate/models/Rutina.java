@@ -1,9 +1,13 @@
 package com.example.activate.models;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +27,9 @@ public class Rutina {
 
     @NotNull
     private int objetivo;
+
+    @OneToMany
+    private List<Ejercicio> ejercicios = new ArrayList<>();
 
 
     // public Rutina generarRutina(){}

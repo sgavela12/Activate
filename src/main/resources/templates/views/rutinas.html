@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rutinas</title>
+    <link rel="stylesheet" href="/css/rutinas.css" />
+    <link rel="stylesheet" href="/css/nav.css" /> 
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+      </header>
+      <main class="rutinas-container">
+        <div class="rutina">
+          <h2>Rutina 1</h2>
+          <p>Descripción de la rutina 1...</p>
+        </div>
+        <div class="rutina">
+          <h2>Rutina 2</h2>
+          <p>Descripción de la rutina 2...</p>
+        </div>
+        <div class="rutina">
+          <h2>Rutina 3</h2>
+          <p>Descripción de la rutina 3...</p>
+        </div>
+        <div class="rutina">
+          <h2>Rutina 4</h2>
+          <p>Descripción de la rutina 4...</p>
+        </div>
+        <div class="rutina">
+          <h2>Rutina 5</h2>
+          <p>Descripción de la rutina 5...</p>
+        </div>
+        <div class="rutina">
+          <h2>Rutina 6</h2>
+          <p>Descripción de la rutina 6...</p>
+        </div>
+      </main>
+      <footer th:replace="~{components/footer.html :: footer}"></footer>
+    </div>
+  </body>
+</html>
