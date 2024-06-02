@@ -6,21 +6,19 @@
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/nav.css" />
     <link rel="stylesheet" href="/css/footer.css" />
-    
-
 
     <script src="/js/index.js"></script>
     <title>Actívate-Inicio</title>
   </head>
   <body cz-shortcut-listen="true">
     <header>
-      <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+      <div class="wrapper">
+        <nav th:replace="~{components/navbar.html :: navBar}"></nav>
     </header>
     <main id="mainBody">
       <a href="/activate/registrarse">
-      <video id="video" src="../images/activate.mp4" autoplay muted></video>
-    </a>
-    </main>
+        <video id="video" src="../images/activate.mp4" autoplay muted></video>
+      </a>
     <div class="noticia" style="display: block">
       <h1>Noticia 1</h1>
       <p>Descripción de la noticia 1.</p>
@@ -33,6 +31,7 @@
       <span class="flecha-izquierda">◁</span>
       <span class="flecha-derecha">▷</span>
     </div>
+  </main>
     <!-- ----footer---- -->
     <footer th:replace="~{components/footer.html :: footer}"></footer>
   </body>
