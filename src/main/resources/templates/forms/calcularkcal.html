@@ -31,7 +31,7 @@
     
     <h2>Calculadora de Calorías</h2>
     
-    <form action="#" th:action="@{/activate/calcularKcal}" th:object="${calculoCalorias}" method="post">
+    <form action="#" th:action="@{/activate/servicios/calcularKcal}" th:object="${calculoCalorias}" method="post">
         <label>Sexo:</label>
         <select th:field="*{sexo}">
             <option value="HOMBRE">Hombre</option>

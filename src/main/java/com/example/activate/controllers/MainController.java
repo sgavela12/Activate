@@ -53,13 +53,13 @@ public class MainController {
     }
 
     // Calculo de Calorías
-    @GetMapping("/calcularKcal")
+    @GetMapping("servicios/calcularKcal")
     public String showCalcularkcal(Model model) {
         model.addAttribute("calculoCalorias", new CalculoCaloriasForm());
         return "forms/calcularKcal";
     }
 
-    @PostMapping("/calcularKcal")
+    @PostMapping("servicios/calcularKcal")
     public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCaloriasForm calculoCaloriasForm,
                                BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
@@ -122,7 +122,7 @@ public class MainController {
        }
 
     // Entrenadores
-    @GetMapping("/entrenadores")
+    @GetMapping("servicios/entrenadores")
     public String showEntrenadores(Model model) {
         model.addAttribute("entrenadores", activateService.devuelveEntrenadores());
         return "views/entrenadores";
@@ -134,11 +134,6 @@ public class MainController {
         return "views/error";
     }
 
-    // Nuevo Entrenador
-    @GetMapping("/nuevoEntrenador")
-    public String showFormEntrenadores() {
-        return "views/inciarSesion";
-    }
 
     @GetMapping("/check")
     public String checkUsers(Model model) {
