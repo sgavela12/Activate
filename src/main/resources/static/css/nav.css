@@ -97,7 +97,7 @@ body {
     margin: 0 0.7vw;
  }
  .nav-links li a:hover {
-    color: #61DAFB;
+    color: #FFD600;
  }
  .nav-links li {
     position: relative;
@@ -119,8 +119,8 @@ body {
  }
  .login-button:hover {
     color: #131418;
-    background-color: #f2f5f7;
-    border:1.5px solid #f2f5f7;
+    background-color: #FFD600;
+    border:1.5px solid #2B2E38;
     transition: all ease-in-out 350ms;
  }
  .join-button{
