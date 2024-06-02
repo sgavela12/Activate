@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/perfil.css" />
+    <link rel="stylesheet" href="/css/servicios.css" />
     <link rel="stylesheet" href="/css/nav.css"> 
     <link rel="stylesheet" href="/css/footer.css" />
 
@@ -10,8 +10,10 @@
   </head>
 
   <body cz-shortcut-listen="true">
+    <div class="wrapper">
 
     <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+    <main>
     <div class="noticias-container">
       <a href="/activate/registrarse" class="container rutinas">
         <h2>Mis Rutinas</h2>
@@ -24,7 +26,8 @@
         <h2>Entrenadores Personales</h2> 
       </a>
     </div>
+  </main>
     <footer th:replace="~{components/footer.html :: footer}"></footer>
-
+  </div>
   </body>
 </html>

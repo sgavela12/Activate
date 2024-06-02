@@ -1,3 +1,4 @@
+/* General body styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,122 +9,100 @@ body {
     line-height: 1.7;
 }
 
-#li-logo {
-    padding: 0px;
-}
-
-
-
-.menu li {
-    padding-top: 1.1vh;
-    text-align: center;
-}
-
-
-.menu li a {
-    color: #ffffff;
-    font-size: 130%;
-    text-decoration: none;
-    padding: 10px 20px;
-}
-
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    background-color: #2B2E38;
-    /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(76,78,54,1) 0%, rgba(13,13,13,1) 56%); */
-
-
-}
-
-.menu-item.active a {
-    color: #FFD600;
-    text-decoration: underline 3px;
-    font-size: 140%;
-}
-
-
-#registrarse {
-    margin-right: 4%;
-    font-weight: bold;
-}
-
-
-
-*{
+/* General styles for all elements */
+* {
     margin: 0;
     padding: 0;
     color: #f2f5f7;
     font-family: sans-serif;
     letter-spacing: 1px;
     font-weight: 300;
- }
+}
 
- nav{
+main{
+    padding-top: 10vh;
+}
+
+/* Navigation bar styles */
+nav {
     height: 4.5rem;
     width: 100vw;
     background-color: #131418;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
+    align-items: center;
+    padding: 0 1vw; /* Adjust padding */
     position: fixed;
     z-index: 10;
- }
- 
- /*Styling logo*/
- .logo{
-    padding:1vh 1vw;
+}
+
+/* Logo styles */
+.logo {
     text-align: center;
- }
- .logo img {
+    margin-right: 1vw; /* Further reduced margin */
+}
+
+.logo img {
     height: 5rem;
     width: 5rem;
- }
- 
- /*Styling Links*/
- .nav-links{
+}
+
+/* Navigation links styles */
+.nav-container {
     display: flex;
-    list-style: none; 
-    width: 88vw;
-    padding: 0 0.7vw;
-    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 80%;
+    padding: 0;
+    justify-content: space-between; /* Adjust spacing */
     text-transform: uppercase;
- }
- .nav-links li a{
+    margin-left: 1vw; /* Reduced margin */
+}
+
+.nav-links li a {
     text-decoration: none;
     margin: 0 0.7vw;
- }
- .nav-links li a:hover {
+}
+
+.nav-links li a:hover {
     color: #FFD600;
- }
- .nav-links li {
+}
+
+.nav-links li {
     position: relative;
- }
- .nav-links li a:hover::before{
-    width: 80%;
- }
- 
- /*Styling Buttons*/
- .login-button{
+}
+
+/* Styling for login button */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.login-button {
     background-color: transparent;
     border: 1.5px solid #f2f5f7;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
-    margin-left: 2vw;
     font-size: 1rem;
     cursor: pointer;
- 
- }
- .login-button:hover {
+}
+
+.login-button:hover {
     color: #131418;
     background-color: #FFD600;
-    border:1.5px solid #2B2E38;
+    border: 1.5px solid #2B2E38;
     transition: all ease-in-out 350ms;
- }
- .join-button{
+}
+
+/* Styling for join button */
+.join-button {
     color: #131418;
     background-color: #61DAFB;
     border: 1.5px solid #61DAFB;
@@ -131,34 +110,37 @@ body {
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
     cursor: pointer;
- }
- .join-button:hover {
+}
+
+.join-button:hover {
     color: #f2f5f7;
     background-color: transparent;
-    border:1.5px solid #f2f5f7;
+    border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
- }
- 
- /*Styling Hamburger Icon*/
- .hamburger div{
+}
+
+/* Styling for hamburger icon */
+.hamburger div {
     width: 30px;
-    height:3px;
+    height: 3px;
     background: #f2f5f7;
     margin: 5px;
     transition: all 0.3s ease;
- }
- .hamburger{
+}
+
+.hamburger {
     display: none;
- }
- 
- /*Stying for small screens*/
- @media screen and (max-width: 800px){
-    nav{
+}
+
+/* Styling for small screens */
+@media screen and (max-width: 800px) {
+    nav {
         position: fixed;
         z-index: 3;
     }
-    .hamburger{
-        display:block;
+
+    .hamburger {
+        display: block;
         position: absolute;
         cursor: pointer;
         right: 5%;
@@ -167,7 +149,8 @@ body {
         z-index: 2;
         transition: all 0.7s ease;
     }
-    .nav-links{
+
+    .nav-links {
         position: fixed;
         background: #131418;
         height: 100vh;
@@ -178,50 +161,62 @@ body {
         transition: all 1s ease-out;
         pointer-events: none;
     }
-    .nav-links.open{
+
+    .nav-links.open {
         clip-path: circle(1000px at 90% -10%);
         -webkit-clip-path: circle(1000px at 90% -10%);
         pointer-events: all;
     }
-    .nav-links li{
+
+    .nav-links li {
         opacity: 0;
     }
-    .nav-links li:nth-child(1){
+
+    .nav-links li:nth-child(1) {
         transition: all 0.5s ease 0.2s;
     }
-    .nav-links li:nth-child(2){
+
+    .nav-links li:nth-child(2) {
         transition: all 0.5s ease 0.4s;
     }
-    .nav-links li:nth-child(3){
+
+    .nav-links li:nth-child(3) {
         transition: all 0.5s ease 0.6s;
     }
-    .nav-links li:nth-child(4){
+
+    .nav-links li:nth-child(4) {
         transition: all 0.5s ease 0.7s;
     }
-    .nav-links li:nth-child(5){
+
+    .nav-links li:nth-child(5) {
         transition: all 0.5s ease 0.8s;
     }
-    .nav-links li:nth-child(6){
+
+    .nav-links li:nth-child(6) {
         transition: all 0.5s ease 0.9s;
         margin: 0;
     }
-    .nav-links li:nth-child(7){
+
+    .nav-links li:nth-child(7) {
         transition: all 0.5s ease 1s;
         margin: 0;
     }
-    li.fade{
+
+    li.fade {
         opacity: 1;
     }
- }
- /*Animating Hamburger Icon on Click*/
- .toggle .line1{
-    transform: rotate(-45deg) translate(-5px,6px);
- }
- .toggle .line2{
+}
+
+/* Animating hamburger icon on click */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
     transition: all 0.7s ease;
-    width:0;
- }
- .toggle .line3{
-    transform: rotate(45deg) translate(-5px,-6px);
- }
- 
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
