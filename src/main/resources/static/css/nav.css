@@ -43,8 +43,10 @@ nav {
 }
 
 .logo img {
-    height: 5rem;
-    width: 5rem;
+    padding-top: 5vh;
+    height: 9rem;
+    width: 9rem;
+    margin-right: 2.5vw;
 }
 
 /* Navigation links styles */
@@ -224,4 +226,41 @@ nav {
 *, *::before, *::after {
     box-sizing: border-box;
   }
+  .nav-links li a.active {
+    color: #FFD600; /* Color amarillo */
+  }
   
+  .nav-links li a {
+    color: #fff; /* Color blanco para los enlaces no activos */
+  }
+  
+/* Existing styles for login button */
+.login-button {
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #f2f5f7;
+}
+
+.login-button:hover {
+    color: #131418;
+    background-color: #FFD600;
+    border: 1.5px solid #2B2E38;
+    transition: all ease-in-out 350ms;
+}
+
+/* New active state for the login button */
+.login-button.active {
+    color: #131418;
+    background-color: #FFD600;
+    border: 1.5px solid #2B2E38;
+}
+
+.login-button.active:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+}
