@@ -93,6 +93,11 @@ div#derechos {
   animation: slide-in-top 0.3s both;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
 @keyframes slide-in-top {
   0% {
       transform: translateY(-50px);
@@ -103,3 +108,4 @@ div#derechos {
       opacity: 1;
   }
 }
+
