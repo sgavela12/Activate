@@ -34,8 +34,9 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
         http.authorizeHttpRequests(auth -> auth
+                .requestMatchers("/activate/**").permitAll()
                 .requestMatchers("/activate/inicio").permitAll()
-                .requestMatchers("/activate/perfil").permitAll()
+                .requestMatchers("/activate/servicios/**").permitAll()
                 .requestMatchers("/activate/iniciarSesion").permitAll()
                 .requestMatchers("/activate/registrarse", "/activate/registrarse/enviar", "/activate/iniciarSesion/enviar").permitAll()
                 .requestMatchers("/activate/check").hasAnyRole("ADMIN")

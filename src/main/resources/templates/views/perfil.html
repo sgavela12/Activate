@@ -1,30 +1,22 @@
+<!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/perfil.css" />
-    <link rel="stylesheet" href="/css/nav.css"> 
+    <link rel="stylesheet" href="/css/nav.css" /> 
     <link rel="stylesheet" href="/css/footer.css" />
 
     <title>Actívate-Inicio</title>
-  </head>
-
-  <body cz-shortcut-listen="true">
-
-    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-    <div class="noticias-container">
-      <a href="/activate/registrarse" class="container rutinas">
-        <h2>Mis Rutinas</h2>
-      </a>
-      <a href="/activate/registrarse" class="container dietas"> <h2>Dieta</h2></a>
-
-      <a href="/activate/calcularKcal" class="container calcular-kcal"> <h2>Calcular Kcal</h2></a>
-
-      <a href="/activate/entrenadores" class="container entrenadores">
-        <h2>Entrenadores Personales</h2> 
-      </a>
+</head>
+<body>
+    <div class="wrapper">
+        <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+        <main>
+            <h1>Perfil</h1>
+            <p>Contenido del perfil...</p>
+        </main>
+        <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>
-    <footer th:replace="~{components/footer.html :: footer}"></footer>
-
-  </body>
+</body>
 </html>

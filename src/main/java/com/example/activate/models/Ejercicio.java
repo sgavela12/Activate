@@ -1,9 +1,12 @@
 package com.example.activate.models;
 
+import com.example.activate.models.enums.TipoEjercicio;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,16 +18,18 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Ejercicio {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEjercicio;
+
     @NotNull
     private String nombre;
+
     @NotNull
     private int dificultad;
 
-    @ManyToOne
-    private Rutina rutina;
+    private String grupoMuscular;
 
-
-
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private TipoEjercicio tipoEjercicio;
 }

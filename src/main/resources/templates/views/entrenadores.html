@@ -9,12 +9,15 @@
 
 </head>
 <body>
+    <div class="wrapper">
     <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+    <main>
     <ul th:each="entrenador: ${entrenadores}">
         <li th:text="${entrenador}"></li>
     </ul>
     <a href="/activate/nuevoEntrenador">Date de alta como entrenador</a>
+    </main>
     <footer th:replace="~{components/footer.html :: footer}"></footer>
-
+</div>
 </body>
 </html>

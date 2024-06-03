@@ -1,16 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actívate-Servicios</title>
-    <link rel="stylesheet" href="/css/nav.css">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/servicios.css" />
+    <link rel="stylesheet" href="/css/nav.css"> 
     <link rel="stylesheet" href="/css/footer.css" />
 
-</head>
-<body>
-    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-    <footer th:replace="~{components/footer.html :: footer}"></footer>
+    <title>Actívate-Inicio</title>
+  </head>
 
-</body>
+  <body cz-shortcut-listen="true">
+    <div class="wrapper">
+
+    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+    <main>
+    <div class="noticias-container">
+      <a href="/activate/servicios/rutinas" class="container rutinas">
+        <h2>Rutinas</h2>
+      </a>
+      <a href="/activate/registrarse" class="container dietas"> <h2>Dietas</h2></a>
+
+      <a href="/activate/servicios/calcularKcal" class="container calcular-kcal"> <h2>Calcular Kcal</h2></a>
+
+      <a href="/activate/servicios/entrenadores" class="container entrenadores">
+        <h2>Entrenadores Personales</h2> 
+      </a>
+    </div>
+  </main>
+    <footer th:replace="~{components/footer.html :: footer}"></footer>
+  </div>
+  </body>
 </html>

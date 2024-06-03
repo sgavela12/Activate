@@ -1,0 +1,123 @@
+
+
+
+
+
+.container:hover {
+    border-radius: 10px;
+    color: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    -webkit-transform: scale(1.015, 1.015); /* Reducí el valor de escala */
+    -moz-transform: scale(1.015, 1.015);
+    -ms-transform: scale(1.015, 1.015);
+    -o-transform: scale(1.015, 1.015);
+    transform: scale(1.015, 1.015);
+    -webkit-transition: all 0.15s linear; /* Reducí la duración de la transición */
+    -moz-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+
+
+
+
+
+.noticias-container {
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px; /* Espacio pequeño entre contenedores */
+    color: #000d21;
+}
+
+
+
+.container {
+    height: 400px; /* Aumentar la altura a 400px o el valor que prefieras */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 10px; /* Esquinas redondeadas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    text-decoration: none;
+}
+
+
+
+
+
+#contacto{
+    text-align: left;
+    
+}
+
+
+
+.rutinas {
+    margin-left: 10px;
+    background-image: url('../images/rutinas.jpg');
+}
+
+.dietas {
+    margin-right: 10px;
+    background-image: url('../images/dietas.jpg');
+}
+
+.calcular-kcal {
+    margin-left: 10px;
+    background-image: url('../images/calcular-kcal.png');
+}
+
+.entrenadores {
+    margin-right: 10px;
+    background-image: url('../images/entrenadores.jpg');
+}
+
+.noticia {
+    background-image: url("../images/Activate.gif");
+    background-repeat: no-repeat; /* Evitar que el fondo se repita */
+    background-size: cover; /* Hacer que la imagen de fondo cubra todo el div */
+    background-position: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    display: none;
+    height: 30%;
+    margin-top: 1%;
+}
+
+.noticia h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.noticia p {
+    font-size: 16px;
+}
+
+.navegacion-noticias {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.flecha-izquierda,
+.flecha-derecha {
+    font-size: 24px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.flecha-izquierda:hover,
+.flecha-derecha:hover {
+    color: #FFD600;
+}
+
+
