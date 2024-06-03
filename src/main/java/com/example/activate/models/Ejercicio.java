@@ -27,6 +27,8 @@ public class Ejercicio {
     @NotNull
     private int dificultad;
 
+    private String grupoMuscular;
+
     @NotNull
     @Enumerated(EnumType.STRING)
     private TipoEjercicio tipoEjercicio;
