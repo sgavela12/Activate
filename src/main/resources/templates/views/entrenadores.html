@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actívate-Iniciar Sesión</title>
+    <title>Entrenadores</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/footer.css" />
-
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/entrenadores.css">
+    
 </head>
 <body>
     <div class="wrapper">
-    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-    <main>
-    <ul th:each="entrenador: ${entrenadores}">
-        <li th:text="${entrenador}"></li>
-    </ul>
-    <a href="/activate/nuevoEntrenador">Date de alta como entrenador</a>
-    </main>
-    <footer th:replace="~{components/footer.html :: footer}"></footer>
-</div>
+        <header>
+            <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+        </header>
+        <main class="entrenadores-container" th:each="entrenador : ${entrenadores}">
+            <div class="card">
+                <img th:src="@{${entrenador.rutaImagen}}" alt="Imagen de Entrenador" />
+                <h2 th:text="${entrenador.nombre} + ' ' + ${entrenador.apellidos}"></h2>
+                <p th:text="'Correo: ' + ${entrenador.email}"></p>
+                <p th:text="'Teléfono: ' + ${entrenador.telefono}"></p>
+                <p th:text="'Especialidad: ' + ${entrenador.especialidad}"></p>
+            </div>
+        </main>
+        <footer th:replace="~{components/footer.html :: footer}"></footer>
+    </div>
 </body>
 </html>

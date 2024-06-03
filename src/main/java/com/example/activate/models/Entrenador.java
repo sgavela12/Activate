@@ -23,29 +23,16 @@ import lombok.NoArgsConstructor;
 public class Entrenador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private long id;
-
-    @NotNull
     private String nombre;
-
-    @NotNull
     private String apellidos;
-
-    @Email
-    @NotNull
     private String email;
-
-    @Past
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @NotNull
-    private LocalDate fechaNacimiento;
-
-    @NotNull
-    private long telefono;
-
-    @NotNull
-    private String contraseña;
+    private String fechaNacimiento; // O `LocalDate` si estás utilizando tipos de fecha
+    private String telefono;
+    private String especialidad;
+    private String rutaImagen; // Nota: Usa camelCase para coincidir con el nombre en Thymeleaf
+    private String descripcion;
 
 
     // public ArrayList<Usuario> verClientesAsignados(){

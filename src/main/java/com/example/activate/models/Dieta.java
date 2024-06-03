@@ -34,6 +34,9 @@ public class Dieta {
     @Enumerated(EnumType.STRING)
     private TipoAlimento tipoAlimento;
 
+    @NotNull
+    private String descripcion;
+
     @OneToMany
     private List<Alimento> alimentos = new ArrayList<>();
 

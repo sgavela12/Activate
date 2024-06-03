@@ -30,6 +30,9 @@ public class Ejercicio {
     private String grupoMuscular;
 
     @NotNull
+    private String descripcion;
+
+    @NotNull
     @Enumerated(EnumType.STRING)
     private TipoEjercicio tipoEjercicio;
 }

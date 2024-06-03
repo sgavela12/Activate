@@ -1,0 +1,12 @@
+.entrenador-detalle {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.entrenador-detalle img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}

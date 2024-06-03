@@ -121,12 +121,7 @@ public class MainController {
            return "forms/cerrarSesion";
        }
 
-    // Entrenadores
-    @GetMapping("servicios/entrenadores")
-    public String showEntrenadores(Model model) {
-        model.addAttribute("entrenadores", activateService.devuelveEntrenadores());
-        return "views/entrenadores";
-    }
+
 
 
     @GetMapping("/servicios/rutinas")
