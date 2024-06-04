@@ -17,11 +17,13 @@ h1 {
 }
 
 .entrenadores-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
     justify-content: center;
     padding: 2rem;
-    gap: 2rem;
+    max-width: 90vw;
+    margin: 0 auto; /* Center the grid */
 }
 
 .card {
@@ -30,8 +32,9 @@ h1 {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
+    width: 40vh; /* Fixed width for all cards */
+    margin: auto; /* Center cards in their grid cells */
 }
 
 .card:hover {
@@ -48,13 +51,10 @@ h1 {
 .card h2 {
     margin: 10px 0;
     font-size: 1.5em;
+    color: rgb(0, 0, 0);
 }
 
 .card p {
     margin: 5px 0;
     color: #555;
-}
-
-main {
-    margin-top: 4vh;
 }

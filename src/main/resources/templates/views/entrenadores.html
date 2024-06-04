@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/entrenadores.css">
-    
 </head>
 <body>
     <div class="wrapper">
-        <header>
+       
             <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-        </header>
-        <main class="entrenadores-container" th:each="entrenador : ${entrenadores}">
+        
+        <h1>Lista de Entrenadores</h1>
+        <main>
+        <div class="entrenadores-container" th:each="entrenador : ${entrenadores}">
             <div class="card">
                 <img th:src="@{${entrenador.rutaImagen}}" alt="Imagen de Entrenador" />
                 <h2 th:text="${entrenador.nombre} + ' ' + ${entrenador.apellidos}"></h2>
@@ -22,6 +23,7 @@
                 <p th:text="'Teléfono: ' + ${entrenador.telefono}"></p>
                 <p th:text="'Especialidad: ' + ${entrenador.especialidad}"></p>
             </div>
+        </div>
         </main>
         <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>
