@@ -19,9 +19,9 @@
                     <!-- Utilizar los atributos del entrenador para mostrar la información -->
                     <img th:src="@{${entrenador.rutaImagen}}" alt="Imagen de Entrenador" />
                     <h2 th:text="${entrenador.nombre} + ' ' + ${entrenador.apellidos}"></h2>
-                    <p th:text="'Correo: ' + ${entrenador.email}"></p>
+                    <p th:text="  ${entrenador.email}"></p>
                     <p th:text="'Teléfono: ' + ${entrenador.telefono}"></p>
-                    <p th:text="'Especialidad: ' + ${entrenador.especialidad}"></p>
+                    <p th:text="${entrenador.especialidad}"></p>
                 </div>
             </div>
         </main>
