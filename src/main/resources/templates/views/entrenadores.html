@@ -10,20 +10,20 @@
 </head>
 <body>
     <div class="wrapper">
-       
-            <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-        
+        <nav th:replace="~{components/navbar.html :: navBar}"></nav>
         <h1>Lista de Entrenadores</h1>
         <main>
-        <div class="entrenadores-container" th:each="entrenador : ${entrenadores}">
-            <div class="card">
-                <img th:src="@{${entrenador.rutaImagen}}" alt="Imagen de Entrenador" />
-                <h2 th:text="${entrenador.nombre} + ' ' + ${entrenador.apellidos}"></h2>
-                <p th:text="'Correo: ' + ${entrenador.email}"></p>
-                <p th:text="'Teléfono: ' + ${entrenador.telefono}"></p>
-                <p th:text="'Especialidad: ' + ${entrenador.especialidad}"></p>
+            <div class="entrenadores-container">
+                <!-- Iterar sobre la lista de entrenadores -->
+                <div class="card" th:each="entrenador : ${entrenadores}">
+                    <!-- Utilizar los atributos del entrenador para mostrar la información -->
+                    <img th:src="@{${entrenador.rutaImagen}}" alt="Imagen de Entrenador" />
+                    <h2 th:text="${entrenador.nombre} + ' ' + ${entrenador.apellidos}"></h2>
+                    <p th:text="'Correo: ' + ${entrenador.email}"></p>
+                    <p th:text="'Teléfono: ' + ${entrenador.telefono}"></p>
+                    <p th:text="'Especialidad: ' + ${entrenador.especialidad}"></p>
+                </div>
             </div>
-        </div>
         </main>
         <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>
