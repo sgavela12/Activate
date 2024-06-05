@@ -1,5 +1,7 @@
 package com.example.activate.models;
 
+import java.util.Set;
+
 import com.example.activate.models.enums.TipoAlimento;
 
 import jakarta.persistence.Entity;
@@ -8,7 +10,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,24 +22,17 @@ import lombok.NoArgsConstructor;
 public class Alimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idComida;
-    
-    @NotNull
+    private Long id;
+
     private String nombre;
-    
-    @NotNull
     private int calorias;
-
-    @NotNull
     private int proteinas;
-
-    @NotNull
     private int hidratos;
-
-    @NotNull
     private int grasas;
-    
-    @NotNull
+
     @Enumerated(EnumType.STRING)
-    private TipoAlimento tipoAlimento; 
+    private TipoAlimento tipoAlimento;
+
+    @ManyToMany(mappedBy = "alimentos")
+    private Set<Dieta> dietas;
 }

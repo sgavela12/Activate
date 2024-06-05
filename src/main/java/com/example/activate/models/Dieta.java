@@ -1,7 +1,6 @@
 package com.example.activate.models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 import com.example.activate.models.enums.TipoAlimento;
 
@@ -11,8 +10,9 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,24 +24,22 @@ import lombok.NoArgsConstructor;
 public class Dieta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDieta;
-    @NotNull
+    private Long id;
+
     private int objetivo;
-    @NotNull
     private int caloriasTotales;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private TipoAlimento tipoAlimento;
 
-    @NotNull
     private String descripcion;
 
-    @OneToMany
-    private List<Alimento> alimentos = new ArrayList<>();
-
-    public void generarDieta() {
-
-    }
+    @ManyToMany
+    @JoinTable(
+            name = "dieta_alimento",
+            joinColumns = @JoinColumn(name = "id_dieta"),
+            inverseJoinColumns = @JoinColumn(name = "id_alimento")
+    )
+    private Set<Alimento> alimentos;
 
 }

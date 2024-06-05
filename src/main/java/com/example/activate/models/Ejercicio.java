@@ -27,6 +27,7 @@ public class Ejercicio {
     @NotNull
     private int dificultad;
 
+    @NotNull
     private String grupoMuscular;
 
     @NotNull
