@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dietas</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/entrenadores.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+          </header>
+        <main>
+            <div class="entrenadores-container">
+                <div th:each="dieta : ${dietas}" class="card">
+                    <img th:src="@{/images/dieta.png}" alt="Imagen de Dieta">
+                    <div class="card-content">
+                        <h2 th:text="${dieta.descripcion}">Nombre de la Dieta</h2>
+                        <div class="card-info">
+                            <p><strong>Objetivo:</strong> <span th:text="${dieta.objetivo}">0</span></p>
+                            <p><strong>Calorías Totales:</strong> <span th:text="${dieta.caloriasTotales}">0</span></p>
+                            <p><strong>Tipo de Alimento:</strong> <span th:text="${dieta.tipoAlimento}">Tipo</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="~{components/footer.html :: footer}"></footer>
+    </div>
+</body>
+</html>

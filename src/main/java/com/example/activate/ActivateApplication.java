@@ -1,7 +1,16 @@
 package com.example.activate;
 
+import java.time.LocalDate;
+import java.time.Month;
+
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.example.activate.models.Rol;
+import com.example.activate.models.Usuario;
+import com.example.activate.service.UsuarioService;
 
 
 
