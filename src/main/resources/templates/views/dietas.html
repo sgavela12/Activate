@@ -4,7 +4,7 @@
     <title>Dietas</title>
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/entrenadores.css">
+    <link rel="stylesheet" href="/css/dietas.css">
 </head>
 <body>
     <div class="wrapper">
@@ -12,6 +12,7 @@
             <nav th:replace="~{components/navbar.html :: navBar}"></nav>
           </header>
         <main>
+            <h1 id="titulo">Dietas</h1>
             <div class="entrenadores-container">
                 <div th:each="dieta : ${dietas}" class="card">
                     <img th:src="@{/images/dieta.png}" alt="Imagen de Dieta">

@@ -1,6 +1,8 @@
 package com.example.activate.models;
 
 import com.example.activate.models.enums.TipoEjercicio;
+import com.example.activate.models.enums.TipoObjetivo;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -33,7 +35,8 @@ public class Rutina {
     private int duracion;
 
     @NotNull
-    private int objetivo;
+    @Enumerated(EnumType.STRING)
+    private TipoObjetivo objetivo;
 
     @NotNull
     @Enumerated(EnumType.STRING)

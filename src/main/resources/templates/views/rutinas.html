@@ -1,45 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
     <title>Rutinas</title>
-    <link rel="stylesheet" href="/css/rutinas.css" />
-    <link rel="stylesheet" href="/css/nav.css" /> 
-    <link rel="stylesheet" href="/css/footer.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/rutinas.css">
+</head>
+<body>
     <div class="wrapper">
-      <header>
-        <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-      </header>
-      <main class="rutinas-container">
-        <div class="rutina">
-          <h2>Rutina 1</h2>
-          <p>Descripción de la rutina 1...</p>
-        </div>
-        <div class="rutina">
-          <h2>Rutina 2</h2>
-          <p>Descripción de la rutina 2...</p>
-        </div>
-        <div class="rutina">
-          <h2>Rutina 3</h2>
-          <p>Descripción de la rutina 3...</p>
-        </div>
-        <div class="rutina">
-          <h2>Rutina 4</h2>
-          <p>Descripción de la rutina 4...</p>
-        </div>
-        <div class="rutina">
-          <h2>Rutina 5</h2>
-          <p>Descripción de la rutina 5...</p>
-        </div>
-        <div class="rutina">
-          <h2>Rutina 6</h2>
-          <p>Descripción de la rutina 6...</p>
-        </div>
-      </main>
-      <footer th:replace="~{components/footer.html :: footer}"></footer>
+        <header>
+            <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+        </header>
+        <main>
+            <h1 id="titulo">Rutinas</h1>
+            <div class="rutinas-container">
+                <div th:each="rutina : ${rutinas}" class="card">
+                    <div class="card-content">
+                        <h2 th:text="${rutina.nombre}">Nombre de la Rutina</h2>
+                        <p>Duración: <span th:text="${rutina.duracion}">Duración</span> minutos</p>
+                        <p>Objetivo: <span th:text="${rutina.objetivo}">Objetivo</span></p>
+                        <p>Tipo de Rutina: <span th:text="${rutina.tipoRutina}">Tipo</span></p>              
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>
-  </body>
+</body>
 </html>

@@ -122,14 +122,6 @@ public class MainController {
        }
 
 
-
-
-    @GetMapping("/servicios/rutinas")
-    public String showRutinas() {
-    
-        return "views/rutinas";
-    }
-
     // Error
     @GetMapping("/error")
     public String showError() {

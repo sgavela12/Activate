@@ -13,6 +13,7 @@
         <nav th:replace="~{components/navbar.html :: navBar}"></nav>
         <h1>Lista de Entrenadores</h1>
         <main>
+            <h1 id="titulo">Entrenadores personales</h1>
             <div class="entrenadores-container">
                 <!-- Iterar sobre la lista de entrenadores -->
                 <div class="card" th:each="entrenador : ${entrenadores}">
