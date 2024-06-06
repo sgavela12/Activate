@@ -70,10 +70,7 @@ main {
 .card:hover {
     transform: scale(1.05);
 }
-#titulo {
-    text-align: center;
-    margin-bottom: 7vh;
-}
+
 span , strong{
     color: #000;
 }

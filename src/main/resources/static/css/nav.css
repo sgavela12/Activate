@@ -264,3 +264,7 @@ nav {
     background-color: transparent;
     border: 1.5px solid #f2f5f7;
 }
+#titulo {
+    text-align: center;
+    margin-bottom: 7vh;
+}

@@ -6,7 +6,7 @@
     <title>Actívate-Servicios</title>
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/css/calculadora.css">
 </head>
 <body>
     <div class="wrapper">
@@ -15,41 +15,55 @@
         <!-- ------------------------ -->
         <!-- CUERPO DE PAGINA -->
         <main>
-            <h2>Calculadora de Calorías</h2>
+            <h2 id="titulo">Calculadora de Calorías</h2>
     
-            <form action="#" th:action="@{/activate/servicios/calcularKcal}" th:object="${calculoCalorias}" method="post">
-                <label>Sexo:</label>
-                <select th:field="*{sexo}">
-                    <option value="HOMBRE">Hombre</option>
-                    <option value="MUJER">Mujer</option>
-                </select>
-                <br>
-                <label>Edad:</label>
-                <input type="number" th:field="*{edad}" required>
-                <br>
-                <label>Peso (kg):</label>
-                <input type="number" step="0.01" th:field="*{peso}" required>
-                <br>
-                <label>Altura (cm):</label>
-                <input type="number" step="0.01" th:field="*{altura}" required>
-                <br>
-                <label>Nivel de actividad:</label>
-                <select th:field="*{nivelActividad}">
-                    <option value="SEDENTARIO">Sedentario</option>
-                    <option value="LIGERO">Ligero</option>
-                    <option value="MODERADO">Moderado</option>
-                    <option value="ACTIVO">Activo</option>
-                    <option value="MUY_ACTIVO">Muy Activo</option>
-                </select>
-                <br>
-                <button type="submit">Calcular</button>
-            </form>
-    
-            <!-- Aquí se mostrará el resultado -->
-            <div th:if="${calculoCaloriasResultado != null}">
-                <h3>Resultado:</h3>
-                <p th:text="'Necesitas consumir aproximadamente ' + ${calculoCaloriasResultado} + ' calorías al día para tu mantenimiento.'"></p>
-            </div>
+         
+            <div class="form-container">
+            <form class="form"  th:action="@{/activate/servicios/calcularKcal}" th:object="${calculoCalorias}" method="post">
+                <div class="form-group">
+                    <label>Sexo:</label>
+                    <select th:field="*{sexo}">
+                        <option value="HOMBRE">Hombre</option>
+                        <option value="MUJER">Mujer</option>
+                    </select>
+                </div>
+                    <br>
+                    <div class="form-group">
+                    <label>Edad:</label>
+                    <input type="number" th:field="*{edad}" required>
+                </div>
+                    <br>
+                    <div class="form-group">
+                    <label>Peso (kg):</label>
+                    <input type="number" step="0.01" th:field="*{peso}" required>
+                </div>
+                    <br>
+                    <div class="form-group">
+                    <label>Altura (cm):</label>
+                    <input type="number" step="0.01" th:field="*{altura}" required>
+                </div>
+                    <br>
+                    <div class="form-group">
+                    <label>Nivel de actividad:</label>
+                    <select th:field="*{nivelActividad}">
+                        <option value="SEDENTARIO">Sedentario</option>
+                        <option value="LIGERO">Ligero</option>
+                        <option value="MODERADO">Moderado</option>
+                        <option value="ACTIVO">Activo</option>
+                        <option value="MUY_ACTIVO">Muy Activo</option>
+                    </select>
+                </div>
+                    <br>
+                    <button class="form-submit-btn" type="submit">Calcular</button>
+
+                    <div th:if="${calculoCaloriasResultado != null}">
+                        <h3>Resultado:</h3>
+                        <p th:text="'Necesitas consumir aproximadamente ' + ${calculoCaloriasResultado} + ' calorías al día para tu mantenimiento.'"></p>
+                    </div>
+      </form>
+    </div>
+
+            
         </main>
         <!-- FOOTER -->
         <footer th:replace="~{components/footer.html :: footer}"></footer>
