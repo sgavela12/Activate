@@ -15,7 +15,7 @@
             <h1 id="titulo">Dietas</h1>
             <div class="entrenadores-container">
                 <div th:each="dieta : ${dietas}" class="card">
-                    <img th:src="@{/images/dieta.png}" alt="Imagen de Dieta">
+                    <img th:src="@{${dieta.rutaImagen}}" alt="Imagen de Dieta">
                     <div class="card-content">
                         <h2 th:text="${dieta.descripcion}">Nombre de la Dieta</h2>
                         <div class="card-info">

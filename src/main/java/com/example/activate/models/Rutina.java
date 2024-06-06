@@ -34,6 +34,9 @@ public class Rutina {
     @NotNull
     private int duracion;
 
+    private String rutaImagen;
+
+
     @NotNull
     @Enumerated(EnumType.STRING)
     private TipoObjetivo objetivo;

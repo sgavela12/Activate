@@ -28,6 +28,7 @@ public class Dieta {
 
     private int objetivo;
     private int caloriasTotales;
+    private String rutaImagen;
 
     @Enumerated(EnumType.STRING)
     private TipoAlimento tipoAlimento;
