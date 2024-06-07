@@ -95,23 +95,23 @@ INSERT INTO alimento (nombre, calorias, proteinas, hidratos, grasas, tipo_alimen
 
 
 
+INSERT INTO dieta ( calorias_totales, tipo_alimento, descripcion, ruta_imagen) VALUES
+( 2000, 'VEGANO', 'Energía Vegana', '/images/dietas/energiaVegana.jpg'),
+( 1800, 'VEGANO', 'Vitalidad Verde', '/images/dietas/vitalidadVerde.jpg'),
+( 2200, 'VEGANO', 'Fuerza Plant-Based', '/images/dietas/fuerzaPlantBased.jpg'),
+( 2100, 'VEGETARIANO', 'Rendimiento Vegetariano', '/images/dietas/rendimientoVegetariano.jpg'),
+( 1900, 'VEGETARIANO', 'Salud Vegetariana', '/images/dietas/saludVegetariana.jpg'),
+( 2300, 'VEGETARIANO', 'Nutrición Verdadera', '/images/dietas/nutricionVerdadera.jpg'),
+( 2500, 'CARNIVORO', 'Potencia Proteica', '/images/dietas/potenciaProteica.jpg'),
+( 2400, 'CARNIVORO', 'Energía Carnívora', '/images/dietas/energiaCarnivora.jpg'),
+( 2600, 'CARNIVORO', 'Fuerza Animal', '/images/dietas/fuerzaAnimal.jpg'),
+( 2000, 'VEGANO', 'Equilibrio Vegano', '/images/dietas/equilibrioVegano.jpg'),
+( 1800, 'VEGANO', 'Esencia Vegana', '/images/dietas/esenciaVegana.jpg'),
+( 2200, 'VEGANO', 'Poder Plant-Based', '/images/dietas/poderPlantBased.jpg'),
+( 2100, 'VEGETARIANO', 'Bienestar Vegetariano', '/images/dietas/bienestarVegetariano.jpg'),
+( 1900, 'VEGETARIANO', 'Equilibrio Vegetariano', '/images/dietas/equilibrioVegetariano.jpg'),
+( 2300, 'VEGETARIANO', 'Frescura Vegetariana', '/images/dietas/frescuraVegetariana.jpg');
 
-INSERT INTO dieta (objetivo, calorias_totales, tipo_alimento, descripcion, ruta_imagen) VALUES
-(1, 2000, 'VEGANO', 'Energía Vegana', 'images/dietas/energiaVegana.jpg'),
-(2, 1800, 'VEGANO', 'Vitalidad Verde', 'images/dietas/vitalidadVerde.jpg'),
-(3, 2200, 'VEGANO', 'Fuerza Plant-Based', 'images/dietas/fuerzaPlantBased.jpg'),
-(1, 2100, 'VEGETARIANO', 'Rendimiento Vegetariano', 'images/dietas/rendimientoVegetariano.jpg'),
-(2, 1900, 'VEGETARIANO', 'Salud Vegetariana', 'images/dietas/saludVegetariana.jpg'),
-(3, 2300, 'VEGETARIANO', 'Nutrición Verdadera', 'images/dietas/nutricionVerdadera.jpg'),
-(1, 2500, 'CARNIVORO', 'Potencia Proteica', 'images/dietas/potenciaProteica.jpg'),
-(2, 2400, 'CARNIVORO', 'Energía Carnívora', 'images/dietas/energiaCarnivora.jpg'),
-(3, 2600, 'CARNIVORO', 'Fuerza Animal', 'images/dietas/fuerzaAnimal.jpg'),
-(1, 2000, 'VEGANO', 'Equilibrio Vegano', 'images/dietas/equilibrioVegano.jpg'),
-(2, 1800, 'VEGANO', 'Esencia Vegana', 'images/dietas/esenciaVegana.jpg'),
-(3, 2200, 'VEGANO', 'Poder Plant-Based', 'images/dietas/poderPlantBased.jpg'),
-(1, 2100, 'VEGETARIANO', 'Bienestar Vegetariano', 'images/dietas/bienestarVegetariano.jpg'),
-(2, 1900, 'VEGETARIANO', 'Equilibrio Vegetariano', 'images/dietas/equilibrioVegetariano.jpg'),
-(3, 2300, 'VEGETARIANO', 'Frescura Vegetariana', 'images/dietas/frescuraVegetariana.jpg');
 
 
 -- Insertar las relaciones entre dietas y alimentos en la tabla 'dieta_alimento'
@@ -285,21 +285,21 @@ VALUES
 ('Sergio', 'Vega', 'sergio.vega@example.com', '1984-08-13', '692 345 680', 'Entrenador de Atletismo', '/images/entrenadores/sergio.jpg', 'Entrenador de atletismo y preparación física, Sergio ofrece programas de entrenamiento que mejoran la velocidad, la resistencia y la técnica de sus atletas.'),
 ('Marta', 'Navarro', 'marta.navarro@example.com', '1986-11-15', '662 345 679', 'Entrenadora de Triatlón', '/images/entrenadores/marta.jpg', 'Entrenadora de triatlón, Marta prepara a sus atletas para competir en triatlones mediante programas que integran natación, ciclismo y carrera, mejorando su resistencia y rendimiento en las tres disciplinas.');
 
-INSERT INTO rutina (nombre, duracion, objetivo, tipo_rutina, ruta_imagen) VALUES
-('Rutina Calistenia Básica 30 min', 30, 1, 'CALISTENIA', 'rutinaCalisteniaBasicaCorta.jpg'),
-('Rutina Calistenia Intermedia 45 min', 45, 2, 'CALISTENIA', 'rutinaCalisteniaIntermediaMedia.jpg'),
-('Rutina Calistenia Avanzada 60 min', 60, 3, 'CALISTENIA', 'rutinaCalisteniaAvanzadaLarga.jpg'),
-('Rutina Casa Básica 30 min', 30, 1, 'CASA', 'rutinaCasaBasicaCorta.jpg'),
-('Rutina Casa Intermedia 45 min', 45, 2, 'CASA', 'rutinaCasaIntermediaMedia.jpg'),
-('Rutina Casa Avanzada 60 min', 60, 3, 'CASA', 'rutinaCasaAvanzadaLarga.jpg'),
-('Rutina Gimnasio Básica 30 min', 30, 1, 'GIMNASIO', 'rutinaGimnasioBasicaCorta.jpg'),
-('Rutina Gimnasio Intermedia 45 min', 45, 2, 'GIMNASIO', 'rutinaGimnasioIntermediaMedia.jpg'),
-('Rutina Gimnasio Avanzada 60 min', 60, 3, 'GIMNASIO', 'rutinaGimnasioAvanzadaLarga.jpg'),
-('Rutina Calistenia Intermedia 30 min', 30, 2, 'CALISTENIA', 'rutinaCalisteniaIntermediaCorta.jpg'),
-('Rutina Calistenia Intermedia 45 min', 45, 2, 'CALISTENIA', 'rutinaCalisteniaIntermediaMedia.jpg'),
-('Rutina Calistenia Avanzada 60 min', 60, 3, 'CALISTENIA', 'rutinaCalisteniaAvanzadaLarga.jpg'),
-('Rutina Casa Básica 30 min', 30, 1, 'CASA', 'rutinaCasaBasicaCorta.jpg'),
-('Rutina Casa Intermedia 45 min', 45, 2, 'CASA', 'rutinaCasaIntermediaMedia.jpg');
+INSERT INTO rutina (nombre, duracion, tipo_rutina, ruta_imagen, frecuencia) VALUES
+('Calistenia Básica Rápida', 30, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaBasicaCorta.jpg', 3),
+('Calistenia Intermedia Dinámica', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia.jpg', 4),
+('Calistenia Avanzada Intensiva', 60, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaAvanzadaLarga.jpg', 5),
+('Entrenamiento Básico en Casa', 30, 'CASA', '/images/rutinas/rutinaCasaBasicaCorta.jpg', 3),
+('Rutina Intermedia en Casa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia.jpg', 4),
+('Desafío Avanzado en Casa', 60, 'CASA', '/images/rutinas/rutinaCasaAvanzadaLarga.jpg', 5),
+('Gimnasio Básico Express', 30, 'GIMNASIO', '/images/rutinas/rutinaGimnasioBasicaCorta.jpg', 3),
+('Gimnasio Intermedio Plus', 45, 'GIMNASIO', '/images/rutinas/rutinaGimnasioIntermediaMedia.jpg', 4),
+('Gimnasio Avanzado Máximo', 60, 'GIMNASIO', '/images/rutinas/rutinaGimnasioAvanzadaLarga.jpg', 5),
+('Calistenia Intermedia Rápida', 30, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaCorta.jpg', 3),
+('Calistenia Intermedia Extensa', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia2.jpg', 4),
+('Calistenia Avanzada Extrema', 60, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaAvanzadaLarga2.jpg', 5),
+('Entrenamiento Rápido en Casa', 30, 'CASA', '/images/rutinas/rutinaCasaBasicaCorta2.jpg', 3),
+('Casa Intermedia Completa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia2.jpg', 4);
 
 
 

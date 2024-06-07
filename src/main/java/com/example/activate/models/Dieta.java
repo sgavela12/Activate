@@ -26,8 +26,9 @@ public class Dieta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int objetivo;
+    
     private int caloriasTotales;
+    
     private String rutaImagen;
 
     @Enumerated(EnumType.STRING)

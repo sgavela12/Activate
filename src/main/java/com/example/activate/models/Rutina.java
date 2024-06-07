@@ -1,7 +1,8 @@
 package com.example.activate.models;
 
+import java.util.Set;
+
 import com.example.activate.models.enums.TipoEjercicio;
-import com.example.activate.models.enums.TipoObjetivo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -16,8 +17,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -34,12 +33,13 @@ public class Rutina {
     @NotNull
     private int duracion;
 
+    @NotNull
     private String rutaImagen;
 
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private TipoObjetivo objetivo;
+    private int frecuencia;
+
 
     @NotNull
     @Enumerated(EnumType.STRING)
