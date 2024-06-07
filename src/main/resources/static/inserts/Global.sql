@@ -299,7 +299,9 @@ INSERT INTO rutina (nombre, duracion, tipo_rutina, ruta_imagen, frecuencia) VALU
 ('Calistenia Intermedia Extensa', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia2.jpg', 4),
 ('Calistenia Avanzada Extrema', 60, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaAvanzadaLarga2.jpg', 5),
 ('Entrenamiento Rápido en Casa', 30, 'CASA', '/images/rutinas/rutinaCasaBasicaCorta2.jpg', 3),
-('Casa Intermedia Completa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia2.jpg', 4);
+('Casa Intermedia Completa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia2.jpg', 4),
+('Rutina de Fuerza Avanzada', 45, 'GIMNASIO', '/images/rutinas/fuerzaAvanzada.jpg', 3),
+('Rutina de Volumen Intensivo', 45, 'GIMNASIO', '/images/rutinas/volumenIntersivo.jpg', 4);
 
 
 
@@ -318,5 +320,6 @@ INSERT INTO rutina_ejercicio (id_rutina, id_ejercicio) VALUES
 (11, 51), (11, 52), (11, 53), (11, 54), (11, 55),
 (12, 56), (12, 57), (12, 58), (12, 59), (12, 60),
 (13, 61), (13, 62), (13, 63), (13, 64), (13, 65),
-(14, 66), (14, 67), (14, 68), (14, 69), (14, 70);
-
+(14, 66), (14, 67), (14, 68), (14, 69), (14, 70),
+(15, 3), (15, 5), (15, 9), (15, 20), (15, 23),
+(16, 33), (16, 26), (16, 29), (16, 55), (16, 58);
