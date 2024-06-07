@@ -15,12 +15,14 @@
             <h1 id="titulo">Rutinas</h1>
             <div class="rutinas-container">
                 <div th:each="rutina : ${rutinas}" class="card">
-                    <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
-                    <div class="card-content">
-                        <h2 th:text="${rutina.nombre}">Nombre de la Rutina</h2>
-                        <p>Duración: <span th:text="${rutina.duracion}">Duración</span> minutos</p>
-                        <p>Tipo de Rutina: <span th:text="${rutina.tipoRutina}">Tipo</span></p>              
-                    </div>
+                    <a th:href="@{'/activate/servicios/rutinas/' + ${rutina.idRutina}}">
+                        <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
+                        <div class="card-content">
+                            <h2 th:text="${rutina.nombre}">Nombre de la Rutina</h2>
+                            <p>Duración: <span th:text="${rutina.duracion}">Duración</span> minutos</p>
+                            <p>Tipo de Rutina: <span th:text="${rutina.tipoRutina}">Tipo</span></p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </main>

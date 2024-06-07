@@ -36,10 +36,8 @@ public class Rutina {
     @NotNull
     private String rutaImagen;
 
-
     @NotNull
     private int frecuencia;
-
 
     @NotNull
     @Enumerated(EnumType.STRING)

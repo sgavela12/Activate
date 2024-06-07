@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle de Rutina</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/rutinaDetalles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+        </header>
+        <main>
+            <h1 th:text="${rutina.nombre}">Nombre de la Rutina</h1>
+            <div class="detalle-container">
+                <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
+                <div class="detalle-content">
+                    <p>Duración: <span th:text="${rutina.duracion}">Duración</span> minutos</p>
+                    <p>Tipo de Rutina: <span th:text="${rutina.tipoRutina}">Tipo</span></p>
+                    <p>Frecuencia: <span th:text="${rutina.frecuencia}">Frecuencia</span> veces por semana</p>
+                    <h3>Ejercicios</h3>
+                    <ul>
+                        <li th:each="ejercicio : ${ejercicios}" th:text="${ejercicio.nombre}">Nombre del Ejercicio</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="~{components/footer.html :: footer}"></footer>
+    </div>
+</body>
+</html>
