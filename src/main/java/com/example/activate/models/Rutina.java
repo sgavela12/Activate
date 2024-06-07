@@ -34,7 +34,10 @@ public class Rutina {
     private int duracion;
 
     @NotNull
-    private String rutaImagen;
+    private String rutaImagen; 
+    
+    @NotNull
+    private String descripcion;
 
     @NotNull
     private int frecuencia;

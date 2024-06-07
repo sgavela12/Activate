@@ -285,23 +285,25 @@ VALUES
 ('Sergio', 'Vega', 'sergio.vega@example.com', '1984-08-13', '692 345 680', 'Entrenador de Atletismo', '/images/entrenadores/sergio.jpg', 'Entrenador de atletismo y preparación física, Sergio ofrece programas de entrenamiento que mejoran la velocidad, la resistencia y la técnica de sus atletas.'),
 ('Marta', 'Navarro', 'marta.navarro@example.com', '1986-11-15', '662 345 679', 'Entrenadora de Triatlón', '/images/entrenadores/marta.jpg', 'Entrenadora de triatlón, Marta prepara a sus atletas para competir en triatlones mediante programas que integran natación, ciclismo y carrera, mejorando su resistencia y rendimiento en las tres disciplinas.');
 
-INSERT INTO rutina (nombre, duracion, tipo_rutina, ruta_imagen, frecuencia) VALUES
-('Calistenia Básica Rápida', 30, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaBasicaCorta.jpg', 3),
-('Calistenia Intermedia Dinámica', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia.jpg', 4),
-('Calistenia Avanzada Intensiva', 60, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaAvanzadaLarga.jpg', 5),
-('Entrenamiento Básico en Casa', 30, 'CASA', '/images/rutinas/rutinaCasaBasicaCorta.jpg', 3),
-('Rutina Intermedia en Casa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia.jpg', 4),
-('Desafío Avanzado en Casa', 60, 'CASA', '/images/rutinas/rutinaCasaAvanzadaLarga.jpg', 5),
-('Gimnasio Básico Express', 30, 'GIMNASIO', '/images/rutinas/rutinaGimnasioBasicaCorta.jpg', 3),
-('Gimnasio Intermedio Plus', 45, 'GIMNASIO', '/images/rutinas/rutinaGimnasioIntermediaMedia.jpg', 4),
-('Gimnasio Avanzado Máximo', 60, 'GIMNASIO', '/images/rutinas/rutinaGimnasioAvanzadaLarga.jpg', 5),
-('Calistenia Intermedia Rápida', 30, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaCorta.jpg', 3),
-('Calistenia Intermedia Extensa', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia2.jpg', 4),
-('Calistenia Avanzada Extrema', 60, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaAvanzadaLarga2.jpg', 5),
-('Entrenamiento Rápido en Casa', 30, 'CASA', '/images/rutinas/rutinaCasaBasicaCorta2.jpg', 3),
-('Casa Intermedia Completa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia2.jpg', 4),
-('Rutina de Fuerza Avanzada', 45, 'GIMNASIO', '/images/rutinas/fuerzaAvanzada.jpg', 3),
-('Rutina de Volumen Intensivo', 45, 'GIMNASIO', '/images/rutinas/volumenIntersivo.jpg', 4);
+INSERT INTO rutina (nombre, duracion, tipo_rutina, ruta_imagen, frecuencia, descripcion) VALUES
+('Calistenia Básica Rápida', 30, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaBasicaCorta.jpg', 3, 'Una rutina diseñada para introducirte en el mundo de la calistenia, mejorando tu fuerza y resistencia en un corto periodo de tiempo.'),
+('Calistenia Intermedia Dinámica', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia.jpg', 4, 'Una rutina para aquellos que ya tienen experiencia en calistenia y buscan aumentar su agilidad y flexibilidad, manteniendo el ritmo y la intensidad.'),
+('Calistenia Avanzada Intensiva', 60, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaAvanzadaLarga.jpg', 5, 'Esta rutina está diseñada para desafiar a los practicantes avanzados de calistenia, enfocándose en el desarrollo de fuerza, resistencia y control corporal de manera intensiva.'),
+('Entrenamiento Básico en Casa', 30, 'CASA', '/images/rutinas/rutinaCasaBasicaCorta.jpg', 3, 'Un plan de entrenamiento básico que se puede realizar en casa, dirigido a principiantes que buscan mejorar su condición física general sin necesidad de equipamiento especial.'),
+('Rutina Intermedia en Casa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia.jpg', 4, 'Una rutina diseñada para aquellos que desean llevar su entrenamiento en casa al siguiente nivel, combinando ejercicios variados para mejorar la fuerza y la resistencia de forma equilibrada.'),
+('Desafío Avanzado en Casa', 60, 'CASA', '/images/rutinas/rutinaCasaAvanzadaLarga.jpg', 5, 'Un desafío para aquellos que están comprometidos con su entrenamiento en casa y buscan un programa exigente que los lleve a nuevos niveles de fuerza, resistencia y rendimiento físico.'),
+('Gimnasio Básico Express', 30, 'GIMNASIO', '/images/rutinas/rutinaGimnasioBasicaCorta.jpg', 3, 'Una rutina rápida y efectiva para quienes tienen poco tiempo pero quieren mantenerse en forma, enfocada en ejercicios básicos que trabajan todos los grupos musculares.'),
+('Gimnasio Intermedio Plus', 45, 'GIMNASIO', '/images/rutinas/rutinaGimnasioIntermediaMedia.jpg', 4, 'Un programa de entrenamiento para el gimnasio diseñado para aquellos que desean progresar más allá del nivel principiante, incorporando una variedad de ejercicios para mejorar la fuerza y la masa muscular.'),
+('Gimnasio Avanzado Máximo', 60, 'GIMNASIO', '/images/rutinas/rutinaGimnasioAvanzadaLarga.jpg', 5, 'Una rutina avanzada para el gimnasio destinada a culturistas experimentados que buscan maximizar su desarrollo muscular y su rendimiento físico en sesiones de entrenamiento intensivas.'),
+('Calistenia Intermedia Rápida', 30, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaCorta.jpg', 3, 'Una rutina intermedia diseñada para aquellos que desean mejorar su fuerza y ​​flexibilidad en un corto período de tiempo, con ejercicios dinámicos y eficientes.'),
+('Calistenia Intermedia Extensa', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia2.jpg', 4, 'Una rutina intermedia que aborda aspectos avanzados de la calistenia, incluyendo ejercicios de fuerza y equilibrio para aquellos que desean un desafío más completo.'),
+('Calistenia Avanzada Extrema', 60, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaAvanzadaLarga2.jpg', 5, 'Una rutina extrema para los amantes de la calistenia que buscan llevar su entrenamiento al límite, con ejercicios avanzados diseñados para mejorar la fuerza, la resistencia y la agilidad de manera extrema.'),
+('Entrenamiento Rápido en Casa', 30, 'CASA', '/images/rutinas/rutinaCasaBasicaCorta2.jpg', 3, 'Un entrenamiento rápido pero efectivo que se puede realizar en casa, ideal para aquellos con un estilo de vida ocupado que desean mantenerse en forma sin pasar horas en el gimnasio.'),
+('Casa Intermedia Completa', 45, 'CASA', '/images/rutinas/rutinaCasaIntermediaMedia2.jpg', 4, 'Una rutina completa diseñada para entrenar en casa, que incluye una variedad de ejercicios para mejorar la fuerza, la resistencia y la flexibilidad de manera equilibrada.'),
+('Rutina de Fuerza Avanzada', 45, 'GIMNASIO', '/images/rutinas/fuerzaAvanzada.jpg', 3, 'Un programa de entrenamiento de fuerza diseñado para culturistas avanzados que desean enfocarse en el desarrollo muscular y la fuerza máxima en sesiones intensivas.'),
+('Rutina de Volumen Intensivo', 45, 'GIMNASIO', '/images/rutinas/volumenIntersivo.jpg', 4, 'Una rutina intensiva diseñada para aquellos que buscan aumentar su masa muscular y ganar volumen de manera rápida y eficaz, con una combinación de ejercicios de fuerza y ​hipertrofia.')
+;
+
 
 
 
