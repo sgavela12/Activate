@@ -96,23 +96,23 @@ INSERT INTO alimento (nombre, calorias, proteinas, hidratos, grasas, tipo_alimen
 
 
 
--- Insertar dietas en la tabla 'dieta'
-INSERT INTO dieta (objetivo, calorias_totales, tipo_alimento, descripcion) VALUES
-(1, 2000, 'VEGANO', 'Energía Vegana'),
-(2, 1800, 'VEGANO', 'Vitalidad Verde'),
-(3, 2200, 'VEGANO', 'Fuerza Plant-Based'),
-(1, 2100, 'VEGETARIANO', 'Rendimiento Vegetariano'),
-(2, 1900, 'VEGETARIANO', 'Salud Vegetariana'),
-(3, 2300, 'VEGETARIANO', 'Nutrición Verdadera'),
-(1, 2500, 'CARNIVORO', 'Potencia Proteica'),
-(2, 2400, 'CARNIVORO', 'Energía Carnívora'),
-(3, 2600, 'CARNIVORO', 'Fuerza Animal'),
-(1, 2000, 'VEGANO', 'Equilibrio Vegano'),
-(2, 1800, 'VEGANO', 'Esencia Vegana'),
-(3, 2200, 'VEGANO', 'Poder Plant-Based'),
-(1, 2100, 'VEGETARIANO', 'Bienestar Vegetariano'),
-(2, 1900, 'VEGETARIANO', 'Equilibrio Vegetariano'),
-(3, 2300, 'VEGETARIANO', 'Frescura Vegetariana');
+INSERT INTO dieta (objetivo, calorias_totales, tipo_alimento, descripcion, ruta_imagen) VALUES
+(1, 2000, 'VEGANO', 'Energía Vegana', 'images/dietas/energiaVegana.jpg'),
+(2, 1800, 'VEGANO', 'Vitalidad Verde', 'images/dietas/vitalidadVerde.jpg'),
+(3, 2200, 'VEGANO', 'Fuerza Plant-Based', 'images/dietas/fuerzaPlantBased.jpg'),
+(1, 2100, 'VEGETARIANO', 'Rendimiento Vegetariano', 'images/dietas/rendimientoVegetariano.jpg'),
+(2, 1900, 'VEGETARIANO', 'Salud Vegetariana', 'images/dietas/saludVegetariana.jpg'),
+(3, 2300, 'VEGETARIANO', 'Nutrición Verdadera', 'images/dietas/nutricionVerdadera.jpg'),
+(1, 2500, 'CARNIVORO', 'Potencia Proteica', 'images/dietas/potenciaProteica.jpg'),
+(2, 2400, 'CARNIVORO', 'Energía Carnívora', 'images/dietas/energiaCarnivora.jpg'),
+(3, 2600, 'CARNIVORO', 'Fuerza Animal', 'images/dietas/fuerzaAnimal.jpg'),
+(1, 2000, 'VEGANO', 'Equilibrio Vegano', 'images/dietas/equilibrioVegano.jpg'),
+(2, 1800, 'VEGANO', 'Esencia Vegana', 'images/dietas/esenciaVegana.jpg'),
+(3, 2200, 'VEGANO', 'Poder Plant-Based', 'images/dietas/poderPlantBased.jpg'),
+(1, 2100, 'VEGETARIANO', 'Bienestar Vegetariano', 'images/dietas/bienestarVegetariano.jpg'),
+(2, 1900, 'VEGETARIANO', 'Equilibrio Vegetariano', 'images/dietas/equilibrioVegetariano.jpg'),
+(3, 2300, 'VEGETARIANO', 'Frescura Vegetariana', 'images/dietas/frescuraVegetariana.jpg');
+
 
 -- Insertar las relaciones entre dietas y alimentos en la tabla 'dieta_alimento'
 -- Dieta 1: Energía Vegana
@@ -179,6 +179,7 @@ INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
 
 
 -- Inserción de 100 ejercicios con nombre, grupo muscular y descripción definidos
+
 INSERT INTO ejercicio (nombre, dificultad, grupo_muscular, descripcion, tipo_ejercicio) VALUES
 ('Sentadilla con Peso Corporal', 1, 'Piernas', 'Ejercicio básico para fortalecer las piernas', 'CALISTENIA'),
 ('Flexiones', 2, 'Pecho', 'Ejercicio clásico para el pecho y tríceps', 'CASA'),
@@ -284,21 +285,23 @@ VALUES
 ('Sergio', 'Vega', 'sergio.vega@example.com', '1984-08-13', '692 345 680', 'Entrenador de Atletismo', '/images/entrenadores/sergio.jpg', 'Entrenador de atletismo y preparación física, Sergio ofrece programas de entrenamiento que mejoran la velocidad, la resistencia y la técnica de sus atletas.'),
 ('Marta', 'Navarro', 'marta.navarro@example.com', '1986-11-15', '662 345 679', 'Entrenadora de Triatlón', '/images/entrenadores/marta.jpg', 'Entrenadora de triatlón, Marta prepara a sus atletas para competir en triatlones mediante programas que integran natación, ciclismo y carrera, mejorando su resistencia y rendimiento en las tres disciplinas.');
 
-INSERT INTO rutina (nombre, duracion, objetivo, tipo_rutina) VALUES
-('Rutina Calistenia Básica 30 min', 30, 1, 'CALISTENIA'),
-('Rutina Calistenia Intermedia 45 min', 45, 2, 'CALISTENIA'),
-('Rutina Calistenia Avanzada 60 min', 60, 3, 'CALISTENIA'),
-('Rutina Casa Básica 30 min', 30, 1, 'CASA'),
-('Rutina Casa Intermedia 45 min', 45, 2, 'CASA'),
-('Rutina Casa Avanzada 60 min', 60, 3, 'CASA'),
-('Rutina Gimnasio Básica 30 min', 30, 1, 'GIMNASIO'),
-('Rutina Gimnasio Intermedia 45 min', 45, 2, 'GIMNASIO'),
-('Rutina Gimnasio Avanzada 60 min', 60, 3, 'GIMNASIO'),
-('Rutina Calistenia Intermedia 30 min', 30, 2, 'CALISTENIA'),
-('Rutina Calistenia Intermedia 45 min', 45, 2, 'CALISTENIA'),
-('Rutina Calistenia Avanzada 60 min', 60, 3, 'CALISTENIA'),
-('Rutina Casa Básica 30 min', 30, 1, 'CASA'),
-('Rutina Casa Intermedia 45 min', 45, 2, 'CASA');
+INSERT INTO rutina (nombre, duracion, objetivo, tipo_rutina, ruta_imagen) VALUES
+('Rutina Calistenia Básica 30 min', 30, 1, 'CALISTENIA', 'rutinaCalisteniaBasicaCorta.jpg'),
+('Rutina Calistenia Intermedia 45 min', 45, 2, 'CALISTENIA', 'rutinaCalisteniaIntermediaMedia.jpg'),
+('Rutina Calistenia Avanzada 60 min', 60, 3, 'CALISTENIA', 'rutinaCalisteniaAvanzadaLarga.jpg'),
+('Rutina Casa Básica 30 min', 30, 1, 'CASA', 'rutinaCasaBasicaCorta.jpg'),
+('Rutina Casa Intermedia 45 min', 45, 2, 'CASA', 'rutinaCasaIntermediaMedia.jpg'),
+('Rutina Casa Avanzada 60 min', 60, 3, 'CASA', 'rutinaCasaAvanzadaLarga.jpg'),
+('Rutina Gimnasio Básica 30 min', 30, 1, 'GIMNASIO', 'rutinaGimnasioBasicaCorta.jpg'),
+('Rutina Gimnasio Intermedia 45 min', 45, 2, 'GIMNASIO', 'rutinaGimnasioIntermediaMedia.jpg'),
+('Rutina Gimnasio Avanzada 60 min', 60, 3, 'GIMNASIO', 'rutinaGimnasioAvanzadaLarga.jpg'),
+('Rutina Calistenia Intermedia 30 min', 30, 2, 'CALISTENIA', 'rutinaCalisteniaIntermediaCorta.jpg'),
+('Rutina Calistenia Intermedia 45 min', 45, 2, 'CALISTENIA', 'rutinaCalisteniaIntermediaMedia.jpg'),
+('Rutina Calistenia Avanzada 60 min', 60, 3, 'CALISTENIA', 'rutinaCalisteniaAvanzadaLarga.jpg'),
+('Rutina Casa Básica 30 min', 30, 1, 'CASA', 'rutinaCasaBasicaCorta.jpg'),
+('Rutina Casa Intermedia 45 min', 45, 2, 'CASA', 'rutinaCasaIntermediaMedia.jpg');
+
+
 
 
 INSERT INTO rutina_ejercicio (id_rutina, id_ejercicio) VALUES
