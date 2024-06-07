@@ -1,0 +1,76 @@
+/* rutinaDetalles.css */
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.detalle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.detalle-content {
+    max-width: 500px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+ul {
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
