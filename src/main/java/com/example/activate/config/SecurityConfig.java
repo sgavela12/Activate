@@ -34,12 +34,11 @@ public class SecurityConfig {
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
             http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
             http.authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/activate/**").permitAll()
-                    .requestMatchers("/activate/inicio").permitAll()
-                    .requestMatchers("/activate/servicios/**").permitAll()
-                    .requestMatchers("/activate/iniciarSesion").permitAll()
-                    .requestMatchers("/activate/registrarse", "/activate/registrarse/enviar", "/activate/iniciarSesion/enviar").permitAll()
+
+                    .requestMatchers("/activate/perfil").hasAnyRole("USUARIO")
                     .requestMatchers("/activate/check").hasAnyRole("ADMIN")
+                    .requestMatchers("/activate/**").permitAll()
+
                     .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                     .anyRequest().authenticated())
                 .formLogin(formLogin -> formLogin
@@ -48,12 +47,12 @@ public class SecurityConfig {
                     .defaultSuccessUrl("/activate/perfil", true)
                     .permitAll())
                 .logout(logout -> logout
-                    .logoutUrl("/activate/logout")
-                    .logoutSuccessUrl("/activate/inicio")
-                    .permitAll())
-                .httpBasic(Customizer.withDefaults());
-            http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/accessError"));
-            return http.build();
+                .logoutUrl("/activate/logout") // Establece la URL de logout
+                .logoutSuccessUrl("/activate/inicio") // Redirige a esta URL después del logout
+                .permitAll())
+            .httpBasic(Customizer.withDefaults());
+        http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/accessError"));
+        return http.build();
         }
         
 }
