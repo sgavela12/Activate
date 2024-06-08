@@ -60,7 +60,7 @@ public String showHome(Model model, Principal principal) {
 
     @GetMapping("/contacto")
     public String showContact() {
-        return "views/contacto";
+        return "forms/contacto";
     }
 
     // Calculo de Calorías
