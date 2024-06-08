@@ -1,6 +1,7 @@
 package com.example.activate.controllers;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.example.activate.models.Dieta;
 import com.example.activate.models.Ejercicio;
 import com.example.activate.models.Rutina;
+import com.example.activate.models.RutinaEjercicio;
 import com.example.activate.repositories.DietaRepository;
 import com.example.activate.repositories.RutinaRepository;
+import com.example.activate.service.RutinaEjercicioService;
+
 
 @Controller
 public class ServiciosController {
@@ -19,8 +23,11 @@ public class ServiciosController {
     @Autowired
     private RutinaRepository rutinaRepository;
 
-     @Autowired
+    @Autowired
     private DietaRepository dietaRepository;
+
+    @Autowired
+    private RutinaEjercicioService rutinaEjercicioService;
 
 
     @GetMapping("activate/servicios/dietas")
@@ -42,6 +49,10 @@ public class ServiciosController {
         Rutina rutina = rutinaRepository.findById(idRutina)
                 .orElseThrow(() -> new IllegalArgumentException("Rutina no encontrada: " + idRutina));
         List<Ejercicio> ejercicios = rutinaRepository.findEjerciciosByRutinaId(idRutina);
+
+        List<RutinaEjercicio> rutinaEjercicio = rutinaEjercicioService.getRutinaEjerciciosByRutinaId(idRutina);
+
+        model.addAttribute("rutinaEjercicio", rutinaEjercicio);
         model.addAttribute("rutina", rutina);
         model.addAttribute("ejercicios", ejercicios);
         return "/views/rutinaDetalles";

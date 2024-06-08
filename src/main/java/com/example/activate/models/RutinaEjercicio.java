@@ -1,7 +1,5 @@
 package com.example.activate.models;
 
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,6 +31,4 @@ public class RutinaEjercicio {
     private String dia;
     private int series;
     private int repeticiones;
-
-
 }

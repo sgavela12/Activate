@@ -25,6 +25,9 @@
                     <ul>
                         <li th:each="ejercicio : ${ejercicios}" th:text="${ejercicio.nombre}">Nombre del Ejercicio</li>
                     </ul>
+                    <ul>
+                        <li th:each="relacion : ${rutinaEjercicio}" th:text="${relacion.dia}">Nombre del Ejercicio</li>
+                    </ul>
                 </div>
             </div>
         </main>
