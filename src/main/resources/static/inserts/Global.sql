@@ -1,3 +1,24 @@
+
+INSERT INTO entrenador (nombre, apellidos, email, fecha_nacimiento, telefono, especialidad, ruta_imagen, descripcion)
+VALUES
+('Carlos', 'García', 'carlos.garcia@example.com', '1980-05-15', '612 345 678', 'Entrenador Personal', '/images/entrenadores/carlos.jpg', 'Experto en entrenamiento funcional, Carlos ha ayudado a muchas personas a alcanzar sus objetivos de fitness mediante programas personalizados y un enfoque motivador.'),
+('María', 'López', 'maria.lopez@example.com', '1985-08-22', '622 345 678', 'Instructora de Yoga', '/images/entrenadores/maria.jpg', 'Especialista en yoga y meditación, María ofrece clases que combinan técnicas de relajación con ejercicios de estiramiento para mejorar la flexibilidad y la tranquilidad mental.'),
+('José', 'Martínez', 'jose.martinez@example.com', '1978-12-30', '632 345 678', 'Entrenador de Fuerza', '/images/entrenadores/jose.jpg', 'Entrenador de fuerza y acondicionamiento, José se enfoca en el desarrollo de la fuerza muscular y la resistencia a través de programas intensivos y estructurados.'),
+('Ana', 'Fernández', 'ana.fernandez@example.com', '1990-07-07', '642 345 678', 'Instructora de Pilates', '/images/entrenadores/ana.jpg', 'Instructora certificada de pilates, Ana ofrece clases que fortalecen el núcleo del cuerpo, mejoran la postura y aumentan la flexibilidad con un enfoque holístico.'),
+('Luis', 'Gómez', 'luis.gomez@example.com', '1983-03-17', '652 345 678', 'Entrenador de Crossfit', '/images/entrenadores/luis.jpg', 'Coach de Crossfit y entrenamiento de alta intensidad, Luis es conocido por sus desafiantes sesiones que mejoran tanto la resistencia cardiovascular como la fuerza muscular.'),
+('Elena', 'Díaz', 'elena.diaz@example.com', '1992-11-25', '662 345 678', 'Entrenadora de Running', '/images/entrenadores/elena.jpg', 'Especialista en entrenamiento de corredores, Elena ha desarrollado programas que optimizan el rendimiento en carreras de corta y larga distancia, y mejoran la técnica de carrera.'),
+('Javier', 'Ruiz', 'javier.ruiz@example.com', '1987-01-05', '672 345 678', 'Entrenador de Natación', '/images/entrenadores/javier.jpg', 'Entrenador de natación con más de 10 años de experiencia, Javier ha trabajado con nadadores de todos los niveles para mejorar su técnica y resistencia en el agua.'),
+('Laura', 'Hernández', 'laura.hernandez@example.com', '1995-09-10', '682 345 678', 'Entrenadora de Ciclismo', '/images/entrenadores/laura.jpg', 'Experta en ciclismo indoor y outdoor, Laura ofrece programas de entrenamiento que mejoran la resistencia cardiovascular y la fuerza en las piernas, adaptados a ciclistas de todos los niveles.'),
+('Miguel', 'Torres', 'miguel.torres@example.com', '1982-06-02', '692 345 678', 'Entrenador de Boxeo', '/images/entrenadores/miguel.jpg', 'Entrenador de boxeo y artes marciales, Miguel combina técnicas tradicionales de boxeo con modernas estrategias de entrenamiento para mejorar la agilidad, la fuerza y la resistencia.'),
+('Carmen', 'Sánchez', 'carmen.sanchez@example.com', '1988-02-14', '672 345 679', 'Instructora de Baile', '/images/entrenadores/carmen.jpg', 'Instructora de baile y zumba, Carmen ofrece clases energéticas y divertidas que combinan el ejercicio aeróbico con ritmos de baile para mejorar la salud cardiovascular y la coordinación.'),
+('Ricardo', 'Ramírez', 'ricardo.ramirez@example.com', '1981-04-19', '682 345 679', 'Entrenador de Kickboxing', '/images/entrenadores/ricardo.jpg', 'Especialista en kickboxing y defensa personal, Ricardo enseña técnicas que mejoran la fuerza, la agilidad y la autoconfianza en sus estudiantes.'),
+('Patricia', 'Romero', 'patricia.romero@example.com', '1993-07-28', '692 345 679', 'Entrenadora de Fitness', '/images/entrenadores/patricia.jpg', 'Entrenadora personal certificada en fitness, Patricia crea planes de entrenamiento personalizados que ayudan a sus clientes a alcanzar sus objetivos de salud y bienestar.'),
+('Juan', 'Ortiz', 'juan.ortiz@example.com', '1977-10-21', '672 345 680', 'Instructor de Artes Marciales', '/images/entrenadores/juan.jpg', 'Instructor de artes marciales mixtas, Juan ha entrenado a numerosos estudiantes en diversas disciplinas, mejorando su técnica, fuerza y resistencia.'),
+('Isabel', 'Castillo', 'isabel.castillo@example.com', '1991-12-05', '682 345 680', 'Entrenadora de Gimnasia', '/images/entrenadores/isabel.jpg', 'Entrenadora de gimnasia rítmica y artística, Isabel ha trabajado con gimnastas de todos los niveles, ayudándolos a perfeccionar sus habilidades y alcanzar su máximo potencial.'),
+('Sergio', 'Vega', 'sergio.vega@example.com', '1984-08-13', '692 345 680', 'Entrenador de Atletismo', '/images/entrenadores/sergio.jpg', 'Entrenador de atletismo y preparación física, Sergio ofrece programas de entrenamiento que mejoran la velocidad, la resistencia y la técnica de sus atletas.'),
+('Marta', 'Navarro', 'marta.navarro@example.com', '1986-11-15', '662 345 679', 'Entrenadora de Triatlón', '/images/entrenadores/marta.jpg', 'Entrenadora de triatlón, Marta prepara a sus atletas para competir en triatlones mediante programas que integran natación, ciclismo y carrera, mejorando su resistencia y rendimiento en las tres disciplinas.');
+
+
 INSERT INTO alimento (nombre, calorias, proteinas, hidratos, grasas, tipo_alimento) VALUES
 ('Ensalada de Quinoa', 250, 8, 45, 8, 'VEGANO'),
 ('Tofu Marinado', 200, 15, 10, 12, 'VEGANO'),
@@ -266,25 +287,6 @@ INSERT INTO ejercicio (nombre, dificultad, grupo_muscular, descripcion, tipo_eje
 ('Peso Muerto con Trap Bar', 3, 'Piernas', 'Ejercicio compuesto para las piernas y espalda baja', 'GIMNASIO');
 
 
-INSERT INTO entrenador (nombre, apellidos, email, fecha_nacimiento, telefono, especialidad, ruta_imagen, descripcion)
-VALUES
-('Carlos', 'García', 'carlos.garcia@example.com', '1980-05-15', '612 345 678', 'Entrenador Personal', '/images/entrenadores/carlos.jpg', 'Experto en entrenamiento funcional, Carlos ha ayudado a muchas personas a alcanzar sus objetivos de fitness mediante programas personalizados y un enfoque motivador.'),
-('María', 'López', 'maria.lopez@example.com', '1985-08-22', '622 345 678', 'Instructora de Yoga', '/images/entrenadores/maria.jpg', 'Especialista en yoga y meditación, María ofrece clases que combinan técnicas de relajación con ejercicios de estiramiento para mejorar la flexibilidad y la tranquilidad mental.'),
-('José', 'Martínez', 'jose.martinez@example.com', '1978-12-30', '632 345 678', 'Entrenador de Fuerza', '/images/entrenadores/jose.jpg', 'Entrenador de fuerza y acondicionamiento, José se enfoca en el desarrollo de la fuerza muscular y la resistencia a través de programas intensivos y estructurados.'),
-('Ana', 'Fernández', 'ana.fernandez@example.com', '1990-07-07', '642 345 678', 'Instructora de Pilates', '/images/entrenadores/ana.jpg', 'Instructora certificada de pilates, Ana ofrece clases que fortalecen el núcleo del cuerpo, mejoran la postura y aumentan la flexibilidad con un enfoque holístico.'),
-('Luis', 'Gómez', 'luis.gomez@example.com', '1983-03-17', '652 345 678', 'Entrenador de Crossfit', '/images/entrenadores/luis.jpg', 'Coach de Crossfit y entrenamiento de alta intensidad, Luis es conocido por sus desafiantes sesiones que mejoran tanto la resistencia cardiovascular como la fuerza muscular.'),
-('Elena', 'Díaz', 'elena.diaz@example.com', '1992-11-25', '662 345 678', 'Entrenadora de Running', '/images/entrenadores/elena.jpg', 'Especialista en entrenamiento de corredores, Elena ha desarrollado programas que optimizan el rendimiento en carreras de corta y larga distancia, y mejoran la técnica de carrera.'),
-('Javier', 'Ruiz', 'javier.ruiz@example.com', '1987-01-05', '672 345 678', 'Entrenador de Natación', '/images/entrenadores/javier.jpg', 'Entrenador de natación con más de 10 años de experiencia, Javier ha trabajado con nadadores de todos los niveles para mejorar su técnica y resistencia en el agua.'),
-('Laura', 'Hernández', 'laura.hernandez@example.com', '1995-09-10', '682 345 678', 'Entrenadora de Ciclismo', '/images/entrenadores/laura.jpg', 'Experta en ciclismo indoor y outdoor, Laura ofrece programas de entrenamiento que mejoran la resistencia cardiovascular y la fuerza en las piernas, adaptados a ciclistas de todos los niveles.'),
-('Miguel', 'Torres', 'miguel.torres@example.com', '1982-06-02', '692 345 678', 'Entrenador de Boxeo', '/images/entrenadores/miguel.jpg', 'Entrenador de boxeo y artes marciales, Miguel combina técnicas tradicionales de boxeo con modernas estrategias de entrenamiento para mejorar la agilidad, la fuerza y la resistencia.'),
-('Carmen', 'Sánchez', 'carmen.sanchez@example.com', '1988-02-14', '672 345 679', 'Instructora de Baile', '/images/entrenadores/carmen.jpg', 'Instructora de baile y zumba, Carmen ofrece clases energéticas y divertidas que combinan el ejercicio aeróbico con ritmos de baile para mejorar la salud cardiovascular y la coordinación.'),
-('Ricardo', 'Ramírez', 'ricardo.ramirez@example.com', '1981-04-19', '682 345 679', 'Entrenador de Kickboxing', '/images/entrenadores/ricardo.jpg', 'Especialista en kickboxing y defensa personal, Ricardo enseña técnicas que mejoran la fuerza, la agilidad y la autoconfianza en sus estudiantes.'),
-('Patricia', 'Romero', 'patricia.romero@example.com', '1993-07-28', '692 345 679', 'Entrenadora de Fitness', '/images/entrenadores/patricia.jpg', 'Entrenadora personal certificada en fitness, Patricia crea planes de entrenamiento personalizados que ayudan a sus clientes a alcanzar sus objetivos de salud y bienestar.'),
-('Juan', 'Ortiz', 'juan.ortiz@example.com', '1977-10-21', '672 345 680', 'Instructor de Artes Marciales', '/images/entrenadores/juan.jpg', 'Instructor de artes marciales mixtas, Juan ha entrenado a numerosos estudiantes en diversas disciplinas, mejorando su técnica, fuerza y resistencia.'),
-('Isabel', 'Castillo', 'isabel.castillo@example.com', '1991-12-05', '682 345 680', 'Entrenadora de Gimnasia', '/images/entrenadores/isabel.jpg', 'Entrenadora de gimnasia rítmica y artística, Isabel ha trabajado con gimnastas de todos los niveles, ayudándolos a perfeccionar sus habilidades y alcanzar su máximo potencial.'),
-('Sergio', 'Vega', 'sergio.vega@example.com', '1984-08-13', '692 345 680', 'Entrenador de Atletismo', '/images/entrenadores/sergio.jpg', 'Entrenador de atletismo y preparación física, Sergio ofrece programas de entrenamiento que mejoran la velocidad, la resistencia y la técnica de sus atletas.'),
-('Marta', 'Navarro', 'marta.navarro@example.com', '1986-11-15', '662 345 679', 'Entrenadora de Triatlón', '/images/entrenadores/marta.jpg', 'Entrenadora de triatlón, Marta prepara a sus atletas para competir en triatlones mediante programas que integran natación, ciclismo y carrera, mejorando su resistencia y rendimiento en las tres disciplinas.');
-
 INSERT INTO rutina (nombre, duracion, tipo_rutina, ruta_imagen, frecuencia, descripcion) VALUES
 ('Calistenia Básica Rápida', 30, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaBasicaCorta.jpg', 3, 'Una rutina diseñada para introducirte en el mundo de la calistenia, mejorando tu fuerza y resistencia en un corto periodo de tiempo.'),
 ('Calistenia Intermedia Dinámica', 45, 'CALISTENIA', '/images/rutinas/rutinaCalisteniaIntermediaMedia.jpg', 4, 'Una rutina para aquellos que ya tienen experiencia en calistenia y buscan aumentar su agilidad y flexibilidad, manteniendo el ritmo y la intensidad.'),
@@ -304,24 +306,351 @@ INSERT INTO rutina (nombre, duracion, tipo_rutina, ruta_imagen, frecuencia, desc
 ('Rutina de Volumen Intensivo', 45, 'GIMNASIO', '/images/rutinas/volumenIntersivo.jpg', 4, 'Una rutina intensiva diseñada para aquellos que buscan aumentar su masa muscular y ganar volumen de manera rápida y eficaz, con una combinación de ejercicios de fuerza y ​hipertrofia.')
 ;
 
+-- Rutina 1 (Frecuencia 3, Lunes, Miércoles, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(1, 'Lunes', 10, 3, 1, 1),
+(2, 'Lunes', 12, 3, 2, 1),
+(3, 'Lunes', 15, 2, 3, 1),
+(4, 'Lunes', 10, 4, 4, 1),
+(5, 'Lunes', 12, 3, 5, 1),
+(6, 'Miércoles', 10, 3, 6, 1),
+(7, 'Miércoles', 12, 3, 7, 1),
+(8, 'Miércoles', 15, 2, 8, 1),
+(9, 'Miércoles', 10, 4, 9, 1),
+(10, 'Miércoles', 12, 3, 10, 1),
+(11, 'Viernes', 10, 3, 11, 1),
+(12, 'Viernes', 12, 3, 12, 1),
+(13, 'Viernes', 15, 2, 13, 1),
+(14, 'Viernes', 10, 4, 14, 1),
+(15, 'Viernes', 12, 3, 15, 1);
 
+-- Rutina 2 (Frecuencia 4, Lunes, Martes, Jueves, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(16, 'Lunes', 10, 3, 16, 2),
+(17, 'Lunes', 12, 3, 17, 2),
+(18, 'Lunes', 15, 2, 18, 2),
+(19, 'Lunes', 10, 4, 19, 2),
+(20, 'Lunes', 12, 3, 20, 2),
+(21, 'Martes', 10, 3, 21, 2),
+(22, 'Martes', 12, 3, 22, 2),
+(23, 'Martes', 15, 2, 23, 2),
+(24, 'Martes', 10, 4, 24, 2),
+(25, 'Martes', 12, 3, 25, 2),
+(26, 'Jueves', 10, 3, 26, 2),
+(27, 'Jueves', 12, 3, 27, 2),
+(28, 'Jueves', 15, 2, 28, 2),
+(29, 'Jueves', 10, 4, 29, 2),
+(30, 'Jueves', 12, 3, 30, 2),
+(31, 'Viernes', 10, 3, 31, 2),
+(32, 'Viernes', 12, 3, 32, 2),
+(33, 'Viernes', 15, 2, 33, 2),
+(34, 'Viernes', 10, 4, 34, 2),
+(35, 'Viernes', 12, 3, 35, 2);
 
+-- Rutina 3 (Frecuencia 5, Lunes a Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(36, 'Lunes', 10, 3, 36, 3),
+(37, 'Lunes', 12, 3, 37, 3),
+(38, 'Lunes', 15, 2, 38, 3),
+(39, 'Lunes', 10, 4, 39, 3),
+(40, 'Lunes', 12, 3, 40, 3),
+(41, 'Martes', 10, 3, 41, 3),
+(42, 'Martes', 12, 3, 42, 3),
+(43, 'Martes', 15, 2, 43, 3),
+(44, 'Martes', 10, 4, 44, 3),
+(45, 'Martes', 12, 3, 45, 3),
+(46, 'Miércoles', 10, 3, 46, 3),
+(47, 'Miércoles', 12, 3, 47, 3),
+(48, 'Miércoles', 15, 2, 48, 3),
+(49, 'Miércoles', 10, 4, 49, 3),
+(50, 'Miércoles', 12, 3, 50, 3),
+(51, 'Jueves', 10, 3, 51, 3),
+(52, 'Jueves', 12, 3, 52, 3),
+(53, 'Jueves', 15, 2, 53, 3),
+(54, 'Jueves', 10, 4, 54, 3),
+(55, 'Jueves', 12, 3, 55, 3),
+(56, 'Viernes', 10, 3, 56, 3),
+(57, 'Viernes', 12, 3, 57, 3),
+(58, 'Viernes', 15, 2, 58, 3),
+(59, 'Viernes', 10, 4, 59, 3),
+(60, 'Viernes', 12, 3, 60, 3);
 
+-- Rutina 4 (Frecuencia 3, Lunes, Miércoles, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(61, 'Lunes', 10, 3, 61, 4),
+(62, 'Lunes', 12, 3, 62, 4),
+(63, 'Lunes', 15, 2, 63, 4),
+(64, 'Lunes', 10, 4, 64, 4),
+(65, 'Lunes', 12, 3, 65, 4),
+(66, 'Miércoles', 10, 3, 66, 4),
+(67, 'Miércoles', 12, 3, 67, 4),
+(68, 'Miércoles', 15, 2, 68, 4),
+(69, 'Miércoles', 10, 4, 69, 4),
+(70, 'Miércoles', 12, 3, 70, 4),
+(71, 'Viernes', 10, 3, 71, 4),
+(72, 'Viernes', 12, 3, 72, 4),
+(73, 'Viernes', 15, 2, 73, 4),
+(74, 'Viernes', 10, 4, 74, 4),
+(75, 'Viernes', 12, 3, 75, 4);
 
-INSERT INTO rutina_ejercicio (id_rutina, id_ejercicio) VALUES
-(1, 1), (1, 2), (1, 3), (1, 4), (1, 5),
-(2, 6), (2, 7), (2, 8), (2, 9), (2, 10),
-(3, 11), (3, 12), (3, 13), (3, 14), (3, 15),
-(4, 16), (4, 17), (4, 18), (4, 19), (4, 20),
-(5, 21), (5, 22), (5, 23), (5, 24), (5, 25),
-(6, 26), (6, 27), (6, 28), (6, 29), (6, 30),
-(7, 31), (7, 32), (7, 33), (7, 34), (7, 35),
-(8, 36), (8, 37), (8, 38), (8, 39), (8, 40),
-(9, 41), (9, 42), (9, 43), (9, 44), (9, 45),
-(10, 46), (10, 47), (10, 48), (10, 49), (10, 50),
-(11, 51), (11, 52), (11, 53), (11, 54), (11, 55),
-(12, 56), (12, 57), (12, 58), (12, 59), (12, 60),
-(13, 61), (13, 62), (13, 63), (13, 64), (13, 65),
-(14, 66), (14, 67), (14, 68), (14, 69), (14, 70),
-(15, 3), (15, 5), (15, 9), (15, 20), (15, 23),
-(16, 33), (16, 26), (16, 29), (16, 55), (16, 58);
+-- Rutina 5 (Frecuencia 4, Lunes, Martes, Jueves, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(76, 'Lunes', 10, 3, 76, 5),
+(77, 'Lunes', 12, 3, 77, 5),
+(78, 'Lunes', 15, 2, 78, 5),
+(79, 'Lunes', 10, 4, 79, 5),
+(80, 'Lunes', 12, 3, 80, 5),
+(81, 'Martes', 10, 3, 81, 5),
+(82, 'Martes', 12, 3, 82, 5),
+(83, 'Martes', 15, 2, 83, 5);
+
+-- Rutina 6 (Frecuencia 5, Lunes a Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(84, 'Lunes', 10, 3, 1, 6),
+(85, 'Lunes', 12, 3, 2, 6),
+(86, 'Lunes', 15, 2, 3, 6),
+(87, 'Lunes', 10, 4, 4, 6),
+(88, 'Lunes', 12, 3, 5, 6),
+(89, 'Martes', 10, 3, 6, 6),
+(90, 'Martes', 12, 3, 7, 6),
+(91, 'Martes', 15, 2, 8, 6),
+(92, 'Martes', 10, 4, 9, 6),
+(93, 'Martes', 12, 3, 10, 6),
+(94, 'Miércoles', 10, 3, 11, 6),
+(95, 'Miércoles', 12, 3, 12, 6),
+(96, 'Miércoles', 15, 2, 13, 6),
+(97, 'Miércoles', 10, 4, 14, 6),
+(98, 'Miércoles', 12, 3, 15, 6),
+(99, 'Jueves', 10, 3, 16, 6),
+(100, 'Jueves', 12, 3, 17, 6),
+(101, 'Jueves', 15, 2, 18, 6),
+(102, 'Jueves', 10, 4, 19, 6),
+(103, 'Jueves', 12, 3, 20, 6),
+(104, 'Viernes', 10, 3, 21, 6),
+(105, 'Viernes', 12, 3, 22, 6),
+(106, 'Viernes', 15, 2, 23, 6),
+(107, 'Viernes', 10, 4, 24, 6),
+(108, 'Viernes', 12, 3, 25, 6);
+
+-- Rutina 7 (Frecuencia 3, Lunes, Miércoles, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(109, 'Lunes', 10, 3, 26, 7),
+(110, 'Lunes', 12, 3, 27, 7),
+(111, 'Lunes', 15, 2, 28, 7),
+(112, 'Lunes', 10, 4, 29, 7),
+(113, 'Lunes', 12, 3, 30, 7),
+(114, 'Miércoles', 10, 3, 31, 7),
+(115, 'Miércoles', 12, 3, 32, 7),
+(116, 'Miércoles', 15, 2, 33, 7),
+(117, 'Miércoles', 10, 4, 34, 7),
+(118, 'Miércoles', 12, 3, 35, 7),
+(119, 'Viernes', 10, 3, 36, 7),
+(120, 'Viernes', 12, 3, 37, 7),
+(121, 'Viernes', 15, 2, 38, 7),
+(122, 'Viernes', 10, 4, 39, 7),
+(123, 'Viernes', 12, 3, 40, 7);
+
+-- Rutina 8 (Frecuencia 4, Lunes, Martes, Jueves, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(124, 'Lunes', 10, 3, 41, 8),
+(125, 'Lunes', 12, 3, 42, 8),
+(126, 'Lunes', 15, 2, 43, 8),
+(127, 'Lunes', 10, 4, 44, 8),
+(128, 'Lunes', 12, 3, 45, 8),
+(129, 'Martes', 10, 3, 46, 8),
+(130, 'Martes', 12, 3, 47, 8),
+(131, 'Martes', 15, 2, 48, 8),
+(132, 'Martes', 10, 4, 49, 8),
+(133, 'Martes', 12, 3, 50, 8),
+(134, 'Jueves', 10, 3, 51, 8),
+(135, 'Jueves', 12, 3, 52, 8),
+(136, 'Jueves', 15, 2, 53, 8),
+(137, 'Jueves', 10, 4, 54, 8),
+(138, 'Jueves', 12, 3, 55, 8),
+(139, 'Viernes', 10, 3, 56, 8),
+(140, 'Viernes', 12, 3, 57, 8),
+(141, 'Viernes', 15, 2, 58, 8),
+(142, 'Viernes', 10, 4, 59, 8),
+(143, 'Viernes', 12, 3, 60, 8);
+
+-- Rutina 9 (Frecuencia 5, Lunes a Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(144, 'Lunes', 10, 3, 61, 9),
+(145, 'Lunes', 12, 3, 62, 9),
+(146, 'Lunes', 15, 2, 63, 9),
+(147, 'Lunes', 10, 4, 64, 9),
+(148, 'Lunes', 12, 3, 65, 9),
+(149, 'Martes', 10, 3, 66, 9),
+(150, 'Martes', 12, 3, 67, 9),
+(151, 'Martes', 15, 2, 68, 9),
+(152, 'Martes', 10, 4, 69, 9),
+(153, 'Martes', 12, 3, 70, 9),
+(154, 'Miércoles', 10, 3, 71, 9),
+(155, 'Miércoles', 12, 3, 72, 9),
+(156, 'Miércoles', 15, 2, 73, 9),
+(157, 'Miércoles', 10, 4, 74, 9),
+(158, 'Miércoles', 12, 3, 75, 9),
+(159, 'Jueves', 10, 3, 76, 9),
+(160, 'Jueves', 12, 3, 77, 9),
+(161, 'Jueves', 15, 2, 78, 9),
+(162, 'Jueves', 10, 4, 79, 9),
+(163, 'Jueves', 12, 3, 80, 9),
+(164, 'Viernes', 10, 3, 81, 9),
+(165, 'Viernes', 12, 3, 82, 9),
+(166, 'Viernes', 15, 2, 83, 9);
+
+-- Rutina 10 (Frecuencia 3, Lunes, Miércoles, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(167, 'Lunes', 10, 3, 1, 10),
+(168, 'Lunes', 12, 3, 2, 10),
+(169, 'Lunes', 15, 2, 3, 10),
+(170, 'Lunes', 10, 4, 4, 10),
+(171, 'Lunes', 12, 3, 5, 10),
+(172, 'Miércoles', 10, 3, 6, 10),
+(173, 'Miércoles', 12, 3, 7, 10),
+(174, 'Miércoles', 15, 2, 8, 10),
+(175, 'Miércoles', 10, 4, 9, 10),
+(176, 'Miércoles', 12, 3, 10, 10),
+(177, 'Viernes', 10, 3, 11, 10),
+(178, 'Viernes', 12, 3, 12, 10),
+(179, 'Viernes', 15, 2, 13, 10),
+(180, 'Viernes', 10, 4, 14, 10),
+(181, 'Viernes', 12, 3, 15, 10);
+
+-- Rutina 11 (Frecuencia 4, Lunes, Martes, Jueves, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(182, 'Lunes', 10, 3, 16, 11),
+(183, 'Lunes', 12, 3, 17, 11),
+(184, 'Lunes', 15, 2, 18, 11),
+(185, 'Lunes', 10, 4, 19, 11),
+(186, 'Lunes', 12, 3, 20, 11),
+(187, 'Martes', 10, 3, 21, 11),
+(188, 'Martes', 12, 3, 22, 11),
+(189, 'Martes', 15, 2, 23, 11),
+(190, 'Martes', 10, 4, 24, 11),
+(191, 'Martes', 12, 3, 25, 11),
+(192, 'Jueves', 10, 3, 26, 11),
+(193, 'Jueves', 12, 3, 27, 11),
+(194, 'Jueves', 15, 2, 28, 11),
+(195, 'Jueves', 10, 4, 29, 11),
+(196, 'Jueves', 12, 3, 30, 11),
+(197, 'Viernes', 10, 3, 31, 11),
+(198, 'Viernes', 12, 3, 32, 11),
+(199, 'Viernes', 15, 2, 33, 11),
+(200, 'Viernes', 10, 4, 34, 11),
+(201, 'Viernes', 12, 3, 35, 11);
+
+-- Rutina 12 (Frecuencia 5, Lunes a Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(202, 'Lunes', 10, 3, 36, 12),
+(203, 'Lunes', 12, 3, 37, 12),
+(204, 'Lunes', 15, 2, 38, 12),
+(205, 'Lunes', 10, 4, 39, 12),
+(206, 'Lunes', 12, 3, 40, 12),
+(207, 'Martes', 10, 3, 41, 12),
+(208, 'Martes', 12, 3, 42, 12),
+(209, 'Martes', 15, 2, 43, 12),
+(210, 'Martes', 10, 4, 44, 12),
+(211, 'Martes', 12, 3, 45, 12),
+(212, 'Miércoles', 10, 3, 46, 12),
+(213, 'Miércoles', 12, 3, 47, 12),
+(214, 'Miércoles', 15, 2, 48, 12),
+(215, 'Miércoles', 10, 4, 49, 12),
+(216, 'Miércoles', 12, 3, 50, 12),
+(217, 'Jueves', 10, 3, 51, 12),
+(218, 'Jueves', 12, 3, 52, 12),
+(219, 'Jueves', 15, 2, 53, 12),
+(220, 'Jueves', 10, 4, 54, 12),
+(221, 'Jueves', 12, 3, 55, 12),
+(222, 'Viernes', 10, 3, 56, 12),
+(223, 'Viernes', 12, 3, 57, 12),
+(224, 'Viernes', 15, 2, 58, 12),
+(225, 'Viernes', 10, 4, 59, 12),
+(226, 'Viernes', 12, 3, 60, 12);
+
+-- Rutina 13 (Frecuencia 3, Lunes, Miércoles, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(227, 'Lunes', 10, 3, 1, 13),
+(228, 'Lunes', 12, 3, 2, 13),
+(229, 'Lunes', 15, 2, 3, 13),
+(230, 'Lunes', 10, 4, 4, 13),
+(231, 'Lunes', 12, 3, 5, 13),
+(232, 'Miércoles', 10, 3, 6, 13),
+(233, 'Miércoles', 12, 3, 7, 13),
+(234, 'Miércoles', 15, 2, 8, 13),
+(235, 'Miércoles', 10, 4, 9, 13),
+(236, 'Miércoles', 12, 3, 10, 13),
+(237, 'Viernes', 10, 3, 11, 13),
+(238, 'Viernes', 12, 3, 12, 13),
+(239, 'Viernes', 15, 2, 13, 13),
+(240, 'Viernes', 10, 4, 14, 13),
+(241, 'Viernes', 12, 3, 15, 13);
+
+-- Rutina 14 (Frecuencia 4, Lunes, Martes, Jueves, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(242, 'Lunes', 10, 3, 16, 14),
+(243, 'Lunes', 12, 3, 17, 14),
+(244, 'Lunes', 15, 2, 18, 14),
+(245, 'Lunes', 10, 4, 19, 14),
+(246, 'Lunes', 12, 3, 20, 14),
+(247, 'Martes', 10, 3, 21, 14),
+(248, 'Martes', 12, 3, 22, 14),
+(249, 'Martes', 15, 2, 23, 14),
+(250, 'Martes', 10, 4, 24, 14),
+(251, 'Martes', 12, 3, 25, 14),
+(252, 'Jueves', 10, 3, 26, 14),
+(253, 'Jueves', 12, 3, 27, 14),
+(254, 'Jueves', 15, 2, 28, 14),
+(255, 'Jueves', 10, 4, 29, 14),
+(256, 'Jueves', 12, 3, 30, 14),
+(257, 'Viernes', 10, 3, 31, 14),
+(258, 'Viernes', 12, 3, 32, 14),
+(259, 'Viernes', 15, 2, 33, 14),
+(260, 'Viernes', 10, 4, 34, 14),
+(261, 'Viernes', 12, 3, 35, 14);
+
+-- Rutina 15 (Frecuencia 5, Lunes a Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(262, 'Lunes', 10, 3, 36, 15),
+(263, 'Lunes', 12, 3, 37, 15),
+(264, 'Lunes', 15, 2, 38, 15),
+(265, 'Lunes', 10, 4, 39, 15),
+(266, 'Lunes', 12, 3, 40, 15),
+(267, 'Martes', 10, 3, 41, 15),
+(268, 'Martes', 12, 3, 42, 15),
+(269, 'Martes', 15, 2, 43, 15),
+(270, 'Martes', 10, 4, 44, 15),
+(271, 'Martes', 12, 3, 45, 15),
+(272, 'Miércoles', 10, 3, 46, 15),
+(273, 'Miércoles', 12, 3, 47, 15),
+(274, 'Miércoles', 15, 2, 48, 15),
+(275, 'Miércoles', 10, 4, 49, 15),
+(276, 'Miércoles', 12, 3, 50, 15),
+(277, 'Jueves', 10, 3, 51, 15),
+(278, 'Jueves', 12, 3, 52, 15),
+(279, 'Jueves', 15, 2, 53, 15),
+(280, 'Jueves', 10, 4, 54, 15),
+(281, 'Jueves', 12, 3, 55, 15),
+(282, 'Viernes', 10, 3, 56, 15),
+(283, 'Viernes', 12, 3, 57, 15),
+(284, 'Viernes', 15, 2, 58, 15),
+(285, 'Viernes', 10, 4, 59, 15),
+(286, 'Viernes', 12, 3, 60, 15);
+
+-- Rutina 16 (Frecuencia 3, Lunes, Miércoles, Viernes)
+INSERT INTO `rutina_ejercicio` (`id`, `dia`, `repeticiones`, `series`, `id_ejercicio`, `id_rutina`) VALUES
+(287, 'Lunes', 10, 3, 1, 16),
+(288, 'Lunes', 12, 3, 2, 16),
+(289, 'Lunes', 15, 2, 3, 16),
+(290, 'Lunes', 10, 4, 4, 16),
+(291, 'Lunes', 12, 3, 5, 16),
+(292, 'Miércoles', 10, 3, 6, 16),
+(293, 'Miércoles', 12, 3, 7, 16),
+(294, 'Miércoles', 15, 2, 8, 16),
+(295, 'Miércoles', 10, 4, 9, 16),
+(296, 'Miércoles', 12, 3, 10, 16),
+(297, 'Viernes', 10, 3, 11, 16),
+(298, 'Viernes', 12, 3, 12, 16),
+(299, 'Viernes', 15, 2, 13, 16),
+(300, 'Viernes', 10, 4, 14, 16),
+(301, 'Viernes', 12, 3, 15, 16);

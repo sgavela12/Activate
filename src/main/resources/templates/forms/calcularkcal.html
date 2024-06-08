@@ -20,6 +20,7 @@
          
             <div class="form-container">
             <form class="form"  th:action="@{/activate/servicios/calcularKcal}" th:object="${calculoCalorias}" method="post">
+                
                 <div class="form-group">
                     <label>Sexo:</label>
                     <select th:field="*{sexo}">
@@ -57,9 +58,14 @@
                     <button class="form-submit-btn" type="submit">Calcular</button>
 
                     <div th:if="${calculoCaloriasResultado != null}">
-                        <h3>Resultado:</h3>
-                        <p th:text="'Necesitas consumir aproximadamente ' + ${calculoCaloriasResultado} + ' calorías al día para tu mantenimiento.'"></p>
+                        
+                        <p id="resultado" th:text="'Necesitas consumir aproximadamente ' + ${calculoCaloriasResultado} + ' calorías al día para tu mantenimiento.'"></p>
                     </div>
+                    <!-- Mensaje de error -->
+                <div  th:if="${mensajeError != null}" class="error-message">
+                    <p id="error" th:text="${mensajeError}"></p>
+                </div>
+                <!-- Fin mensaje de error -->
       </form>
     </div>
 

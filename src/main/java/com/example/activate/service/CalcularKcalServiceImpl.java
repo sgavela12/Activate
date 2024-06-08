@@ -19,10 +19,10 @@ public class CalcularKcalServiceImpl implements CalcularKcalService {
     }
 
     @Override
-    public double calcularCalorias(Sexo sexo, int edad, double peso, double altura, NivelActividad nivelActividad) {
+    public float calcularCalorias(Sexo sexo, int edad, double peso, double altura, NivelActividad nivelActividad) {
         double factorActividad = obtenerFactorActividad(nivelActividad);
         double metabolismoBasal = calcularMetabolismoBasal(sexo, edad, peso, altura);
-        return metabolismoBasal * factorActividad;
+        return (float) (metabolismoBasal * factorActividad);
     }
 
     private double calcularMetabolismoBasal(Sexo sexo, int edad, double peso, double altura) {

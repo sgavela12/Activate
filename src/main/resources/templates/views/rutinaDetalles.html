@@ -12,7 +12,7 @@
             <nav th:replace="~{components/navbar.html :: navBar}"></nav>
         </header>
         <main>
-            <h1 th:text="${rutina.nombre}">Nombre de la Rutina</h1>
+            <h1 id="titulo" th:text="${rutina.nombre}">Nombre de la Rutina</h1>
             <div class="detalle-container">
                 <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
                 <div class="detalle-content">

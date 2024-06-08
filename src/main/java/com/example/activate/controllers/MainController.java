@@ -39,7 +39,7 @@ public class MainController {
         return "views/index";
     }
 
- @GetMapping("/perfil")
+    @GetMapping("/perfil")
     public String showProfile(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUserName = authentication.getName();
@@ -68,22 +68,29 @@ public class MainController {
         return "forms/calcularKcal";
     }
 
-    @PostMapping("servicios/calcularKcal")
-    public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCaloriasForm calculoCaloriasForm,
-                               BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            return "forms/calcularKcal";
-        }
-
-        CalcularKcalServiceImpl.Sexo sexo = (calculoCaloriasForm.getSexo().equalsIgnoreCase("HOMBRE")) 
-            ? CalcularKcalServiceImpl.Sexo.HOMBRE : CalcularKcalServiceImpl.Sexo.MUJER;
-        CalcularKcalServiceImpl.NivelActividad nivelActividad = CalcularKcalServiceImpl.NivelActividad.valueOf(calculoCaloriasForm.getNivelActividad());
-
-        double calorias = calcularKcalService.calcularCalorias(sexo, calculoCaloriasForm.getEdad(), calculoCaloriasForm.getPeso(), calculoCaloriasForm.getAltura(), nivelActividad);
-        model.addAttribute("calculoCaloriasResultado", calorias);
-
+   @PostMapping("servicios/calcularKcal")
+public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCaloriasForm calculoCaloriasForm,
+                           BindingResult bindingResult, Model model) {
+    if (bindingResult.hasErrors()) {
         return "forms/calcularKcal";
     }
+
+    // Validación de datos de entrada
+    if (calculoCaloriasForm.getEdad() == 0 || calculoCaloriasForm.getPeso() == 0 || calculoCaloriasForm.getAltura() == 0) {
+        model.addAttribute("mensajeError", "Por favor, introduzca datos válidos para edad, peso y altura.");
+        return "forms/calcularKcal";
+    }
+
+    CalcularKcalServiceImpl.Sexo sexo = (calculoCaloriasForm.getSexo().equalsIgnoreCase("HOMBRE"))
+            ? CalcularKcalServiceImpl.Sexo.HOMBRE : CalcularKcalServiceImpl.Sexo.MUJER;
+    CalcularKcalServiceImpl.NivelActividad nivelActividad = CalcularKcalServiceImpl.NivelActividad.valueOf(calculoCaloriasForm.getNivelActividad());
+
+    double calorias = calcularKcalService.calcularCalorias(sexo, calculoCaloriasForm.getEdad(), calculoCaloriasForm.getPeso(), calculoCaloriasForm.getAltura(), nivelActividad);
+    model.addAttribute("calculoCaloriasResultado", String.format("%.2f", calorias));
+
+    return "forms/calcularKcal";
+}
+
 
     // Iniciar Sesión
     @GetMapping("/iniciarSesion")
@@ -123,12 +130,12 @@ public class MainController {
         return "redirect:/activate/registrarse?msg=okay";
     }
 
-       // Cerrar Sesión
-       @GetMapping("/cerrarSesion")
-       public String showCerrarSesion() {
-          
-           return "forms/cerrarSesion";
-       }
+    // Cerrar Sesión
+    @GetMapping("/cerrarSesion")
+    public String showCerrarSesion() {
+
+        return "forms/cerrarSesion";
+    }
 
 
     // Error
