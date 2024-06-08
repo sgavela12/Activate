@@ -15,9 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.activate.models.CalculoCaloriasForm;
+import com.example.activate.models.Dieta;
+import com.example.activate.models.Rutina;
 import com.example.activate.models.Usuario;
 import com.example.activate.service.ActivateService;
 import com.example.activate.service.CalcularKcalServiceImpl;
+import com.example.activate.service.DietaServiceImpl;
+import com.example.activate.service.RutinaServiceImpl;
 import com.example.activate.service.UsuarioDBServiceImpl;
 
 import jakarta.validation.Valid;
@@ -35,6 +39,12 @@ public class MainController {
     @Autowired
     private UsuarioDBServiceImpl usuarioDBServiceImpl;
 
+    @Autowired
+    private RutinaServiceImpl rutinaServiceImpl;
+
+    @Autowired
+    private DietaServiceImpl dietaServiceImpl;
+
  @GetMapping("/inicio")
 public String showHome(Model model, Principal principal) {
     if (principal != null) {
@@ -50,7 +60,21 @@ public String showHome(Model model, Principal principal) {
         String currentUserName = authentication.getName();
         
         Usuario usuario = usuarioDBServiceImpl.obtenerPorEmail(currentUserName);
-        model.addAttribute("usuario", usuario);
+        
+        if (usuario.getRutina() == null) {
+            model.addAttribute("mensajeRutina", "No cuentas con una Rutina personalizada? Buscala aquí");
+        }else{
+            Rutina rutina = rutinaServiceImpl.obtenerPorId(usuario.getRutina().getIdRutina());
+            model.addAttribute("rutina", rutina);
+        }
+
+
+        if (usuario.getDieta() == null) {
+            model.addAttribute("mensajeDieta", "No cuentas con una Dieta personlizada? Buscala aquí");
+        }else{
+            Dieta dieta = dietaServiceImpl.obtenerPorId(usuario.getDieta().getId());
+            model.addAttribute("dieta", dieta);
+        }
 
         return "views/perfil";
     }
