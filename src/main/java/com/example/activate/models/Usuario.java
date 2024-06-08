@@ -6,6 +6,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,13 +28,16 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Enumerated(EnumType.STRING)
     private Rol rol;
 
     @NotNull
     private String nombreCompleto;
 
-    @Pattern(regexp="(^$|[0-9]{9})")
+    @Pattern(regexp = "(^$|[0-9]{9})")
     @NotNull
     private String telefono;
 
@@ -55,9 +60,7 @@ public class Usuario {
     @OneToOne
     private Rutina rutina;
 
-    
-
-  public Usuario(String nombreCompleto, Rol rol, String contraseña, LocalDate fechaNacimiento) {
+    public Usuario(String nombreCompleto, Rol rol, String contraseña, LocalDate fechaNacimiento) {
         this.nombreCompleto = nombreCompleto;
         this.rol = rol;
         this.contraseña = contraseña;
@@ -69,7 +72,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario [nombre=" + nombreCompleto +  ", email=" + email + ", fechaNacimiento="
+        return "Usuario [nombre=" + nombreCompleto + ", email=" + email + ", fechaNacimiento="
                 + fechaNacimiento + ", contraseña=" + contraseña + "]";
     }
 

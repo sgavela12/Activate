@@ -1,5 +1,7 @@
 package com.example.activate.controllers;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -33,11 +35,14 @@ public class MainController {
     @Autowired
     private UsuarioDBServiceImpl usuarioDBServiceImpl;
 
-    @GetMapping("/inicio")
-    public String showHome(Model model) {
-        model.addAttribute("mensajeFecha", activateService.mensajeFecha());
-        return "views/index";
+ @GetMapping("/inicio")
+public String showHome(Model model, Principal principal) {
+    if (principal != null) {
+        
     }
+    model.addAttribute("mensajeFecha", activateService.mensajeFecha());
+    return "views/index";
+}
 
     @GetMapping("/perfil")
     public String showProfile(Model model) {
@@ -96,7 +101,7 @@ public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCalo
     @GetMapping("/iniciarSesion")
     public String showIniciarSesion(@RequestParam(required = false) String msg, Model model) {
         if (msg != null) {
-            model.addAttribute("mensajeCreacion", "Sesión iniciada correctamente.");
+            model.addAttribute("mensajeCreacion", "Usuario o contraseña incorrecta.");
         }
         model.addAttribute("usuario", new Usuario());
         return "forms/registrarse";
@@ -105,7 +110,7 @@ public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCalo
     @PostMapping("/iniciarSesion/enviar")
     public String showIniciarSesionEnviar(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "forms/registrarse";
+            return "redirect:/activate/iniciarSesion?msg=";
         }
         usuarioDBServiceImpl.añadir(usuario);
         return "redirect:/activate/iniciarSesion?msg=okay";
@@ -114,8 +119,10 @@ public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCalo
     // Registrarse
     @GetMapping("/registrarse")
     public String showRegistrarse(@RequestParam(required = false) String msg, Model model) {
-        if (msg != null) {
+        if (msg.equals("okay")) {
             model.addAttribute("mensajeCreacion", "Usuario creado correctamente.");
+        }else if (msg.equals("error")) {
+            model.addAttribute("mensajeCreacion", "Error, campos incorrectos.");           
         }
         model.addAttribute("usuario", new Usuario());
         return "forms/registrarse";
@@ -124,7 +131,7 @@ public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCalo
     @PostMapping("/registrarse/enviar")
     public String showRegistrarseEnviar(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "forms/registrarse";
+            return "redirect:/activate/registrarse?msg=error";
         }
         usuarioDBServiceImpl.añadir(usuario);
         return "redirect:/activate/registrarse?msg=okay";

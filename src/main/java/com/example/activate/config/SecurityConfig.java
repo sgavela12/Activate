@@ -45,10 +45,10 @@ public class SecurityConfig {
                 .formLogin(formLogin -> formLogin
                     .loginPage("/activate/iniciarSesion")
                     .loginProcessingUrl("/login")
-                    .defaultSuccessUrl("/activate/inicio", true)
+                    .defaultSuccessUrl("/activate/perfil", true)
                     .permitAll())
                 .logout(logout -> logout
-                    .logoutUrl("/logout")
+                    .logoutUrl("/activate/logout")
                     .logoutSuccessUrl("/activate/inicio")
                     .permitAll())
                 .httpBasic(Customizer.withDefaults());

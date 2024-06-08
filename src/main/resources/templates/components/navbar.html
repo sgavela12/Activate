@@ -15,7 +15,8 @@
       <li><a href="/activate/perfil" class="nav-link" data-route="/activate/perfil">Perfil</a></li>
       <li><a href="/activate/servicios" class="nav-link" data-route="/activate/servicios">Servicios</a></li>
       <li><a href="/activate/contacto" class="nav-link" data-route="/activate/contacto">Contacto</a></li>
-      <li><a href="/activate/iniciarSesion"><button class="login-button" id="loginButton">Iniciar Sesión/Registrarse</button></a></li>
+      <li th:if="${currentUserName == null}"><a href="/activate/iniciarSesion"><button class="login-button" id="loginButton">Iniciar Sesión/Registrarse</button></a></li>
+      <li th:if="${currentUserName != null}"><a href="/activate/perfil"><button class="login-button" id="loginButton" th:text="${currentUserName}">Cerrar Sesión</button></a></li>
     </ul>
   </nav>
   <script src="/js/nav.js"></script>

@@ -7,6 +7,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.activate.models.Rol;
 import com.example.activate.models.Usuario;
 import com.example.activate.repositories.UsuarioRepository;
 
@@ -20,6 +21,7 @@ public class UsuarioDBServiceImpl implements UsuarioService {
     private PasswordEncoder passwordEncoder;
 
     public Usuario añadir(Usuario usuario) {
+        usuario.setRol(Rol.USUARIO);
         String passCrypted = passwordEncoder.encode(usuario.getContraseña());
         usuario.setContraseña(passCrypted);
         try {
