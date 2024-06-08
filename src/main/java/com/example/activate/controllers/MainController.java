@@ -1,6 +1,8 @@
 package com.example.activate.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -37,8 +39,15 @@ public class MainController {
         return "views/index";
     }
 
-    @GetMapping("/perfil")
+ @GetMapping("/perfil")
     public String showProfile(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUserName = authentication.getName();
+        String currentUserRole = authentication.getAuthorities().toString();
+
+        model.addAttribute("currentUserName", currentUserName);
+        model.addAttribute("currentUserRole", currentUserRole);
+
         return "views/perfil";
     }
 

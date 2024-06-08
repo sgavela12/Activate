@@ -14,7 +14,9 @@
         <nav th:replace="~{components/navbar.html :: navBar}"></nav>
         <main>
             <h1 id="titulo">Perfil</h1>
-            <p>Contenido del perfil...</p>
+            <h1>User Profile</h1>
+            <p>Username: <span th:text="${currentUserName}"></span></p>
+            <p>User Role: <span th:text="${currentUserRole}"></span></p>
         </main>
         <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>
