@@ -54,7 +54,7 @@ public String showHome(Model model, Principal principal) {
     return "views/index";
 }
 
-    @GetMapping("/perfil")
+   @GetMapping("/perfil")
     public String showProfile(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUserName = authentication.getName();

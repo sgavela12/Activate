@@ -33,6 +33,19 @@ public class UsuarioDBServiceImpl implements UsuarioService {
         }
     }
 
+    public Usuario añadirAdmin(Usuario usuario) {
+        usuario.setRol(Rol.ADMIN);
+        String passCrypted = passwordEncoder.encode(usuario.getContraseña());
+        usuario.setContraseña(passCrypted);
+        try {
+            return usuarioRepository.save(usuario);
+
+        } catch (DataIntegrityViolationException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     @Override
     public List<Usuario> obtenerTodos() {
         return usuarioRepository.findAll();

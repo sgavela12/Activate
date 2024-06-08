@@ -26,15 +26,13 @@ public class ActivateApplication {
     //     return args -> {
     //         // Crear un usuario con todos los campos
     //         Usuario usuario = new Usuario();
-    //         usuario.setRol(Rol.ADMIN);
+           
     //         usuario.setNombreCompleto("Admin");
     //         usuario.setTelefono("123456789");
     //         usuario.setEmail("admin@admin");
     //         usuario.setFechaNacimiento(LocalDate.of(1990, Month.JANUARY, 1));
-    //         usuario.setContraseña("1234"); // Aquí puedes definir la contraseña deseada
-    //         // Puedes seguir configurando los demás campos según sea necesario
-
-    //         usuarioService.añadir(usuario);
+    //         usuario.setContraseña("1234"); 
+    //         usuarioService.añadirAdmin(usuario);
     //     };
 	
 	// }

@@ -7,6 +7,8 @@ import com.example.activate.models.Usuario;
 public interface UsuarioService {
     public Usuario añadir(Usuario usuario);
 
+    public Usuario añadirAdmin(Usuario usuario);
+
     public List<Usuario> obtenerTodos();
 
     public Usuario obtenerPorId(long id);
