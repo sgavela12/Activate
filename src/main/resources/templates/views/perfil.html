@@ -17,7 +17,9 @@
             <h1>User Profile</h1>
             <p>Username: <span th:text="${currentUserName}"></span></p>
             <p>User Role: <span th:text="${currentUserRole}"></span></p>
-            <a href="/activate/logout">Cerrar Sesión</a>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout" />
+            </form>
         </main>
         <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>

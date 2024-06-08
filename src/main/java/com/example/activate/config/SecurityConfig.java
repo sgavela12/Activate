@@ -46,13 +46,10 @@ public class SecurityConfig {
                     .loginProcessingUrl("/login")
                     .defaultSuccessUrl("/activate/perfil", true)
                     .permitAll())
-                .logout(logout -> logout
-                .logoutUrl("/activate/logout") // Establece la URL de logout
-                .logoutSuccessUrl("/activate/inicio") // Redirige a esta URL después del logout
-                .permitAll())
-            .httpBasic(Customizer.withDefaults());
-        http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/accessError"));
-        return http.build();
+                    .logout(logout -> logout.logoutSuccessUrl("/").permitAll());
+
+                    http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/sesion/error"));
+                    return http.build();
         }
         
 }
