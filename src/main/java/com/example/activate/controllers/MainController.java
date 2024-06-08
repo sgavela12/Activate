@@ -48,7 +48,9 @@ public String showHome(Model model, Principal principal) {
     public String showProfile(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUserName = authentication.getName();
-        String currentUserRole = authentication.getAuthorities().toString();
+        
+        Usuario usuario = usuarioDBServiceImpl.obtenerPorEmail(currentUserName);
+        model.addAttribute("usuario", usuario);
 
         return "views/perfil";
     }

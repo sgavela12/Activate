@@ -14,4 +14,8 @@ public interface UsuarioService {
     public Usuario editar(Usuario usuario);
 
     public void borrar(Long id);
+
+    public Usuario obtenerPorEmail(String email);
+
+
 }

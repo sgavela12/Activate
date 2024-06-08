@@ -43,6 +43,12 @@ public class UsuarioDBServiceImpl implements UsuarioService {
         return usuarioRepository.findById(id).orElse(null);
     }
 
+
+    @Override
+    public Usuario obtenerPorEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
+
     public Usuario editar(Usuario usuario) {
         String passCrypted = passwordEncoder.encode(usuario.getContraseña());
         usuario.setContraseña(passCrypted);
