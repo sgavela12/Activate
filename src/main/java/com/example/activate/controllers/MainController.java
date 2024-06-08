@@ -50,9 +50,6 @@ public String showHome(Model model, Principal principal) {
         String currentUserName = authentication.getName();
         String currentUserRole = authentication.getAuthorities().toString();
 
-        model.addAttribute("currentUserName", currentUserName);
-        model.addAttribute("currentUserRole", currentUserRole);
-
         return "views/perfil";
     }
 
