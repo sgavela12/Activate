@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/perfil.css" />
-    <link rel="stylesheet" href="/css/nav.css" /> 
+    <link rel="stylesheet" href="/css/nav.css" />
     <link rel="stylesheet" href="/css/footer.css" />
 
     <title>Actívate-Inicio</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-        <main>
-            <h1 id="titulo">Perfil</h1>
-            <h1><span th:text="${currentUserName}"></span></h1>
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Logout" />
-            </form>
+      <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+      <main>
+        <h1 id="titulo">Perfil</h1>
+        <h1><span th:text="${currentUserName}"></span></h1>
 
-            <!-- <li th:if="${currentUserName == null}"><a href="/activate/iniciarSesion"><button class="login-button" id="loginButton">Iniciar Sesión/Registrarse</button></a></li> -->
-        
-          
-            <h2 th:text="${mensajeRutina}"></h2>
-            <h2 th:text="${mensajeRutina}"></h2>
-
-        </main>
-        <footer th:replace="~{components/footer.html :: footer}"></footer>
+        <!-- <li th:if="${currentUserName == null}"><a href="/activate/iniciarSesion"><button class="login-button" id="loginButton">Iniciar Sesión/Registrarse</button></a></li> -->
+        <br>
+        <h2 th:text="${mensajeRutina}"></h2>
+        <br>
+        <h2 th:text="${mensajeRutina}"></h2>
+        <br />
+        <form th:action="@{/logout}" method="post">
+          <input id="cerrarSesion" type="submit" value="Logout" />
+        </form>
+      </main>
+      <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>
-</body>
+  </body>
 </html>
