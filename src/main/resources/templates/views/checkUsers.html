@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr,td,th{
+            border: solid 2px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Usuarios</h2>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Nombre Completo</th>
+            <th>email</th>
+            <th>fecha Nacimiento</th>
+        </tr>
+        <tr th:each="usuario:${usuarios}">
+        <td th:text="${usuario.id}">id</td>
+        <td th:text="${usuario.nombreCompleto}">nombre</td>
+        <td th:text="${usuario.email}">email@gmail.com</td>
+        <td th:text="${usuario.fechaNacimiento}">email@gmail.com</td>
+        </tr>
+       </table> 
+</body>
+</html>

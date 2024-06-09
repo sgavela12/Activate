@@ -91,9 +91,9 @@
       </div>
       <div id="mensajeRutinaResultante" th:if="${dieta != null}">
         La mejor rutina para ti es <span id="rutinaResultante" th:text="${dieta.descripcion}"></span>
-        <form th:action="@{'/activate/perfil/añadeRutina/' + ${dieta.id}}" method="post">
+        <form th:action="@{'/activate/perfil/añadeDieta/' + ${dieta.id}}" method="post">
             <input type="submit" value="Añadir como rutina">
-        </form>
+        </form>        
       </div>      
     </main>
     <!-- FOOTER -->

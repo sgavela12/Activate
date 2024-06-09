@@ -7,6 +7,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.activate.models.Dieta;
 import com.example.activate.models.Rol;
 import com.example.activate.models.Usuario;
 import com.example.activate.repositories.UsuarioRepository;
@@ -19,6 +20,9 @@ public class UsuarioDBServiceImpl implements UsuarioService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private DietaService dietaService;
 
     public Usuario añadir(Usuario usuario) {
         usuario.setRol(Rol.USUARIO);
@@ -45,6 +49,21 @@ public class UsuarioDBServiceImpl implements UsuarioService {
             return null;
         }
     }
+
+
+
+    public Usuario añadirDieta(Usuario usuario,Integer idDieta) {
+        Dieta dieta = dietaService.obtenerPorId(idDieta);
+        usuario.setDieta(dieta);
+        try {
+            return usuarioRepository.save(usuario);
+
+        } catch (DataIntegrityViolationException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
     @Override
     public List<Usuario> obtenerTodos() {

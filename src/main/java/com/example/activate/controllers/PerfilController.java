@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.activate.models.Dieta;
 import com.example.activate.models.Rutina;
@@ -108,5 +110,18 @@ public class PerfilController {
 
         return "forms/nuevaDieta";
     }
+
+
+    
+ @PostMapping("/perfil/añadeDieta/{id}")
+public String showRegistrarse(@PathVariable("id") int id) {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String currentUserName = authentication.getName();
+
+    Usuario usuario = usuarioDBServiceImpl.obtenerPorEmail(currentUserName);
+    usuarioDBServiceImpl.añadirDieta(usuario, id);
+
+    return "redirect:/activate/perfil";
+}
 
 }
