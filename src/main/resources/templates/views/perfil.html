@@ -16,7 +16,7 @@
         <h1 id="titulo">Perfil</h1>
         <h1><span th:text="${currentUserName}"></span></h1>
 
-        <!-- <li th:if="${currentUserName == null}"><a href="/activate/iniciarSesion"><button class="login-button" id="loginButton">Iniciar Sesión/Registrarse</button></a></li> -->
+        <li th:if="${dieta == null}"><a href="/activate/iniciarSesion"><button class="login-button" id="loginButton">No cuentas con ninguna dieta?</button></a></li>
         <br>
         <h2 th:text="${mensajeRutina}"></h2>
         <br>

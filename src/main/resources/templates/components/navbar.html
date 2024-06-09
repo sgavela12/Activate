@@ -35,9 +35,9 @@
       <li th:if="${currentUserName != null}" class="dropdown">
         <button class="login-button" id="userButton" th:text="${currentUserName}"></button>
         <div class="dropdown-content">
-          <a href="/activate/perfil" class="dropdown-button">Mi Perfil</a>
+          <a href="/activate/perfil" id="perfilNav" class="dropdown-button">Mi Perfil</a>
           <form th:action="@{/logout}" method="post">
-            <button class="login-button dropdown-button">Cerrar Sesión</button>
+            <button id="cerrarSesionNav" class="login-button dropdown-button">Cerrar Sesión</button>
           </form>
         </div>
       </li>
