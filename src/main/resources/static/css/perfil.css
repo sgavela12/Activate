@@ -1,13 +1,4 @@
-.noticias-container {
-    text-align: center;
-    margin-top: 20px;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px; /* Espacio pequeño entre contenedores */
-    color: #000d21;
-  }
-  
+
   .container {
     background-size: cover;
     background-position: center;

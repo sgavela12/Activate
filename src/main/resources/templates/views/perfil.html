@@ -18,37 +18,42 @@
         <div class="perfil-columnas">
           <div class="dietas-container container">
             <h2>Tu Dieta</h2>
+
+            
             <div class="tarjeta">
-            <section th:if="${dieta == null}">
-              <p>No cuentas con ninguna dieta.</p>
-              <a href="/activate/nuevaDieta"
-                >Elige la que más se adecue a ti.</a
-              >
-            </section>
-            <section th:if="${dieta != null}">
+            <a href="/activate/nuevaDieta" th:if="${dieta == null}">
+              <p>No cuentas con ninguna dieta.
+              <br>
+                Elige la que más se adecue a ti.
+              </p>
+            </a>
+            <a th:href="@{'/activate/servicios/dietas/' + ${dieta.id}}" th:if="${dieta != null}">
               <h2 th:text="${dieta.nombre}"></h2>
               <img th:src="@{${dieta.rutaImagen}}" alt="Imagen de Dieta" />
-            </section>
+            </a>
             </div>
+
+
+            
           </div>
           
           <div class="rutinas-container container">
             <h2>Tu Rutina</h2>
             <div class="tarjeta">
-            <section th:if="${rutina == null}">
-              <a href="/activate/perfil"
-                ><button class="login-button" id="loginButton">
-                  No cuentas con ninguna rutina?
-                </button></a
-              >
-            </section>
-            <section th:if="${rutina != null}">
+            <a href="/activate/nuevaRutina" th:if="${rutina == null}">
+              <p>No cuentas con ninguna rutina.
+                <br>
+                  Elige la que más se adecue a ti.
+                </p>
+                
+            </a>
+            <a  th:href="@{'/activate/servicios/rutinas/' + ${rutina.idRutina}}" th:if="${rutina != null}">
               <h2 th:text="${rutina.nombre}"></h2>
               <img
                 th:src="@{${rutina.rutaImagen}}"
-                alt="Imagen de Entrenador"
+                alt="Imagen de Rutina"
               />
-            </section>
+            </a>
           </div>
           </div>
         </div>
