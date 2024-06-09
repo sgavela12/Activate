@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.activate.models.CalculoCaloriasForm;
 import com.example.activate.models.Dieta;
 import com.example.activate.models.Rutina;
 import com.example.activate.models.Usuario;
+import com.example.activate.models.dtos.CalculoDietaForm;
+import com.example.activate.models.enums.TipoAlimento;
 import com.example.activate.service.CalcularKcalServiceImpl;
 import com.example.activate.service.DietaServiceImpl;
 import com.example.activate.service.RutinaServiceImpl;
@@ -64,35 +65,45 @@ public class PerfilController {
 
     @GetMapping("/nuevaDieta")
     public String showNuevaDieta(Model model) {
-        model.addAttribute("calculoCalorias", new CalculoCaloriasForm());
+        model.addAttribute("calculoCalorias", new CalculoDietaForm());
         return "forms/nuevaDieta";
     }
 
 
 
 
-    @PostMapping("servicios/nuevaDieta")
-    public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCaloriasForm calculoCaloriasForm,
+    @PostMapping("/nuevaDieta/enviar")
+    public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoDietaForm calculoDietaForm,
             BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "forms/nuevaDieta";
         }
 
         // Validación de datos de entrada
-        if (calculoCaloriasForm.getEdad() == 0 || calculoCaloriasForm.getPeso() == 0
-                || calculoCaloriasForm.getAltura() == 0) {
+        if (calculoDietaForm.getEdad() == 0 || calculoDietaForm.getPeso() == 0
+                || calculoDietaForm.getAltura() == 0) {
             model.addAttribute("mensajeError", "Por favor, introduzca datos válidos para edad, peso y altura.");
             return "forms/nuevaDieta";
         }
-
-        CalcularKcalServiceImpl.Sexo sexo = (calculoCaloriasForm.getSexo().equalsIgnoreCase("HOMBRE"))
+        
+        CalcularKcalServiceImpl.Sexo sexo = (calculoDietaForm.getSexo().equalsIgnoreCase("HOMBRE"))
                 ? CalcularKcalServiceImpl.Sexo.HOMBRE
                 : CalcularKcalServiceImpl.Sexo.MUJER;
         CalcularKcalServiceImpl.NivelActividad nivelActividad = CalcularKcalServiceImpl.NivelActividad
-                .valueOf(calculoCaloriasForm.getNivelActividad());
+                .valueOf(calculoDietaForm.getNivelActividad());
 
-        double calorias = calcularKcalService.calcularCalorias(sexo, calculoCaloriasForm.getEdad(),
-                calculoCaloriasForm.getPeso(), calculoCaloriasForm.getAltura(), nivelActividad);
+        double calorias = calcularKcalService.calcularCalorias(sexo, calculoDietaForm.getEdad(),
+                calculoDietaForm.getPeso(), calculoDietaForm.getAltura(), nivelActividad);
+
+
+        
+        TipoAlimento tipoDieta =  calcularKcalService.guardaTipoDieta(calculoDietaForm.getTipoDieta());
+
+
+        Dieta dietaCorrecta = dietaServiceImpl.calculaDieta(calorias, tipoDieta);
+
+        model.addAttribute("dieta", dietaCorrecta);
+        
         model.addAttribute("calculoCaloriasResultado", String.format("%.2f", calorias));
 
         return "forms/nuevaDieta";

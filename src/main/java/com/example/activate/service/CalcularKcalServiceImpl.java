@@ -2,6 +2,8 @@ package com.example.activate.service;
 
 import org.springframework.stereotype.Service;
 
+import com.example.activate.models.enums.TipoAlimento;
+
 @Service
 public class CalcularKcalServiceImpl implements CalcularKcalService {
 
@@ -49,4 +51,15 @@ public class CalcularKcalServiceImpl implements CalcularKcalService {
                 throw new IllegalArgumentException("Nivel de actividad no válido");
         }
     }
+
+    public TipoAlimento guardaTipoDieta(String respuesta) {
+        if (respuesta.equals("VEGANO")) {
+            return TipoAlimento.VEGANO;
+        } else if (respuesta.equals("VEGETARIANO")) {
+            return TipoAlimento.VEGETARIANO;
+        } else {
+            return TipoAlimento.CARNIVORO;
+        }
+    }
+
 }
