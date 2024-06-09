@@ -21,20 +21,20 @@ public class ActivateApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ActivateApplication.class, args);
 	}
-	// @Bean
-    // public CommandLineRunner agregarUsuario(UsuarioService usuarioService, PasswordEncoder passwordEncoder) {
-    //     return args -> {
-    //         // Crear un usuario con todos los campos
-    //         Usuario usuario = new Usuario();
+	@Bean
+    public CommandLineRunner agregarUsuario(UsuarioService usuarioService, PasswordEncoder passwordEncoder) {
+        return args -> {
+            // Crear un usuario con todos los campos
+            Usuario usuario = new Usuario();
            
-    //         usuario.setNombreCompleto("Admin");
-    //         usuario.setTelefono("123456789");
-    //         usuario.setEmail("admin@admin");
-    //         usuario.setFechaNacimiento(LocalDate.of(1990, Month.JANUARY, 1));
-    //         usuario.setContraseña("1234"); 
-    //         usuarioService.añadirAdmin(usuario);
-    //     };
+            usuario.setNombreCompleto("Admin");
+            usuario.setTelefono("123456789");
+            usuario.setEmail("admin@admin");
+            usuario.setFechaNacimiento(LocalDate.of(1990, Month.JANUARY, 1));
+            usuario.setContraseña("1234"); 
+            usuarioService.añadirAdmin(usuario);
+        };
 	
-	// }
+	}
 }
 	

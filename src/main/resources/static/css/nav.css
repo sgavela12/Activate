@@ -25,13 +25,14 @@ main {
 
 /* Navigation bar styles */
 nav {
+  padding-top: 20px;
   height: 4.5rem;
   width: 100vw;
   background-color: #131418;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  padding: 0 1vw; /* Adjust padding */
+ 
   position: fixed;
   z-index: 10;
 }
@@ -43,9 +44,9 @@ nav {
 }
 
 .logo img {
-  padding-top: 5vh;
-  height: 9rem;
-  width: 9rem;
+    padding-top: 4vh;
+    height: 9rem;
+    width: 9.5rem;
   margin-right: 2.5vw;
 }
 
@@ -95,8 +96,8 @@ nav {
   font-size: 1rem;
   cursor: pointer;
   color: #f2f5f7;
-  width: 160px; /* Fixed width */
   height: 50px; /* Fixed height */
+  margin: 5px;
 }
 
 .login-button:hover {
@@ -104,7 +105,6 @@ nav {
   background-color: #ffd600;
   transition: all ease-in-out 350ms;
 }
-
 
 /* Styling for hamburger icon */
 .hamburger div {
