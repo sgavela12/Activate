@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+        <main>
+            <h1 id="titulo">Funciones Admin</h1>
+            <h2>Usuarios</h2>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre Completo</th>
+                    <th>email</th>
+                    <th>fecha Nacimiento</th>
+                </tr>
+                <tr th:each="usuario:${usuarios}">
+                <td th:text="${usuario.id}">id</td>
+                <td th:text="${usuario.nombreCompleto}">nombre</td>
+                <td th:text="${usuario.email}">email@gmail.com</td>
+                <td th:text="${usuario.fechaNacimiento}">email@gmail.com</td>
+                </tr>
+               </table> 
+        </main>
+        <footer th:replace="~{components/footer.html :: footer}"></footer>
+    </div>
+</body>
+</html>

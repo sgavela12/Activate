@@ -36,7 +36,7 @@ public class SecurityConfig {
             http.authorizeHttpRequests(auth -> auth
 
                     .requestMatchers("/activate/perfil").hasAnyRole("USUARIO","ADMIN")
-                    .requestMatchers("/activate/check").hasAnyRole("ADMIN")
+                    .requestMatchers("/activate/admin").hasAnyRole("ADMIN")
                     .requestMatchers("/activate/**").permitAll()
 
                     .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()

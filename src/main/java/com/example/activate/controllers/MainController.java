@@ -146,11 +146,5 @@ public String calcularKcal(@ModelAttribute("calculoCalorias") @Valid CalculoCalo
     public String showError() {
         return "views/error";
     }
-
-
-    @GetMapping("/check")
-    public String checkUsers(Model model) {
-        model.addAttribute("usuarios", usuarioDBServiceImpl.obtenerTodos());
-        return "views/checkUsers";
-    }
+   
 }

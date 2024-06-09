@@ -16,14 +16,11 @@
       <li class="opciones"><a href="/activate/servicios" class="nav-link" data-route="/activate/servicios">Servicios</a></li>
       <li class="opciones"><a href="/activate/contacto" class="nav-link" data-route="/activate/contacto">Contacto</a></li>
 
-      <!-- Mostrar el enlace de administrador si el primer rol del usuario es 'ADMIN' -->
-      <li th:if="${currentUserRoles != null and #lists.size(currentUserRoles) > 0 and currentUserRoles[0] == 'ADMIN'}">
-        <a href="/activate/admin" class="nav-link" data-route="/activate/admin">Admin</a>
-      </li>
+    
 
       <!-- Mostrar el botón de rol si el usuario tiene roles -->
       <li th:if="${currentUserRoles != null and currentUserRoles[0] == 'ROLE_ADMIN'}">
-        <a href="/activate/perfil"><button class="login-button" id="roleButton" th:text="${currentUserRoles[0]}">Rol</button></a>
+        <a href="/activate/admin"><button class="login-button" id="roleButton" th:text="${currentUserRoles[0]}">Rol</button></a>
       </li> 
 
       <!-- Mostrar botón de iniciar sesión si el usuario no está autenticado -->
