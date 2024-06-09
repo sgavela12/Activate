@@ -1,103 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Actívate-Servicios</title>
-  <link rel="stylesheet" href="/css/nav.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/calculadora.css" />
-  <link rel="stylesheet" href="/css/nuevaDieta.css" />
-</head>
-<body>
-  <div class="wrapper">
-    <!-- NAV -->
-    <nav th:replace="~{components/navbar.html :: navBar}"></nav>
-    <!-- ------------------------ -->
-    <!-- CUERPO DE PAGINA -->
-    <main>
-      <h2 id="titulo">Rellena tus Datos</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actívate-Servicios</title>
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/calculadora.css" />
+    <link rel="stylesheet" href="/css/nuevaDieta.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- NAV -->
+      <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+      <!-- ------------------------ -->
+      <!-- CUERPO DE PAGINA -->
+      <main>
+        <h2 id="titulo">Rellena tus Datos</h2>
 
-      <div class="form-container">
-        <form
-          class="form"
-          th:action="@{/activate/nuevaDieta/enviar}"
-          th:object="${calculoCalorias}"
-          method="post"
-        >
-          <div class="form-group">
-            <label>Sexo:</label>
-            <select th:field="*{sexo}">
-              <option value="HOMBRE">Hombre</option>
-              <option value="MUJER">Mujer</option>
-            </select>
-          </div>
-          <br />
-          <div class="form-group">
-            <label>Edad:</label>
-            <input type="number" th:field="*{edad}" required />
-          </div>
-          <br />
-          <div class="form-group">
-            <label>Peso (kg):</label>
-            <input type="number" step="0.01" th:field="*{peso}" required />
-          </div>
-          <br />
-          <div class="form-group">
-            <label>Altura (cm):</label>
-            <input type="number" step="0.01" th:field="*{altura}" required />
-          </div>
-          <br />
-          <div class="form-group">
-            <label>Nivel de actividad:</label>
-            <select th:field="*{nivelActividad}">
-              <option value="SEDENTARIO">Sedentario</option>
-              <option value="LIGERO">Ligero</option>
-              <option value="MODERADO">Moderado</option>
-              <option value="ACTIVO">Activo</option>
-              <option value="MUY_ACTIVO">Muy Activo</option>
-            </select>
-          </div>
-          <br />
-          <div class="form-group">
-            <label>Tipo de Dieta:</label>
-            <select th:field="*{tipoDieta}">
-              <option value="CARNIVORO">Omnívora</option>
-              <option value="VEGETARIANO">Vegetariana</option>
-              <option value="VEGANO">Vegana</option>             
-            </select>
-          </div>
-          <br />
-          <button class="form-submit-btn" type="submit">Calcular</button>
+        <div class="form-container">
+          <form
+            class="form"
+            th:action="@{/activate/nuevaDieta/enviar}"
+            th:object="${calculoCalorias}"
+            method="post"
+          >
+            <div class="form-group">
+              <label>Sexo:</label>
+              <select th:field="*{sexo}">
+                <option value="HOMBRE">Hombre</option>
+                <option value="MUJER">Mujer</option>
+              </select>
+            </div>
+            <br />
+            <div class="form-group">
+              <label>Edad:</label>
+              <input type="number" th:field="*{edad}" required />
+            </div>
+            <br />
+            <div class="form-group">
+              <label>Peso (kg):</label>
+              <input type="number" step="0.01" th:field="*{peso}" required />
+            </div>
+            <br />
+            <div class="form-group">
+              <label>Altura (cm):</label>
+              <input type="number" step="0.01" th:field="*{altura}" required />
+            </div>
+            <br />
+            <div class="form-group">
+              <label>Nivel de actividad:</label>
+              <select th:field="*{nivelActividad}">
+                <option value="SEDENTARIO">Sedentario</option>
+                <option value="LIGERO">Ligero</option>
+                <option value="MODERADO">Moderado</option>
+                <option value="ACTIVO">Activo</option>
+                <option value="MUY_ACTIVO">Muy Activo</option>
+              </select>
+            </div>
+            <br />
+            <div class="form-group">
+              <label>Tipo de Dieta:</label>
+              <select th:field="*{tipoDieta}">
+                <option value="CARNIVORO">Omnívora</option>
+                <option value="VEGETARIANO">Vegetariana</option>
+                <option value="VEGANO">Vegana</option>
+              </select>
+            </div>
+            <br />
+            <button class="form-submit-btn" type="submit">Calcular</button>
 
-          <div th:if="${calculoCaloriasResultado != null}">
-            <h3 id="resultado">
-              Necesitas consumir aproximadamente
-              <u th:text="${calculoCaloriasResultado}"></u> calorías al día
-              para tu mantenimiento.
-            </h3>
-          </div>
+            <div th:if="${calculoCaloriasResultado != null}">
+              <h3 id="resultado">
+                Necesitas consumir aproximadamente
+                <u th:text="${calculoCaloriasResultado}"></u> calorías al día
+                para tu mantenimiento.
+              </h3>
+            </div>
 
-          
-
-          <!-- Mensaje de error -->
-          <div th:if="${mensajeError != null}" class="error-message">
-            <p id="error" th:text="${mensajeError}"></p>
-          </div>
-          <!-- Fin mensaje de error -->
-        </form>
-        
-        
-      </div>
-      <div id="mensajeRutinaResultante" th:if="${dieta != null}">
-        La mejor rutina para ti es <span id="rutinaResultante" th:text="${dieta.descripcion}"></span>
-        <form th:action="@{'/activate/perfil/añadeDieta/' + ${dieta.id}}" method="post">
-            <input type="submit" value="Añadir como rutina">
-        </form>        
-      </div>      
-    </main>
-    <!-- FOOTER -->
-    <footer th:replace="~{components/footer.html :: footer}"></footer>
-  </div>
-</body>
+            <!-- Mensaje de error -->
+            <div th:if="${mensajeError != null}" class="error-message">
+              <p id="error" th:text="${mensajeError}"></p>
+            </div>
+            <!-- Fin mensaje de error -->
+          </form>
+        </div>
+        <div id="mensajeRutinaResultante" th:if="${dieta != null}">
+          La mejor rutina para ti es
+          <span id="rutinaResultante" th:text="${dieta.descripcion}"></span>
+          <form
+            th:action="@{'/activate/perfil/añadeDieta/' + ${dieta.id}}"
+            method="post"
+          >
+            <input
+              class="styled-button"
+              type="submit"
+              value="Añadir como rutina"
+            />
+          </form>
+        </div>
+      </main>
+      <!-- FOOTER -->
+      <footer th:replace="~{components/footer.html :: footer}"></footer>
+    </div>
+  </body>
 </html>

@@ -19,39 +19,63 @@
           <div class="dietas-container container">
             <h2>Tu Dieta</h2>
 
-            
             <div class="tarjeta">
-            <a href="/activate/nuevaDieta" th:if="${dieta == null}">
-              <p>No cuentas con ninguna dieta.
-              <br>
-                Elige la que más se adecue a ti.
-              </p>
-            </a>
-            <a th:href="@{'/activate/servicios/dietas/' + ${dieta.id}}" th:if="${dieta != null}">
-              <h2 th:text="${dieta.descripcion}"></h2>
-              <img th:src="@{${dieta.rutaImagen}}" alt="Imagen de Dieta" />
-            </a>
+              <a href="/activate/nuevaDieta" th:if="${dieta == null}">
+                <p>
+                  No cuentas con ninguna dieta.
+                  <br />
+                  Elige la que más se adecue a ti.
+                </p>
+              </a>
+
+              <a
+                th:href="@{'/activate/servicios/dietas/' + ${dieta.id}}"
+                th:if="${dieta != null}"
+              >
+                <h2 th:text="${dieta.descripcion}"></h2>
+                <img th:src="@{${dieta.rutaImagen}}" alt="Imagen de Dieta" />
+                <p id="calorias">
+                  <strong>Calorías Totales:</strong>
+                  <span th:text="${dieta.caloriasTotales}">0</span>
+                </p>
+                <p id="tipo">
+                  <strong>Tipo de Dieta:</strong>
+                  <span th:text="${dieta.tipoAlimento}">Tipo</span>
+                </p>
+              </a>
             </div>
+            <br />
+            <a th:if="${dieta != null}" href="/activate/nuevaDieta"></a>
+              Calcula de nuevo tu Dieta</a
+            >
           </div>
-          
+
           <div class="rutinas-container container">
             <h2>Tu Rutina</h2>
             <div class="tarjeta">
-            <a href="/activate/nuevaRutina" th:if="${rutina == null}">
-              <p>No cuentas con ninguna rutina.
-                <br>
+              <a href="/activate/nuevaRutina" th:if="${rutina == null}">
+                <p>
+                  No cuentas con ninguna rutina.
+                  <br />
                   Elige la que más se adecue a ti.
                 </p>
-                
-            </a>
-            <a  th:href="@{'/activate/servicios/rutinas/' + ${rutina.idRutina}}" th:if="${rutina != null}">
-              <h2 th:text="${rutina.nombre}"></h2>
-              <img
-                th:src="@{${rutina.rutaImagen}}"
-                alt="Imagen de Rutina"
-              />
-            </a>
-          </div>
+              </a>
+              <a
+                th:href="@{'/activate/servicios/rutinas/' + ${rutina.idRutina}}"
+                th:if="${rutina != null}"
+              >
+                <h2 th:text="${rutina.nombre}"></h2>
+                <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina" />
+                <p id="calorias">
+                  <strong>Duración:</strong>
+                  <span th:text="${rutina.duracion}">0</span>
+                </p>
+                <p id="tipo">
+                  <strong>Tipo de Rutina:</strong>
+                  <span th:text="${rutina.tipoRutina}">Tipo</span>
+                </p>
+              </a>
+            </div>
           </div>
         </div>
         <br />

@@ -8,9 +8,11 @@
     border-radius: 10px; /* Esquinas redondeadas */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-decoration: none;
+
+
   }
+
+  
   
   main {
     display: flex;
@@ -156,3 +158,9 @@
     color: #000000;
     text-decoration: none;
   }
+
+
+  #tipo *, #calorias *{
+    color:#000000 ;
+  }
+
