@@ -17,7 +17,7 @@
         <h1><span th:text="${currentUserName}"></span></h1>
 
      
-        <section th:if="${dieta == null}"><p>No cuentas con ninguna dieta.</p><a href="/activate/perfil">Elige la que mas se edecue a ti.</a></section>
+        <section th:if="${dieta == null}"><p>No cuentas con ninguna dieta.</p><a href="/activate/nuevaDieta">Elige la que mas se edecue a ti.</a></section>
         <section th:if="${dieta != null}"><h2 th:text="${rutina.nombre}"></h2></section>
         <br>
         <section th:if="${rutina == null}"><a href="/activate/perfil"><button class="login-button" id="loginButton">No cuentas con ninguna rutina?</button></a></section>
