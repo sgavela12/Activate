@@ -27,7 +27,7 @@
 
 
 .noticia {
-    background-image: url("../img/Activate.gif");
+    background-image: url("../images/Activate.gif");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
@@ -35,7 +35,7 @@
     margin-right: 2.5vw;
     border-radius: 10px;
     display: none;
-    height: 30%;
+    height: 30vh;
     margin-top: 1%;
 }
 

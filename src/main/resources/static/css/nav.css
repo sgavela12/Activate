@@ -19,7 +19,7 @@ body {
     font-weight: 300;
 }
 
-main{
+main {
     padding-top: 9vh;
 }
 
@@ -94,6 +94,7 @@ nav {
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
     cursor: pointer;
+    color: #f2f5f7;
 }
 
 .login-button:hover {
@@ -225,15 +226,16 @@ nav {
 
 *, *::before, *::after {
     box-sizing: border-box;
-  }
-  .nav-links li a.active {
+}
+
+.nav-links li a.active {
     color: #FFD600; /* Color amarillo */
-  }
-  
-  .nav-links li a {
+}
+
+.nav-links li a {
     color: #fff; /* Color blanco para los enlaces no activos */
-  }
-  
+}
+
 /* Existing styles for login button */
 .login-button {
     background-color: transparent;
@@ -264,7 +266,53 @@ nav {
     background-color: transparent;
     border: 1.5px solid #f2f5f7;
 }
+
 #titulo {
     text-align: center;
     margin-bottom: 7vh;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #131418; /* Fondo del menú desplegable */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Estilo para "Mi Perfil" */
+.dropdown-content a.perfil {
+    color: white;
+}
+
+/* Estilo para "Cerrar Sesión" */
+.dropdown-content a.cerrar-sesion {
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #f2f5f7;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

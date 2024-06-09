@@ -15,7 +15,7 @@
       <li><a href="/activate/perfil" class="nav-link" data-route="/activate/perfil">Perfil</a></li>
       <li><a href="/activate/servicios" class="nav-link" data-route="/activate/servicios">Servicios</a></li>
       <li><a href="/activate/contacto" class="nav-link" data-route="/activate/contacto">Contacto</a></li>
-      
+
       <!-- Mostrar el enlace de administrador si el primer rol del usuario es 'ADMIN' -->
       <li th:if="${currentUserRoles != null and #lists.size(currentUserRoles) > 0 and currentUserRoles[0] == 'ADMIN'}">
         <a href="/activate/admin" class="nav-link" data-route="/activate/admin">Admin</a>
@@ -23,7 +23,7 @@
 
       <!-- Mostrar el botón de rol si el usuario tiene roles -->
       <li th:if="${currentUserRoles != null and #lists.size(currentUserRoles) > 0}">
-        <a href="/activate/perfil"><button class="login-button" id="loginButton" th:text="${currentUserRoles[0]}">Rol</button></a>
+        <a href="/activate/perfil"><button class="login-button" id="roleButton" th:text="${currentUserRoles[0]}">Rol</button></a>
       </li> 
 
       <!-- Mostrar botón de iniciar sesión si el usuario no está autenticado -->
@@ -32,8 +32,14 @@
       </li>
 
       <!-- Mostrar botón de cerrar sesión si el usuario está autenticado -->
-      <li th:if="${currentUserName != null}">
-        <a href="/logout"><button class="login-button" id="loginButton" th:text="${currentUserName}">Cerrar Sesión</button></a>
+      <li th:if="${currentUserName != null}" class="dropdown">
+        <button class="login-button" id="userButton" th:text="${currentUserName}"></button>
+        <div class="dropdown-content">
+          <a href="/activate/perfil" class="dropdown-button">Mi Perfil</a>
+          <form th:action="@{/logout}" method="post">
+            <button class="login-button dropdown-button">Cerrar Sesión</button>
+          </form>
+        </div>
       </li>
     </ul>
   </nav>
