@@ -112,10 +112,6 @@ INSERT INTO alimento (nombre, calorias, proteinas, hidratos, grasas, tipo_alimen
 ('Caballa', 220, 25, 0, 10, 'CARNIVORO');
 
 
-
-
-
-
 INSERT INTO dieta ( calorias_totales, tipo_alimento, descripcion, ruta_imagen) VALUES
 ( 1800, 'VEGANO', 'Energía Vegana', '/images/dietas/energiaVegana.jpg'),
 ( 2000, 'VEGANO', 'Vitalidad Verde', '/images/dietas/vitalidadVerde.jpg'),

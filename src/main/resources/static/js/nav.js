@@ -30,9 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Check if the current path is the login page
   if (currentPath === '/activate/iniciarSesion') {
     loginButton.classList.add('active');
-  } else {
-    loginButton.classList.remove('active');
-  }
+  } 
 });
 
 // JavaScript for dropdown menu
