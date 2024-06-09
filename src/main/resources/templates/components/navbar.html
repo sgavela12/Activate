@@ -22,7 +22,7 @@
       </li>
 
       <!-- Mostrar el botón de rol si el usuario tiene roles -->
-      <li th:if="${currentUserRoles != null and #lists.size(currentUserRoles) > 0}">
+      <li th:if="${currentUserRoles != null and currentUserRoles[0] == 'ROLE_ADMIN'}">
         <a href="/activate/perfil"><button class="login-button" id="roleButton" th:text="${currentUserRoles[0]}">Rol</button></a>
       </li> 
 
