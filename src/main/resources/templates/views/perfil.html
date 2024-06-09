@@ -16,12 +16,12 @@
         <h1 id="titulo">Perfil</h1>
         <h1><span th:text="${currentUserName}"></span></h1>
 
-        <li th:if="${dieta == null}"><a href="/activate/iniciarSesion"><button class="login-button" id="loginButton">No cuentas con ninguna dieta?</button></a></li>
+     
+        <section th:if="${dieta == null}"><p>No cuentas con ninguna dieta.</p><a href="/activate/perfil">Elige la que mas se edecue a ti.</a></section>
+        <section th:if="${dieta != null}"><h2 th:text="${rutina.nombre}"></h2></section>
         <br>
-        <h2 th:text="${mensajeRutina}"></h2>
-        <br>
-        <h2 th:text="${mensajeRutina}"></h2>
-        <br />
+        <section th:if="${rutina == null}"><a href="/activate/perfil"><button class="login-button" id="loginButton">No cuentas con ninguna rutina?</button></a></section>
+        <section th:if="${rutina != null}"><h2 th:text="${rutina.nombre}"></h2></section>
         <form th:action="@{/logout}" method="post">
           <input id="cerrarSesion" type="submit" value="Logout" />
         </form>
