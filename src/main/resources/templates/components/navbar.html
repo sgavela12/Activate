@@ -2,7 +2,7 @@
   <nav>
     <div class="logo" style="display: flex;align-items: center;">
       <a href="/activate/inicio">
-        <img id="logo" src="/images/logo.png" alt="Logo de la aplicación" />
+        <img  id="logo" src="/images/logo.png" alt="Logo de la aplicación" />
       </a>
     </div>
     <div class="hamburger">
@@ -11,10 +11,10 @@
       <div class="line3"></div>
     </div>
     <ul class="nav-links">
-      <li><a href="/activate/inicio" class="nav-link" data-route="/activate/inicio">Inicio</a></li>
-      <li><a href="/activate/perfil" class="nav-link" data-route="/activate/perfil">Perfil</a></li>
-      <li><a href="/activate/servicios" class="nav-link" data-route="/activate/servicios">Servicios</a></li>
-      <li><a href="/activate/contacto" class="nav-link" data-route="/activate/contacto">Contacto</a></li>
+      <li class="opciones"><a href="/activate/inicio" class="nav-link" data-route="/activate/inicio">Inicio</a></li>
+      <li class="opciones"><a href="/activate/perfil" class="nav-link" data-route="/activate/perfil">Perfil</a></li>
+      <li class="opciones"><a href="/activate/servicios" class="nav-link" data-route="/activate/servicios">Servicios</a></li>
+      <li class="opciones"><a href="/activate/contacto" class="nav-link" data-route="/activate/contacto">Contacto</a></li>
 
       <!-- Mostrar el enlace de administrador si el primer rol del usuario es 'ADMIN' -->
       <li th:if="${currentUserRoles != null and #lists.size(currentUserRoles) > 0 and currentUserRoles[0] == 'ADMIN'}">

@@ -25,7 +25,6 @@ main {
 
 /* Navigation bar styles */
 nav {
-  padding-top: 20px;
   height: 4.5rem;
   width: 100vw;
   background-color: #131418;
@@ -37,6 +36,10 @@ nav {
   z-index: 10;
 }
 
+.opciones{
+    padding-top: 15px;
+}
+
 /* Logo styles */
 .logo {
   text-align: center;
@@ -44,10 +47,10 @@ nav {
 }
 
 .logo img {
-    padding-top: 4vh;
+    padding-top: 5.2vh;
     height: 9rem;
-    width: 9.5rem;
-  margin-right: 2.5vw;
+    width: 9rem;
+    margin-right: 2.5vw;
 }
 
 /* Navigation links styles */
