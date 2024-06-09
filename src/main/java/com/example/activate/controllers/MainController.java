@@ -39,11 +39,7 @@ public class MainController {
     @Autowired
     private UsuarioDBServiceImpl usuarioDBServiceImpl;
 
-    @Autowired
-    private RutinaServiceImpl rutinaServiceImpl;
 
-    @Autowired
-    private DietaServiceImpl dietaServiceImpl;
 
  @GetMapping("/inicio")
 public String showHome(Model model, Principal principal) {
