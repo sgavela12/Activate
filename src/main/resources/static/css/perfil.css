@@ -148,3 +148,21 @@ main{
     color: #FFD600;
     box-shadow: 0 8px 24px 0 (16,39,112,.2);
 }
+
+.perfil-columnas {
+    display: flex;
+    justify-content: space-between; /* Para distribuir los contenedores a lo largo del eje principal (horizontal) */
+}
+
+.container {
+    flex-basis: 48%; /* Ancho máximo de los contenedores */
+    margin: 0; /* Eliminar el margen para que los contenedores estén pegados */
+}
+
+.dietas-container {
+    background-color: #2B2E38; /* Color de fondo para diferenciar */
+}
+
+.rutinas-container {
+    background-color: #131418; /* Color de fondo para diferenciar */
+}
