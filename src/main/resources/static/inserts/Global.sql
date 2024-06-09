@@ -117,21 +117,21 @@ INSERT INTO alimento (nombre, calorias, proteinas, hidratos, grasas, tipo_alimen
 
 
 INSERT INTO dieta ( calorias_totales, tipo_alimento, descripcion, ruta_imagen) VALUES
-( 2000, 'VEGANO', 'Energía Vegana', '/images/dietas/energiaVegana.jpg'),
-( 1800, 'VEGANO', 'Vitalidad Verde', '/images/dietas/vitalidadVerde.jpg'),
+( 1800, 'VEGANO', 'Energía Vegana', '/images/dietas/energiaVegana.jpg'),
+( 2000, 'VEGANO', 'Vitalidad Verde', '/images/dietas/vitalidadVerde.jpg'),
 ( 2200, 'VEGANO', 'Fuerza Plant-Based', '/images/dietas/fuerzaPlantBased.jpg'),
-( 2100, 'VEGETARIANO', 'Rendimiento Vegetariano', '/images/dietas/rendimientoVegetariano.jpg'),
-( 1900, 'VEGETARIANO', 'Salud Vegetariana', '/images/dietas/saludVegetariana.jpg'),
-( 2300, 'VEGETARIANO', 'Nutrición Verdadera', '/images/dietas/nutricionVerdadera.jpg'),
-( 2500, 'CARNIVORO', 'Potencia Proteica', '/images/dietas/potenciaProteica.jpg'),
+( 1800, 'VEGETARIANO', 'Rendimiento Vegetariano', '/images/dietas/rendimientoVegetariano.jpg'),
+( 2000, 'VEGETARIANO', 'Salud Vegetariana', '/images/dietas/saludVegetariana.jpg'),
+( 2200, 'VEGETARIANO', 'Nutrición Verdadera', '/images/dietas/nutricionVerdadera.jpg'),
+( 1900, 'CARNIVORO', 'Potencia Proteica', '/images/dietas/potenciaProteica.jpg'),
 ( 2400, 'CARNIVORO', 'Energía Carnívora', '/images/dietas/energiaCarnivora.jpg'),
-( 2600, 'CARNIVORO', 'Fuerza Animal', '/images/dietas/fuerzaAnimal.jpg'),
-( 2000, 'VEGANO', 'Equilibrio Vegano', '/images/dietas/equilibrioVegano.jpg'),
-( 1800, 'VEGANO', 'Esencia Vegana', '/images/dietas/esenciaVegana.jpg'),
-( 2200, 'VEGANO', 'Poder Plant-Based', '/images/dietas/poderPlantBased.jpg'),
-( 2100, 'VEGETARIANO', 'Bienestar Vegetariano', '/images/dietas/bienestarVegetariano.jpg'),
-( 1900, 'VEGETARIANO', 'Equilibrio Vegetariano', '/images/dietas/equilibrioVegetariano.jpg'),
-( 2300, 'VEGETARIANO', 'Frescura Vegetariana', '/images/dietas/frescuraVegetariana.jpg');
+( 2900, 'CARNIVORO', 'Fuerza Animal', '/images/dietas/fuerzaAnimal.jpg'),
+( 2400, 'VEGANO', 'Equilibrio Vegano', '/images/dietas/equilibrioVegano.jpg'),
+( 2600, 'VEGANO', 'Esencia Vegana', '/images/dietas/esenciaVegana.jpg'),
+( 2900, 'VEGANO', 'Poder Plant-Based', '/images/dietas/poderPlantBased.jpg'),
+( 2400, 'VEGETARIANO', 'Bienestar Vegetariano', '/images/dietas/bienestarVegetariano.jpg'),
+( 2600, 'VEGETARIANO', 'Equilibrio Vegetariano', '/images/dietas/equilibrioVegetariano.jpg'),
+( 2900, 'VEGETARIANO', 'Frescura Vegetariana', '/images/dietas/frescuraVegetariana.jpg');
 
 
 
