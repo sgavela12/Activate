@@ -1,75 +1,94 @@
-/* rutinaDetalles.css */
-
-
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-}
-
-nav ul {
-    list-style-type: none;
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #1f2029;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.7;
 }
 
-nav li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
+/* Main styles */
 main {
-    flex: 1;
+    padding-top: 9vh;
 }
 
-h1 {
+/* Title styles */
+#titulo {
     text-align: center;
+    margin-bottom: 7vh;
 }
 
+/* Detail container styles */
 .detalle-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Cambiamos la dirección a columna para apilar los elementos */
     align-items: center;
-    margin-top: 20px;
-}
-
-img {
-    width: 300px;
-    height: auto;
-    margin-right: 20px;
+    margin-bottom: 5rem;
 }
 
 .detalle-content {
-    max-width: 500px;
+    background-color: #131418;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 2vh;
+    width: 90%;
 }
 
-p {
-    margin: 5px 0;
+.detalle-content img {
+    max-width: 100%; /* Ajustamos el ancho máximo de la imagen */
+    height: auto; /* Permitimos que la altura se ajuste automáticamente */
+    border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
-ul {
-    margin-top: 10px;
+.detalle-content h1 {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-li {
-    margin-bottom: 5px;
+.detalle-content p {
+    margin-bottom: 0.5rem;
 }
 
+.detalle-content table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+}
+
+.detalle-content th,
+.detalle-content td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+}
+
+.detalle-content th {
+    background-color: #131418;
+    color: #ffd600;
+}
+
+.detalle-content tbody tr:nth-child(even) {
+    background-color: #2B2E38;
+}
+
+.detalle-content tbody tr:hover {
+    background-color: #3b3e4a;
+}
+
+.primeraLinea{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas de igual ancho */
+    grid-gap: 10px; 
+}
+
+.primeraLinea section {
+    display: flex;
+    flex-direction: column; /* Para que los elementos estén en columnas */
+    justify-content: center; /* Para centrar verticalmente */
+    align-items: center; /* Para centrar horizontalmente */
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+}

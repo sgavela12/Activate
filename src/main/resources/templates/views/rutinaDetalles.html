@@ -12,16 +12,21 @@
             <nav th:replace="~{components/navbar.html :: navBar}"></nav>
         </header>
         <main>
-            <h1 id="titulo" th:text="${rutina.nombre}">Nombre de la Rutina</h1>
             <div class="detalle-container">
-                <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
+                
                 <div class="detalle-content">
-                    <h2 th:text="${rutina.nombre}">Duración</h2>
+                    <h1 th:text="${rutina.nombre}">Duración</h1>
+                    <div class="primeraLinea">
+                        <section>
+                    <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
+                    </section>
+                    <section>
                     <p>Duración: <span th:text="${rutina.duracion}">Duración</span> minutos</p>
                     <p>Tipo de Rutina: <span th:text="${rutina.tipoRutina}">Tipo</span></p>
                     <p>Frecuencia: <span th:text="${rutina.frecuencia}">Frecuencia</span> veces por semana</p>
                     <p>Descripción: <span th:text="${rutina.descripcion}"></span></p>
-                    
+                </section>
+                    </div>
                     <h3>Ejercicios</h3>
                     <table>
                         <thead>
