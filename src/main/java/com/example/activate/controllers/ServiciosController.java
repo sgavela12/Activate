@@ -1,6 +1,9 @@
 package com.example.activate.controllers;
 
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,15 +49,20 @@ public class ServiciosController {
 
     @GetMapping("/activate/servicios/rutinas/{idRutina}")
     public String mostrarDetalleRutina(@PathVariable Long idRutina, Model model) {
-        Rutina rutina = rutinaRepository.findById(idRutina)
-                .orElseThrow(() -> new IllegalArgumentException("Rutina no encontrada: " + idRutina));
-        List<Ejercicio> ejercicios = rutinaRepository.findEjerciciosByRutinaId(idRutina);
+       Rutina rutina = rutinaRepository.findById(idRutina)
+            .orElseThrow(() -> new IllegalArgumentException("Rutina no encontrada: " + idRutina));
+    List<Ejercicio> ejercicios = rutinaRepository.findEjerciciosByRutinaId(idRutina);
+    List<RutinaEjercicio> rutinaEjercicio = rutinaEjercicioService.getRutinaEjerciciosByRutinaId(idRutina);
 
-        List<RutinaEjercicio> rutinaEjercicio = rutinaEjercicioService.getRutinaEjerciciosByRutinaId(idRutina);
+    // Obtener la lista de días únicos
+    Set<String> dias = rutinaEjercicio.stream()
+        .map(RutinaEjercicio::getDia)
+        .collect(Collectors.toCollection(LinkedHashSet::new)); // LinkedHashSet para mantener el orden
 
-        model.addAttribute("rutinaEjercicio", rutinaEjercicio);
-        model.addAttribute("rutina", rutina);
-        model.addAttribute("ejercicios", ejercicios);
-        return "/views/rutinaDetalles";
+    model.addAttribute("rutinaEjercicio", rutinaEjercicio);
+    model.addAttribute("rutina", rutina);
+    model.addAttribute("ejercicios", ejercicios);
+    model.addAttribute("dias", dias);
+    return "/views/rutinaDetalles";
     }
 }
