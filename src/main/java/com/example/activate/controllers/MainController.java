@@ -3,8 +3,6 @@ package com.example.activate.controllers;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,13 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.activate.models.CalculoCaloriasForm;
-import com.example.activate.models.Dieta;
-import com.example.activate.models.Rutina;
 import com.example.activate.models.Usuario;
 import com.example.activate.service.ActivateService;
 import com.example.activate.service.CalcularKcalServiceImpl;
-import com.example.activate.service.DietaServiceImpl;
-import com.example.activate.service.RutinaServiceImpl;
 import com.example.activate.service.UsuarioDBServiceImpl;
 
 import jakarta.validation.Valid;
