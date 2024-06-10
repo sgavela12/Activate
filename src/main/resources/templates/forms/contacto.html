@@ -14,8 +14,8 @@
         <nav th:replace="~{components/navbar.html :: navBar}"></nav>
         <main>
             <h1 id="titulo">Contacto</h1>
-
-            <form action="#" method="POST">
+            <section class="tarjeta">
+            <form class="contactForm" action="#" method="POST">
                 <div class="form-group">
                   <label for="name">Nombre:</label>
                   <input type="text" id="name" name="name" required>
@@ -30,6 +30,7 @@
                 </div>
                 <button type="submit">Enviar Mensaje</button>
               </form>
+            </section>
         </main>
         <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>

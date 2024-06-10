@@ -1,13 +1,16 @@
 #mensajeRutinaResultante {
     color: white;
     font-size: 1.2em; /* Ajusta el tamaño de la fuente según tu preferencia */
-    margin-top: 20px; /* Ajusta el espacio superior según tu preferencia */
     text-align: center; /* Centra el mensaje */
     background-color: #333; /* Color de fondo para resaltar el mensaje */
     padding: 10px; /* Espacio interno para mayor separación */
     border-radius: 5px; /* Bordes redondeados */
-    margin-left: auto; /* Centra horizontalmente */
-    margin-right: auto; /* Centra horizontalmente */
+
+    margin-bottom: 3vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 2vw;
+    padding: 20px;
 }
 
 
@@ -31,3 +34,14 @@
     color: black;
 }
 
+#imagenDietaResultante{
+    height: 30vh;
+}
+
+#resultado{
+    color: rgb(255, 255, 255);
+}
+
+#resultado *{
+    color: #ffcc00;
+}

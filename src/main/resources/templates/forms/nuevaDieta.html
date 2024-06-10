@@ -16,8 +16,39 @@
       <!-- ------------------------ -->
       <!-- CUERPO DE PAGINA -->
       <main>
+        <div id="mensajeRutinaResultante" th:if="${dieta != null}">
+          <div th:if="${calculoCaloriasResultado != null}">
+            <h3>La mejor rutina para ti es
+              <span id="rutinaResultante" th:text="${dieta.descripcion}"></span>
+              </h3>
+            <h4 id="resultado">
+              Necesitas consumir aproximadamente
+              <u th:text="${calculoCaloriasResultado}"></u> calorías al día
+              para tu mantenimiento.
+            </h4>
+            <img
+            th:src="@{${dieta.rutaImagen}}"
+            id="imagenDietaResultante"
+            alt="Imagen de Dieta"
+          />
+          <h4>Calorias Totales: <span th:text="${dieta.caloriasTotales}"></span></h4>
+          <h4>Tipo de Dieta: <span th:text="${dieta.tipoAlimento}"></span></h4>
+          
+          
+          </div>
+         
+          <form
+            th:action="@{'/activate/perfil/añadeDieta/' + ${dieta.id}}"
+            method="post"
+          >
+            <input
+              class="styled-button"
+              type="submit"
+              value="Añadir como rutina"
+            />
+          </form>
+        </div>
         <h2 id="titulo">Rellena tus Datos</h2>
-
         <div class="form-container">
           <form
             class="form"
@@ -70,33 +101,13 @@
             <br />
             <button class="form-submit-btn" type="submit">Calcular</button>
 
-            <div th:if="${calculoCaloriasResultado != null}">
-              <h3 id="resultado">
-                Necesitas consumir aproximadamente
-                <u th:text="${calculoCaloriasResultado}"></u> calorías al día
-                para tu mantenimiento.
-              </h3>
-            </div>
+            
 
             <!-- Mensaje de error -->
             <div th:if="${mensajeError != null}" class="error-message">
               <p id="error" th:text="${mensajeError}"></p>
             </div>
             <!-- Fin mensaje de error -->
-          </form>
-        </div>
-        <div id="mensajeRutinaResultante" th:if="${dieta != null}">
-          La mejor rutina para ti es
-          <span id="rutinaResultante" th:text="${dieta.descripcion}"></span>
-          <form
-            th:action="@{'/activate/perfil/añadeDieta/' + ${dieta.id}}"
-            method="post"
-          >
-            <input
-              class="styled-button"
-              type="submit"
-              value="Añadir como rutina"
-            />
           </form>
         </div>
       </main>

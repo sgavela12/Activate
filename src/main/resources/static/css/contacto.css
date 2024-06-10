@@ -50,4 +50,33 @@
   button[type="submit"]:hover {
     background-color: #dfc12f;
   }
-  
+  .contactForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+
+
+  #name, #email , #message{
+    width: 20vw;
+  }
+
+
+  .tarjeta{
+
+    margin-left: 35vw ;
+    margin-right: 35vw ;
+    background-color: #2B2E38;
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  label{
+    color: #ddd;
+  }
+
+  input, textarea{
+    color: #000000;
+  }
