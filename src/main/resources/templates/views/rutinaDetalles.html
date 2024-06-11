@@ -13,34 +13,37 @@
         </header>
         <main>
             <div class="detalle-container">
-                
                 <div class="detalle-content">
-                    <h1 th:text="${rutina.nombre}">Duración</h1>
+                    <h1 th:text="${rutina.nombre}">Nombre de la Rutina</h1>
                     <div class="primeraLinea">
                         <section>
-                    <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
-                    </section>
-                    <section>
-                    <p>Duración: <span th:text="${rutina.duracion}">Duración</span> minutos</p>
-                    <p>Tipo de Rutina: <span th:text="${rutina.tipoRutina}">Tipo</span></p>
-                    <p>Frecuencia: <span th:text="${rutina.frecuencia}">Frecuencia</span> veces por semana</p>
-                    <p>Descripción: <span th:text="${rutina.descripcion}"></span></p>
-                </section>
+                            <img th:src="@{${rutina.rutaImagen}}" alt="Imagen de Rutina">
+                        </section>
+                        <section>
+                            <p>Duración: <span th:text="${rutina.duracion}">Duración</span> minutos</p>
+                            <p>Tipo de Rutina: <span th:text="${rutina.tipoRutina}">Tipo</span></p>
+                            <p>Frecuencia: <span th:text="${rutina.frecuencia}">Frecuencia</span> veces por semana</p>
+                            <p>Descripción: <span th:text="${rutina.descripcion}">Descripción</span></p>
+                        </section>
                     </div>
                     <h3>Ejercicios</h3>
                     <table>
                         <thead>
                             <tr>
                                 <th>Ejercicio</th>
-                                <th>Día de la Semana</th>
+                                <th>Día de la Semana</th>                               
                                 <th>Series</th>
                                 <th>Repeticiones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="relacion : ${rutinaEjercicio}">
-                                <td th:text="${relacion.ejercicio.nombre}">Ejercicio</td>
-                                <td th:text="${relacion.dia}">Día</td>
+                                <td>
+                                    <a th:href="@{'/activate/servicios/ejercicio/' + ${relacion.ejercicio.idEjercicio}}">
+                                        <span th:text="${relacion.ejercicio.nombre}">Ejercicio</span>
+                                    </a>
+                                </td>
+                                <td th:text="${relacion.dia}">Día</td>                              
                                 <td th:text="${relacion.series}">Series</td>
                                 <td th:text="${relacion.repeticiones}">Repeticiones</td>
                             </tr>

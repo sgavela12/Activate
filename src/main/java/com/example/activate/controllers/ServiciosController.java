@@ -16,6 +16,7 @@ import com.example.activate.models.Ejercicio;
 import com.example.activate.models.Rutina;
 import com.example.activate.models.RutinaEjercicio;
 import com.example.activate.repositories.DietaRepository;
+import com.example.activate.repositories.EjercicioRepository;
 import com.example.activate.repositories.RutinaRepository;
 import com.example.activate.service.RutinaEjercicioService;
 
@@ -31,6 +32,9 @@ public class ServiciosController {
 
     @Autowired
     private RutinaEjercicioService rutinaEjercicioService;
+
+    @Autowired
+    private EjercicioRepository ejercicioRepository;
 
 
     @GetMapping("activate/servicios/dietas")
@@ -65,4 +69,12 @@ public class ServiciosController {
     model.addAttribute("dias", dias);
     return "/views/rutinaDetalles";
     }
+
+    @GetMapping("/activate/servicios/ejercicio/{idEjercicio}")
+public String mostrarDetalleEjercicio(@PathVariable Long idEjercicio, Model model) {
+    Ejercicio ejercicio = ejercicioRepository.findById(idEjercicio)
+        .orElseThrow(() -> new IllegalArgumentException("Ejercicio no encontrado: " + idEjercicio));
+    model.addAttribute("ejercicio", ejercicio);
+    return "views/ejercicioDetalles";
+}
 }

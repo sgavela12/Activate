@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle del Ejercicio</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/ejercicioDetalles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav th:replace="~{components/navbar.html :: navBar}"></nav>
+        </header>
+        <main>
+            <div class="detalle-container">
+                <div class="detalle-content">
+                    <h1 th:text="${ejercicio.nombre}">Nombre del Ejercicio</h1>
+                    <div class="primeraLinea">
+                        <section>
+                            <p>Dificultad: <span th:text="${ejercicio.dificultad}">Dificultad</span></p>
+                            <p>Grupo Muscular: <span th:text="${ejercicio.grupoMuscular}">Grupo Muscular</span></p>
+                            <p>Descripción: <span th:text="${ejercicio.descripcion}">Descripción</span></p>
+                        </section>
+                        <section>
+                            <!-- Insertar directamente la URL de embed -->
+                            <iframe src="https://www.youtube.com/embed/dJtwLWSRdCo?controls=0&showinfo=0&rel=0" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="~{components/footer.html :: footer}"></footer>
+    </div>
+</body>
+</html>

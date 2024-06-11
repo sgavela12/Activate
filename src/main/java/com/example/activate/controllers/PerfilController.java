@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.activate.models.Dieta;
+import com.example.activate.models.Ejercicio;
 import com.example.activate.models.Rutina;
 import com.example.activate.models.Usuario;
 import com.example.activate.models.dtos.CalculoDietaForm;
 import com.example.activate.models.enums.TipoAlimento;
+import com.example.activate.repositories.EjercicioRepository;
 import com.example.activate.service.CalcularKcalServiceImpl;
 import com.example.activate.service.DietaServiceImpl;
 import com.example.activate.service.RutinaServiceImpl;
@@ -39,6 +41,8 @@ public class PerfilController {
 
     @Autowired
     private CalcularKcalServiceImpl calcularKcalService;
+
+    
 
     
 
@@ -122,5 +126,9 @@ public String showRegistrarse(@PathVariable("id") int id) {
 
     return "redirect:/activate/perfil";
 }
+
+
+
+
 
 }
