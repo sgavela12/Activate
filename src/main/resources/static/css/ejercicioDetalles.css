@@ -1,0 +1,61 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1f2029;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+/* Main styles */
+main {
+    padding-top: 9vh;
+}
+
+/* Title styles */
+#titulo {
+    text-align: center;
+    margin-bottom: 7vh;
+}
+
+/* Detail container styles */
+.detalle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.detalle-content {
+    background-color: #131418;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 2vh;
+    width: 90%;
+}
+
+.detalle-content h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.detalle-content p {
+    margin-bottom: 0.5rem;
+}
+
+.primeraLinea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.primeraLinea section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
