@@ -31,16 +31,16 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Día de la Semana</th>
                                 <th>Ejercicio</th>
+                                <th>Día de la Semana</th>
                                 <th>Series</th>
                                 <th>Repeticiones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="relacion : ${rutinaEjercicio}">
-                                <td th:text="${relacion.dia}">Día</td>
                                 <td th:text="${relacion.ejercicio.nombre}">Ejercicio</td>
+                                <td th:text="${relacion.dia}">Día</td>
                                 <td th:text="${relacion.series}">Series</td>
                                 <td th:text="${relacion.repeticiones}">Repeticiones</td>
                             </tr>
