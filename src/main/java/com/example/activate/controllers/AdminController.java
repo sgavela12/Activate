@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.activate.service.ContactoFormServiceImpl;
 import com.example.activate.service.UsuarioDBServiceImpl;
 
 @Controller
@@ -14,16 +15,20 @@ public class AdminController {
 
     @Autowired
     UsuarioDBServiceImpl usuarioDBServiceImpl;
+    @Autowired
+    ContactoFormServiceImpl contactoFormServiceImpl;
+
 
     
 
     
 
     @GetMapping("/admin")
-    public String showProfile(Model model) {
-        model.addAttribute("usuarios", usuarioDBServiceImpl.obtenerTodos());
-        return "views/admin";
-    }
+public String showProfile(Model model) {
+    model.addAttribute("usuarios", usuarioDBServiceImpl.obtenerTodos());
+    model.addAttribute("contactos", contactoFormServiceImpl.obtenerTodos()); 
+    return "views/admin";
+}
 
 
 

@@ -3,6 +3,8 @@ package com.example.activate.controllers;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.activate.models.CalculoCaloriasForm;
+import com.example.activate.models.ContactoForm;
 import com.example.activate.models.Usuario;
+import com.example.activate.repositories.ContactoFormRepository;
 import com.example.activate.service.ActivateService;
 import com.example.activate.service.CalcularKcalServiceImpl;
 import com.example.activate.service.UsuarioDBServiceImpl;
@@ -32,6 +37,9 @@ public class MainController {
 
     @Autowired
     private UsuarioDBServiceImpl usuarioDBServiceImpl;
+
+     @Autowired
+    private ContactoFormRepository contactoFormRepository;
 
 
 
@@ -52,9 +60,30 @@ public String showHome(Model model, Principal principal) {
     }
 
     @GetMapping("/contacto")
-    public String showContact() {
+    public String showContacto(@ModelAttribute("contactoForm") ContactoForm contactoForm, @RequestParam(required = false) String msg, Model model) {
+        if (msg != null && msg.equals("okay")) {
+            model.addAttribute("mensajeExito", "Mensaje enviado correctamente.");
+        }
         return "forms/contacto";
     }
+    
+
+@PostMapping("/contacto/enviar")
+public String enviarContacto(@Valid ContactoForm contactoForm, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    if (bindingResult.hasErrors()) {
+        return "forms/contacto";
+    }
+
+    // Obtener el email del usuario autenticado
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    if (authentication != null && !authentication.getName().equals("anonymousUser")) {
+        contactoForm.setEmail(authentication.getName());
+    }
+
+    contactoFormRepository.save(contactoForm);
+    return "redirect:/activate/contacto?msg=okay";
+}
+
 
     // Calculo de Calorías
     @GetMapping("servicios/calcularKcal")
