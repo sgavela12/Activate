@@ -20,7 +20,6 @@ import com.example.activate.repositories.EjercicioRepository;
 import com.example.activate.repositories.RutinaRepository;
 import com.example.activate.service.RutinaEjercicioService;
 
-
 @Controller
 public class ServiciosController {
 
@@ -35,7 +34,6 @@ public class ServiciosController {
 
     @Autowired
     private EjercicioRepository ejercicioRepository;
-
 
     @GetMapping("activate/servicios/dietas")
     public String mostrarDietas(Model model) {
@@ -53,28 +51,29 @@ public class ServiciosController {
 
     @GetMapping("/activate/servicios/rutinas/{idRutina}")
     public String mostrarDetalleRutina(@PathVariable Long idRutina, Model model) {
-       Rutina rutina = rutinaRepository.findById(idRutina)
-            .orElseThrow(() -> new IllegalArgumentException("Rutina no encontrada: " + idRutina));
-    List<Ejercicio> ejercicios = rutinaRepository.findEjerciciosByRutinaId(idRutina);
-    List<RutinaEjercicio> rutinaEjercicio = rutinaEjercicioService.getRutinaEjerciciosByRutinaId(idRutina);
+        Rutina rutina = rutinaRepository.findById(idRutina)
+                .orElseThrow(() -> new IllegalArgumentException("Rutina no encontrada: " + idRutina));
+        List<Ejercicio> ejercicios = rutinaRepository.findEjerciciosByRutinaId(idRutina);
+        List<RutinaEjercicio> rutinaEjercicio = rutinaEjercicioService.getRutinaEjerciciosByRutinaId(idRutina);
 
-    // Obtener la lista de días únicos
-    Set<String> dias = rutinaEjercicio.stream()
-        .map(RutinaEjercicio::getDia)
-        .collect(Collectors.toCollection(LinkedHashSet::new)); // LinkedHashSet para mantener el orden
+        // Obtener la lista de días únicos
+        Set<String> dias = rutinaEjercicio.stream()
+                .map(RutinaEjercicio::getDia)
+                .collect(Collectors.toCollection(LinkedHashSet::new)); // LinkedHashSet para mantener el orden
 
-    model.addAttribute("rutinaEjercicio", rutinaEjercicio);
-    model.addAttribute("rutina", rutina);
-    model.addAttribute("ejercicios", ejercicios);
-    model.addAttribute("dias", dias);
-    return "/views/rutinaDetalles";
+        model.addAttribute("rutinaEjercicio", rutinaEjercicio);
+        model.addAttribute("rutina", rutina);
+        model.addAttribute("ejercicios", ejercicios);
+        model.addAttribute("dias", dias);
+        return "/views/rutinaDetalles";
     }
 
     @GetMapping("/activate/servicios/ejercicio/{idEjercicio}")
-public String mostrarDetalleEjercicio(@PathVariable Long idEjercicio, Model model) {
-    Ejercicio ejercicio = ejercicioRepository.findById(idEjercicio)
-        .orElseThrow(() -> new IllegalArgumentException("Ejercicio no encontrado: " + idEjercicio));
-    model.addAttribute("ejercicio", ejercicio);
-    return "views/ejercicioDetalles";
-}
+    public String mostrarDetalleEjercicio(@PathVariable Long idEjercicio, Model model) {
+        Ejercicio ejercicio = ejercicioRepository.findById(idEjercicio)
+                .orElseThrow(() -> new IllegalArgumentException("Ejercicio no encontrado: " + idEjercicio));
+        model.addAttribute("ejercicio", ejercicio);
+
+        return "views/ejercicioDetalle";
+    }
 }

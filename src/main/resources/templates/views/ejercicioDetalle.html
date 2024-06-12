@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/ejercicioDetalles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/youtube-player/5.5.1/youtube-player.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -22,8 +23,8 @@
                             <p>Descripción: <span th:text="${ejercicio.descripcion}">Descripción</span></p>
                         </section>
                         <section>
-                            <!-- Insertar directamente la URL de embed -->
-                            <iframe src="https://www.youtube.com/embed/dJtwLWSRdCo?controls=0&showinfo=0&rel=0" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                            <!-- Video de YouTube sin interfaz -->
+                            <div id="video-container"></div>
                         </section>
                     </div>
                 </div>
@@ -31,5 +32,40 @@
         </main>
         <footer th:replace="~{components/footer.html :: footer}"></footer>
     </div>
+
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video-container', {
+                height: '315',
+                width: '560',
+                videoId: 'SCVCLChPQFY', // ID del video de YouTube
+                playerVars: {
+                    'controls': 0, // Sin controles
+                    'showinfo': 0,
+                    'rel': 0,
+                    'modestbranding': 1,
+                    'iv_load_policy': 3,
+                    'fs': 0,
+                    'cc_load_policy': 0,
+                    'autoplay': 1, // Reproducir automáticamente
+                    'mute': 1 // Silenciar el video
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        // Cargar la API de IFrame de YouTube
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
 </body>
 </html>
