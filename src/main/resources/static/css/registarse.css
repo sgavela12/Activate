@@ -217,12 +217,12 @@ display: none;
 #loginTab:hover ,#signupTab:hover {
 
     color: #FFD600;
-    font-size: 1.1em; /* Ajusta el tamaño según tus preferencias */
+    font-size: 1.1em; 
     transition: color 0.2s, font-size 0.2s;
   }
   
   .card-3d-wrap {
-    height: 450px; /* Puedes ajustar la altura según tus necesidades */
+    height: 450px; 
 }
 
 .card-3d-wrapper {

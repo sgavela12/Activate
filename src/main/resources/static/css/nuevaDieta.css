@@ -1,10 +1,10 @@
 #mensajeRutinaResultante {
     color: white;
-    font-size: 1.2em; /* Ajusta el tamaño de la fuente según tu preferencia */
-    text-align: center; /* Centra el mensaje */
-    background-color: #333; /* Color de fondo para resaltar el mensaje */
-    padding: 10px; /* Espacio interno para mayor separación */
-    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.2em; 
+    text-align: center; 
+    background-color: #333; 
+    padding: 10px;
+    border-radius: 5px; 
 
     margin-bottom: 3vh;
     margin-left: 10vw;
@@ -15,7 +15,7 @@
 
 
 #rutinaResultante {
-    color: #ffcc00; /* Cambia este color según tu preferencia */
+    color: #ffcc00;
     font-weight: bold;
 }
 

@@ -2,19 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh; /* Centra el formulario en el centro de la pantalla */
-    border-radius: 10px; /* Esquinas redondeadas */
+    height: 30vh; 
+    border-radius: 10px; 
     margin-top: 100px;
   }
   
   form {
     width: 40%;
-    text-align: center; /* Centra el contenido del formulario */
+    text-align: center;
     padding: 30px;
     background: linear-gradient(rgb(81, 130, 189),rgb(138, 153, 172));
-    border-radius: 10px; /* Esquinas redondeadas para el formulario */
-    max-width: 400px; /* Reduce el ancho del formulario */
-    margin: 0 20px; /* Agrega un poco de margen alrededor del formulario */
+    border-radius: 10px; 
+    max-width: 400px; 
+    margin: 0 20px; 
     
   }
   

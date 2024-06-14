@@ -1,4 +1,3 @@
-/* Ensures the entire html and body take up 100% height */
 html, body {
   height: 100%;
   margin: 0;
@@ -25,7 +24,7 @@ footer {
 }
 
 div#derechos {
-  margin-left: auto; /* Mueve #derechos a la derecha */
+  margin-left: auto;
 }
 
 .redes {

@@ -23,7 +23,6 @@
                             <p>Descripción: <span th:text="${ejercicio.descripcion}">Descripción</span></p>
                         </section>
                         <section>
-                            <!-- Video de YouTube sin interfaz -->
                             <div id="video-container"></div>
                         </section>
                     </div>
@@ -39,17 +38,17 @@
             player = new YT.Player('video-container', {
                 height: '315',
                 width: '560',
-                videoId: 'SCVCLChPQFY', // ID del video de YouTube
+                videoId: 'SCVCLChPQFY', 
                 playerVars: {
-                    'controls': 0, // Sin controles
+                    'controls': 0, 
                     'showinfo': 0,
                     'rel': 0,
                     'modestbranding': 1,
                     'iv_load_policy': 3,
                     'fs': 0,
                     'cc_load_policy': 0,
-                    'autoplay': 1, // Reproducir automáticamente
-                    'mute': 1 // Silenciar el video
+                    'autoplay': 1, 
+                    'mute': 1 
                 },
                 events: {
                     'onReady': onPlayerReady
@@ -61,7 +60,6 @@
             event.target.playVideo();
         }
 
-        // Cargar la API de IFrame de YouTube
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];

@@ -1,4 +1,3 @@
-/* General body styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,7 +8,6 @@ body {
   line-height: 1.7;
 }
 
-/* General styles for all elements */
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +21,6 @@ main {
   padding-top: 9vh;
 }
 
-/* Navigation bar styles */
 nav {
   height: 4.5rem;
   width: 100vw;
@@ -40,10 +37,10 @@ nav {
     padding-top: 15px;
 }
 
-/* Logo styles */
+
 .logo {
   text-align: center;
-  margin-right: 1vw; /* Further reduced margin */
+  margin-right: 1vw; 
 }
 
 .logo img {
@@ -53,7 +50,6 @@ nav {
     margin-right: 2.5vw;
 }
 
-/* Navigation links styles */
 .nav-container {
   display: flex;
   align-items: center;
@@ -66,9 +62,9 @@ nav {
   list-style: none;
   width: 80%;
   padding: 0;
-  justify-content: space-between; /* Adjust spacing */
+  justify-content: space-between; 
   text-transform: uppercase;
-  margin-left: 1vw; /* Reduced margin */
+  margin-left: 1vw;
 }
 
 .nav-links li a {
@@ -84,7 +80,7 @@ nav {
   position: relative;
 }
 
-/* Styling for login button */
+
 .login-container {
   display: flex;
   align-items: center;
@@ -94,12 +90,12 @@ nav {
 .login-button {
   background-color: transparent;
   border: 1.5px solid #f2f5f7;
-  border-radius: 1em; /* Less rounded */
+  border-radius: 1em;
   padding: 0.6rem 0.8rem;
   font-size: 1rem;
   cursor: pointer;
   color: #f2f5f7;
-  height: 50px; /* Fixed height */
+  height: 50px; 
   margin: 5px;
 }
 
@@ -109,7 +105,6 @@ nav {
   transition: all ease-in-out 350ms;
 }
 
-/* Styling for hamburger icon */
 .hamburger div {
   width: 30px;
   height: 3px;
@@ -122,7 +117,6 @@ nav {
   display: none;
 }
 
-/* Styling for small screens */
 @media screen and (max-width: 800px) {
   nav {
     position: fixed;
@@ -197,7 +191,6 @@ nav {
   }
 }
 
-/* Animating hamburger icon on click */
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -218,11 +211,11 @@ nav {
 }
 
 .nav-links li a.active {
-  color: #ffd600; /* Color amarillo */
+  color: #ffd600; 
 }
 
 .nav-links li a {
-  color: #fff; /* Color blanco para los enlaces no activos */
+  color: #fff; 
 }
 
 #titulo {
@@ -230,7 +223,6 @@ nav {
   margin-bottom: 7vh;
 }
 
-/* Dropdown menu */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -246,7 +238,7 @@ nav {
 
 .dropdown-content a,
 .dropdown-content button {
-  border-radius: 0.5em; /* Less rounded */
+  border-radius: 0.5em; 
   padding: 0.6rem 0.8rem;
   font-size: 1rem;
   cursor: pointer;
@@ -256,8 +248,8 @@ nav {
   border: none;
   color: #f2f5f7;
   text-align: center;
-  width: 160px; /* Misma anchura para ambos botones */
-  height: 45px; /* Fixed height */
+  width: 160px; 
+  height: 45px; 
 }
 
 .dropdown-content a:hover,

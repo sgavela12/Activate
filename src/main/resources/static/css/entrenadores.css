@@ -12,7 +12,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 20px; /* Añade un poco de margen a la izquierda solo a las tarjetas */
+    margin-left: 20px; 
 }
 
 .card {
@@ -20,52 +20,52 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
-    margin-bottom: 30px; /* Aumenta el margen inferior */
-    margin-right: 30px; /* Aumenta el margen derecho */
-    flex: 1 1 calc(21% - 30px); /* Ajusta el ancho para que sean un poco más pequeñas y queden 4 por fila con más espacio entre ellas */
-    transition: transform 0.3s ease; /* Añade una transición suave para el hover */
-    position: relative; /* Establece posición relativa para el pseudo-elemento */
+    margin-bottom: 30px; 
+    margin-right: 30px; 
+    flex: 1 1 calc(21% - 30px);
+    transition: transform 0.3s ease; 
+    position: relative; 
 }
 
 .card img {
     width: 100%;
     height: auto;
-    display: block; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    display: block;
 }
 
 .card-content {
-    padding: 15px; /* Añade padding al contenido de la tarjeta */
+    padding: 15px;
 }
 
 .card h2 {
     font-size: 1.2em;
     margin: 15px 0 10px;
-    color: #000; /* Establece el color del texto a negro */
-    text-align: center; /* Centra el texto del nombre del entrenador */
-    position: relative; /* Establece posición relativa para que el ::after sea relativo a este elemento */
+    color: #000;
+    text-align: center; 
+    position: relative; 
 }
 
 .card h2::after {
-    content: ''; /* Agrega contenido vacío para el pseudo-elemento */
-    position: absolute; /* Establece posición absoluta para el pseudo-elemento */
-    left: 50%; /* Posiciona el pseudo-elemento en el centro del elemento padre */
-    transform: translateX(-50%); /* Centra el pseudo-elemento horizontalmente */
-    bottom: -5px; /* Posiciona el pseudo-elemento 5px por debajo del borde inferior del elemento padre */
-    width: 80%; /* Establece el ancho del pseudo-elemento al 40% del elemento padre */
-    height: 2px; /* Establece la altura del pseudo-elemento */
-    background-color: #000; /* Color de la línea */
+    content: ''; 
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    bottom: -5px; 
+    width: 80%;
+    height: 2px; 
+    background-color: #000; 
 }
 
 
 .card p {
     margin: 5px 0;
-    padding: 5px; /* Añade padding a todos los elementos <p> */
+    padding: 5px; 
     color: #555;
-    text-align: center; /* Centra el texto de los párrafos */
+    text-align: center;
 }
 
 .card-info {
-    padding: 10px 0; /* Añade padding específico a los elementos de información */
+    padding: 10px 0; 
 }
 
 .card:hover {

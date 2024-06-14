@@ -1,6 +1,5 @@
 #activate-mensaje {
     margin-top: -570px;
-    /* Adjust this value to your preference */
 }
 
 .noticias-container a:hover {
@@ -20,8 +19,8 @@
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     width: 95vw;
-    height: 100%; /* Añadido para ocupar toda la altura del contenedor */
-    object-fit: cover; /* Añadido para mantener la proporción de aspecto y cubrir todo el contenedor */
+    height: 100%; 
+    object-fit: cover; 
 }
 
 

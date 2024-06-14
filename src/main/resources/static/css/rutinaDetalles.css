@@ -1,4 +1,3 @@
-/* General body styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,21 +8,18 @@ body {
     line-height: 1.7;
 }
 
-/* Main styles */
 main {
     padding-top: 9vh;
 }
 
-/* Title styles */
 #titulo {
     text-align: center;
     margin-bottom: 7vh;
 }
 
-/* Detail container styles */
 .detalle-container {
     display: flex;
-    flex-direction: column; /* Cambiamos la dirección a columna para apilar los elementos */
+    flex-direction: column; 
     align-items: center;
     margin-bottom: 5rem;
 }
@@ -38,8 +34,8 @@ main {
 }
 
 .detalle-content img {
-    max-width: 100%; /* Ajustamos el ancho máximo de la imagen */
-    height: auto; /* Permitimos que la altura se ajuste automáticamente */
+    max-width: 100%; 
+    height: auto; 
     border-radius: 10px;
     margin-bottom: 2rem;
 }
@@ -81,14 +77,14 @@ main {
 
 .primeraLinea{
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas de igual ancho */
+    grid-template-columns: 1fr 1fr; 
     grid-gap: 10px; 
 }
 
 .primeraLinea section {
     display: flex;
-    flex-direction: column; /* Para que los elementos estén en columnas */
-    justify-content: center; /* Para centrar verticalmente */
-    align-items: center; /* Para centrar horizontalmente */
-    height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
 }
