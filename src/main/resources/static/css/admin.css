@@ -1,32 +1,31 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas iguales */
-    gap: 20px; /* Espacio entre las columnas */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
 }
 
 .left-content,
 .right-content {
-    padding: 20px; /* Añade espacio alrededor del contenido */
+    padding: 20px;
 }
 
-/* Ajustes de diseño para las tablas según sea necesario */
 .left-table,
 .right-table {
-    width: 100%; /* Ajusta el ancho de las tablas al 100% del contenedor */
+    width: 100%; 
 }
 
-/* Ajustes de diseño adicionales según sea necesario */
+
 main {
-    overflow: auto; /* Limpiar los flotantes */
+    overflow: auto; 
 }
 
-/* Ajustes de diseño para las tablas según sea necesario */
+
 .left-table,
 .right-table {
- /* Ajusta el ancho de las tablas al 100% del contenedor */
-    text-align: center; /* Centra el contenido de las celdas */
-    border-collapse: collapse; /* Combina los bordes de las celdas */
-    border-spacing: 5px; /* Establece el espacio entre las celdas */
+
+    text-align: center; 
+    border-collapse: collapse; 
+    border-spacing: 5px; 
 
 }
 
