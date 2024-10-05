@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  mysql-container:
+    image: mysql:8.0  # Usamos la imagen oficial de MySQL
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: -Esperanza12  # Contraseña para el usuario root
+      MYSQL_DATABASE: Activate  # Nombre de la base de datos que quieres crear
+      MYSQL_USER: sergio  # Usuario adicional que puedes crear
+      MYSQL_PASSWORD: -Esperanza12  # Contraseña del usuario adicional
+    ports:
+      - "3306:3306"  # Exponemos el puerto 3306
+    volumes:
+      - mysql-data:/var/lib/mysql  # Persistencia de los datos de MySQL
+    networks:
+      - spring-net
+
+  spring-app:
+    image: spring-app-image  # Este es el nombre de la imagen de tu aplicación
+    container_name: spring-app
+    build:
+      context: .  # Asume que tienes un Dockerfile en el mismo directorio
+    ports:
+      - "8080:8080"  # Mapeo del puerto de la app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container:3306/Activate  # Conectamos a MySQL en el contenedor
+      SPRING_DATASOURCE_USERNAME: sergio  # Usuario de la base de datos
+      SPRING_DATASOURCE_PASSWORD: -Esperanza12  # Contraseña de la base de datos
+    depends_on:
+      - mysql-container  # Se asegura de que MySQL esté listo antes de levantar la app
+    networks:
+      - spring-net
+
+networks:
+  spring-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
