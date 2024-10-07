@@ -1,14 +1,14 @@
-# Usamos una imagen base de OpenJDK 17, ya que estás usando Java 17
-FROM openjdk:17-jdk-slim
+# Usa una imagen oficial de Java como base
+FROM openjdk:17-jdk-alpine
 
-# Establecemos un directorio de trabajo dentro del contenedor
+# Configura el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiamos el archivo JAR de la aplicación al contenedor
-COPY target/activate-0.0.1-SNAPSHOT.jar app.jar
+# Copia el archivo JAR de la aplicación a la imagen del contenedor
+COPY target/tu-app-spring.jar /app/app.jar
 
-# Exponemos el puerto 8080 para el acceso externo
+# Expone el puerto en el que la aplicación escucha
 EXPOSE 8080
 
-# Ejecutamos la aplicación
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Comando para ejecutar la aplicación
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
