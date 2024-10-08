@@ -52,11 +52,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.27</version> <!-- Asegúrate de usar la versión correcta -->
-		</dependency>
+	<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.6.0</version> <!-- Asegúrate de que esta versión sea compatible -->
+</dependency>
+
 		<dependency> 
 			<groupId>org.springframework.boot</groupId> 
 			<artifactId>spring-boot-starter-oauth2-client</artifactId> 
@@ -83,5 +84,15 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+    <profile>
+        <id>no-db</id>
+        <properties>
+            <spring.datasource.url>jdbc:postgresql://localhost:5432/activate</spring.datasource.url>
+            <spring.datasource.username>postgres</spring.datasource.username>
+            <spring.datasource.password>zmFOx3RQbKlym0V</spring.datasource.password>
+        </properties>
+    </profile>
+</profiles>
 
 </project>
