@@ -1,5 +1,5 @@
 # Usa una imagen base de Maven para construir la aplicación
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:latest AS build
 
 # Establece el directorio de trabajo
 WORKDIR /app
@@ -22,3 +22,4 @@ EXPOSE 8080
 
 # Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
