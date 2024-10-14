@@ -1,14 +1,24 @@
-# Usamos una imagen base de OpenJDK 17, ya que estás usando Java 17
-FROM openjdk:17-jdk-slim
+# Usa una imagen base de Maven para construir la aplicación
+FROM maven:3.8.6-openjdk-17 AS build
 
-# Establecemos un directorio de trabajo dentro del contenedor
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiamos el archivo JAR de la aplicación al contenedor
-COPY target/activate-0.0.1-SNAPSHOT.jar app.jar
+# Copia el archivo pom.xml y el directorio src
+COPY pom.xml .
+COPY src ./src
 
-# Exponemos el puerto 8080 para el acceso externo
+# Compila el proyecto y genera el JAR
+RUN mvn clean package -DskipTests
+
+# Usa una imagen base de OpenJDK para ejecutar la aplicación
+FROM openjdk:17-jdk-slim
+
+# Copia el archivo JAR generado desde la etapa de construcción
+COPY --from=build /app/target/*.jar app.jar
+
+# Expone el puerto en el que se ejecuta la aplicación
 EXPOSE 8080
 
-# Ejecutamos la aplicación
+# Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
