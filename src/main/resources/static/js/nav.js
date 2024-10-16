@@ -38,10 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const userButton = document.getElementById('userButton');
   const dropdownContent = document.querySelector('.dropdown-content');
 
-  userButton.addEventListener('click', function(event) {
-    event.stopPropagation();
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-  });
 
   document.addEventListener('click', function() {
     dropdownContent.style.display = 'none';
