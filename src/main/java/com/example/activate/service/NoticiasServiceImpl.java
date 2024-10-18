@@ -3,11 +3,12 @@ package com.example.activate.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.example.activate.models.Alimento;
 import com.example.activate.models.Noticia;
 import com.example.activate.repositories.NoticiaRepository;
 
+@Service
 public class NoticiasServiceImpl {
 
     @Autowired
