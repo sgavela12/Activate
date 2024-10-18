@@ -1,3 +1,7 @@
+#rutaImagen{
+    display: none;
+}
+
 #activate-mensaje {
     margin-top: -570px;
 }

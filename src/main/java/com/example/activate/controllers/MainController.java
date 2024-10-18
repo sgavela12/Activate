@@ -54,13 +54,8 @@ public String showHome(Model model, Principal principal) {
     if (principal != null) {
         
     }
-    String noticiasConjunto = "";
 
     List<Noticia> noticias = noticiasServiceImpl.obtenerTodos();
-
-    for (Noticia noticia : noticias) {
-       noticiasConjunto =  noticiasConjunto + noticia.getTitulo();
-    }
 
     model.addAttribute("noticias", noticias);
     return "views/index";
