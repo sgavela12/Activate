@@ -49,6 +49,7 @@ public String showHome(Model model, Principal principal) {
         
     }
     model.addAttribute("mensajeFecha", activateService.mensajeFecha());
+    
     return "views/index";
 }
 
