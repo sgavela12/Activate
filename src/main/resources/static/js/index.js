@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let noticias = document.querySelectorAll(".noticia");
     let index = 0;
+    mostrarNoticia();
 
     function mostrarNoticia() {
         noticias[index].style.display = "none";
