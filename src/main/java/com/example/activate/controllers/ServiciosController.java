@@ -42,14 +42,16 @@ public class ServiciosController {
         return "/views/dietas";
     }
 
-    @GetMapping("/activate/servicios/rutinas")
+    @GetMapping("activate/servicios/rutinas")
     public String mostrarRutinas(Model model) {
         List<Rutina> rutinas = rutinaRepository.findAll();
         model.addAttribute("rutinas", rutinas);
         return "/views/rutinas";
     }
 
-    @GetMapping("/activate/servicios/rutinas/{idRutina}")
+    
+
+    @GetMapping("activate/servicios/rutinas/{idRutina}")
     public String mostrarDetalleRutina(@PathVariable Long idRutina, Model model) {
         Rutina rutina = rutinaRepository.findById(idRutina)
                 .orElseThrow(() -> new IllegalArgumentException("Rutina no encontrada: " + idRutina));
@@ -68,7 +70,7 @@ public class ServiciosController {
         return "/views/rutinaDetalles";
     }
 
-    @GetMapping("/activate/servicios/ejercicio/{idEjercicio}")
+    @GetMapping("activate/servicios/ejercicio/{idEjercicio}")
     public String mostrarDetalleEjercicio(@PathVariable Long idEjercicio, Model model) {
         Ejercicio ejercicio = ejercicioRepository.findById(idEjercicio)
                 .orElseThrow(() -> new IllegalArgumentException("Ejercicio no encontrado: " + idEjercicio));
