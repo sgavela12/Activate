@@ -28,7 +28,6 @@
 }
 
 
-
 .noticia {
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,14 +56,19 @@
     margin: 0;
 }
 
-.noticia p {
-    font-size: 16px;
+.noticia {
+    position: relative; 
+    padding-bottom: 10%; 
 }
 
 .navegacion-noticias {
+    position: absolute;
+    bottom: 10%; 
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-top: 20px;
 }
+
 
 .flecha-izquierda,
 .flecha-derecha {
