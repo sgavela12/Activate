@@ -30,7 +30,6 @@
 
 
 .noticia {
-    background-image: url("../images/calcular-kcal.png");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
@@ -40,6 +39,17 @@
     display: none;
     height: 30vh;
     margin-top: 1%;
+    position: relative;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
 }
 
 .noticia h3 {
@@ -67,3 +77,5 @@
 .flecha-derecha:hover {
     color: #FFD600;
 }
+
+
