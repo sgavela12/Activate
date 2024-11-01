@@ -58,11 +58,12 @@ nav {
 }
 
 .nav-links {
+  margin: 1vw;
   display: flex;
   list-style: none;
   width: 80%;
   padding: 0;
-  justify-content: space-between; 
+  justify-content:center; 
   text-transform: uppercase;
   margin-left: 1vw;
 }
@@ -322,7 +323,7 @@ nav {
 
   .nav-links.open {
     clip-path: circle(1000px at 90% -10%);
-    pointer-events: all; /* Asegúrate de que se pueda interactuar */
+    pointer-events: all;
   }
 }
 
@@ -330,6 +331,11 @@ nav {
 @media screen and (max-width: 800px) {
   .nav-links {
     justify-content: center;
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
+}
+
+.nav-links li{
+
+  margin: 2vw;
 }
