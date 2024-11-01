@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let index = 0;
     mostrarNoticia();
 
+       
+
 
     
 
@@ -13,16 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
         noticias[index].style.display = "block";
 
         noticias[index].style.backgroundImage = `url(${noticias[index].firstElementChild.textContent})`;
-    
-
-
         
+         
     }
 
 
-    
 
     setInterval(mostrarNoticia, 7000); // Cambiar cada 7 segundos (7000 ms)
 });
+
+
+let flechaDerecha = document.getElementById("flecha-derecha");+
+flechaDerecha.addEventListener("click", diHola); 
+
+function diHola(){
+    alert("hola");
+}
 
 

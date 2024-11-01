@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link  rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/nav.css" />
     <link rel="stylesheet" href="/css/footer.css" />
 
-    <script src="/js/index.js"></script>
+    <script src="/js/index.js" defer></script>
     <title>Actívate-Inicio</title>
   </head>
   <body cz-shortcut-listen="true">
@@ -28,7 +28,7 @@
         <p th:text="${noticia.cuerpo}"></p>
         <div class="navegacion-noticias">
           <span class="flecha-izquierda">◁</span>
-          <span class="flecha-derecha">▷</span>
+          <button class="flecha-derecha" id="flecha-derecha">▷</span>
         </div>
       </div>
     </div>
