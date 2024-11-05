@@ -1,3 +1,7 @@
+#rutaImagen{
+    display: none;
+}
+
 #activate-mensaje {
     margin-top: -570px;
 }
@@ -24,9 +28,7 @@
 }
 
 
-
 .noticia {
-    background-image: url("../images/Activate.gif");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
@@ -36,6 +38,17 @@
     display: none;
     height: 30vh;
     margin-top: 1%;
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
 }
 
 .noticia h3 {
@@ -43,17 +56,23 @@
     margin: 0;
 }
 
-.noticia p {
-    font-size: 16px;
+.noticia {
+    position: relative; 
+    padding-bottom: 10%; 
 }
 
 .navegacion-noticias {
+    position: absolute;
+    bottom: 10%; 
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-top: 20px;
 }
+
 
 .flecha-izquierda,
 .flecha-derecha {
+    all: unset;
     font-size: 24px;
     margin: 0 20px;
     cursor: pointer;
@@ -63,3 +82,5 @@
 .flecha-derecha:hover {
     color: #FFD600;
 }
+
+

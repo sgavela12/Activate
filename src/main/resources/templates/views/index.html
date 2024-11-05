@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link  rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/nav.css" />
     <link rel="stylesheet" href="/css/footer.css" />
 
-    <script src="/js/index.js"></script>
+    <script src="/js/index.js" defer></script>
     <title>Actívate-Inicio</title>
   </head>
   <body cz-shortcut-listen="true">
@@ -19,18 +19,23 @@
       <a href="/activate/perfil">
         <video id="video" src="../images/activate.mp4" autoplay muted></video>
       </a>
-    <div class="noticia" style="display: block">
-      <h1>Noticia 1</h1>
-      <p>Descripción de la noticia 1.</p>
+  
+    <div th:each="noticia:${noticias}">
+      <div class="noticia" style="display: none">
+        <p id="rutaImagen" th:text="${noticia.rutaImagen}"></p>
+        <h3 th:text="${noticia.titulo}"></h3>
+        <br>
+        <p th:text="${noticia.cuerpo}"></p>
+        <div class="navegacion-noticias">
+          <span class="flecha-izquierda">◁</span>
+          <button class="flecha-derecha" id="flecha-derecha">▷</span>
+        </div>
+      </div>
     </div>
-    <div class="noticia" style="display: none">
-      <h3>Noticia 2</h3>
-      <p>Descripción de la noticia 2.</p>
-    </div>
-    <div class="navegacion-noticias">
-      <span class="flecha-izquierda">◁</span>
-      <span class="flecha-derecha">▷</span>
-    </div>
+    
+
+    
+
   </main>
     <!-- ----footer---- -->
     <footer th:replace="~{components/footer.html :: footer}"></footer>

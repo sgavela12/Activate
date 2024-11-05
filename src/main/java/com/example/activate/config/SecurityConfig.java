@@ -37,7 +37,9 @@ public class SecurityConfig {
                     .requestMatchers("/activate/perfil").hasAnyRole("USUARIO","ADMIN")
                     .requestMatchers("/activate/admin").hasAnyRole("ADMIN")
                     .requestMatchers("/activate/contacto").hasAnyRole("USUARIO","ADMIN")
+                    .requestMatchers("/activate/servicios/**").permitAll()
                     .requestMatchers("/activate/**").permitAll()
+
 
                     .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                     .anyRequest().authenticated())

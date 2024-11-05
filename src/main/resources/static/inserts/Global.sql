@@ -131,6 +131,15 @@ INSERT INTO dieta ( calorias_totales, tipo_alimento, descripcion, ruta_imagen) V
 
 
 
+INSERT INTO noticia (id, titulo, cuerpo, ruta_imagen) VALUES
+(1, 'Alimentación saludable', 'Descubre los beneficios de una dieta balanceada y cómo mantener una alimentación saludable a lo largo del tiempo.', '/images/noticias/alimentacion.jpeg'),
+(2, 'Entrenamiento de fuerza', 'El entrenamiento de fuerza no solo mejora tu resistencia, sino que también fortalece los músculos y previene lesiones.', '/images/noticias/entrenamiento.jpeg'),
+(3, 'Suplementos nutricionales', 'Los suplementos pueden ayudar a cubrir deficiencias nutricionales, pero no deben reemplazar una dieta saludable. Infórmate sobre su uso.', '/images/noticias/suplementos.jpeg'),
+(4, 'Rutina para principiantes', 'Esta rutina de ejercicios está diseñada para personas que recién comienzan en el mundo del fitness. ¡Empieza con el pie derecho!', '/images/noticias/rutina.jpeg'),
+(5, 'Hidratación durante el ejercicio', 'Mantenerse hidratado es clave para un rendimiento óptimo. Aprende cuánta agua necesitas beber según la intensidad de tu entrenamiento.', '/images/noticias/hidratacion.jpeg');
+
+
+
 -- Insertar las relaciones entre dietas y alimentos en la tabla 'dieta_alimento'
 -- Dieta 1: Energía Vegana
 INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES

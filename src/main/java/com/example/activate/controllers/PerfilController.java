@@ -126,7 +126,4 @@ public String showRegistrarse(@PathVariable("id") int id) {
 }
 
 
-
-
-
 }

@@ -1,6 +1,7 @@
 package com.example.activate.controllers;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -17,10 +18,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.activate.models.CalculoCaloriasForm;
 import com.example.activate.models.ContactoForm;
+import com.example.activate.models.Noticia;
 import com.example.activate.models.Usuario;
 import com.example.activate.repositories.ContactoFormRepository;
 import com.example.activate.service.ActivateService;
 import com.example.activate.service.CalcularKcalServiceImpl;
+import com.example.activate.service.NoticiasServiceImpl;
 import com.example.activate.service.UsuarioDBServiceImpl;
 
 import jakarta.validation.Valid;
@@ -41,6 +44,9 @@ public class MainController {
      @Autowired
     private ContactoFormRepository contactoFormRepository;
 
+    @Autowired
+    private NoticiasServiceImpl noticiasServiceImpl;
+
 
 
  @GetMapping("/inicio")
@@ -48,7 +54,10 @@ public String showHome(Model model, Principal principal) {
     if (principal != null) {
         
     }
-    model.addAttribute("mensajeFecha", activateService.mensajeFecha());
+
+    List<Noticia> noticias = noticiasServiceImpl.obtenerTodos();
+
+    model.addAttribute("noticias", noticias);
     return "views/index";
 }
 
