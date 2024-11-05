@@ -51,10 +51,20 @@
    
 }
 
-.noticia h3 {
+.noticia h3{
+
     font-size: 24px;
-    margin: 0;
+    background-color: #131418c6;
+    border-radius: 5px;
 }
+
+
+.noticia p{
+    background-color: #131418c6;
+    border-radius: 5px;
+}
+
+
 
 .noticia {
     position: relative; 
