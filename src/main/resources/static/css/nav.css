@@ -41,14 +41,16 @@ nav {
 .logo {
   text-align: center;
   margin-right: 1vw; 
+  padding-top: 8vh; /* Ajusta este valor según sea necesario */
+
+  
 }
 
 .logo img {
-    padding-top: 5.2vh;
-    height: 9rem;
-    width: 9rem;
-    margin-right: 2.5vw;
+  max-height: 16vh;        /* Altura máxima relativa a la altura de la pantalla */
+  object-fit: contain;     /* Asegura que la imagen se ajuste dentro del contenedor sin deformarse */
 }
+
 
 .nav-container {
   display: flex;
@@ -339,3 +341,5 @@ nav {
 
   margin: 2vw;
 }
+
+
