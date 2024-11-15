@@ -78,4 +78,15 @@ public class ServiciosController {
 
         return "views/ejercicioDetalle";
     }
+
+
+
+    @GetMapping("activate/servicios/dietas/{idDieta}")
+    public String mostrarDieta(@PathVariable Long idDieta, Model model) {
+        Dieta dieta = dietaRepository.findById(idDieta)
+                .orElseThrow(() -> new IllegalArgumentException("Dieta no encontrado: " + idDieta));
+        model.addAttribute("dieta", dieta);
+
+        return "views/dietaDetalle";
+    }
 }
