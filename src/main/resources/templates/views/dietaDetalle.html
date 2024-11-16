@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detalles de la Dieta</title>
+    <link rel="stylesheet" href="/css/dietaDetalle.css">
 </head>
 <body>
-    pruebita de dieta
+    <div class="container">
+        <div class="dieta-card">
+            <img th:src="@{${dieta.rutaImagen}}" alt="Imagen de la Dieta" class="dieta-image">
+            <div class="dieta-details">
+                <h1 class="dieta-title" th:text="${dieta.descripcion}" >Nombre de la Dieta</h1>
+                <p class="dieta-info" ><strong>Calorías Totales:</strong> <span th:text="${dieta.caloriasTotales}"></span></p>
+                <p class="dieta-info"><strong>Tipo de Alimento:</strong> <span th:text="${dieta.tipoAlimento}" ></span></p>
+                <p class="dieta-description">
+                    <strong>Descripción:</strong>
+                    <span >Esta dieta es ideal para...</span>
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
