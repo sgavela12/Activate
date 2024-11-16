@@ -21,7 +21,6 @@ import com.example.activate.models.ContactoForm;
 import com.example.activate.models.Noticia;
 import com.example.activate.models.Usuario;
 import com.example.activate.repositories.ContactoFormRepository;
-import com.example.activate.service.ActivateService;
 import com.example.activate.service.CalcularKcalServiceImpl;
 import com.example.activate.service.NoticiasServiceImpl;
 import com.example.activate.service.UsuarioDBServiceImpl;
@@ -32,8 +31,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/activate")
 public class MainController {
 
-    @Autowired
-    private ActivateService activateService;
+
 
     @Autowired
     private CalcularKcalServiceImpl calcularKcalService;
