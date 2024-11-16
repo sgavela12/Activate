@@ -16,6 +16,7 @@ import com.example.activate.models.Dieta;
 import com.example.activate.models.Ejercicio;
 import com.example.activate.models.Rutina;
 import com.example.activate.models.RutinaEjercicio;
+import com.example.activate.models.dtos.AlimentoDietaDto;
 import com.example.activate.repositories.DietaRepository;
 import com.example.activate.repositories.EjercicioRepository;
 import com.example.activate.repositories.RutinaRepository;
@@ -86,7 +87,7 @@ public class ServiciosController {
     public String mostrarDieta(@PathVariable Long idDieta, Model model) {
         Dieta dieta = dietaRepository.findById(idDieta)
                 .orElseThrow(() -> new IllegalArgumentException("Dieta no encontrado: " + idDieta));
-        List<Alimento> alimentos = dietaRepository.findAlimentosByDietaId(idDieta);
+        List<AlimentoDietaDto> alimentos = dietaRepository.findAlimentosByDietaId(idDieta);
         model.addAttribute("dieta", dieta);
         model.addAttribute("alimentos", alimentos);
 

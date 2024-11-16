@@ -6,11 +6,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.example.activate.models.Alimento;
 import com.example.activate.models.Dieta;
+import com.example.activate.models.dtos.AlimentoDietaDto;
 
 public interface DietaRepository extends JpaRepository<Dieta,Long>{
-    @Query("SELECT a FROM Alimento a WHERE a.id IN " +
-    "(SELECT da.alimento.id FROM DietaAlimento da WHERE da.dieta.id = :idDieta order by da.dia, da.comida)")
-    List<Alimento> findAlimentosByDietaId(@Param("idDieta") Long idDieta);
+    @Query("SELECT new com.example.activate.models.dtos.AlimentoDietaDto(da.dia, da.comida, a.nombre, da.cantidad) " +
+           "FROM DietaAlimento da " +
+           "JOIN da.alimento a " +
+           "WHERE da.dieta.id = :idDieta " +
+           "ORDER BY da.dia, da.comida")
+    List<AlimentoDietaDto> findAlimentosByDietaId(@Param("idDieta") Long idDieta);
 }
