@@ -11,6 +11,6 @@ import com.example.activate.models.Dieta;
 
 public interface DietaRepository extends JpaRepository<Dieta,Long>{
     @Query("SELECT a FROM Alimento a WHERE a.id IN " +
-    "(SELECT da.alimento.id FROM DietaAlimento da WHERE da.dieta.id = :idDieta)")
+    "(SELECT da.alimento.id FROM DietaAlimento da WHERE da.dieta.id = :idDieta order by da.dia, da.comida)")
     List<Alimento> findAlimentosByDietaId(@Param("idDieta") Long idDieta);
 }

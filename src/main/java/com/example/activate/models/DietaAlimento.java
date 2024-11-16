@@ -1,5 +1,9 @@
 package com.example.activate.models;
 
+import java.util.PrimitiveIterator;
+
+import com.example.activate.models.enums.Comida;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,6 +34,8 @@ public class DietaAlimento {
 
 
     private int dia;
+    
+    private Comida comida;
 
     private int cantidad;
 
