@@ -9,22 +9,26 @@
 <body>
     <div class="container">
         <div class="dieta-card">
+            <!-- Corregir th:src -->
             <img th:src="@{${dieta.rutaImagen}}" alt="Imagen de la Dieta" class="dieta-image">
             <div class="dieta-details">
+                <!-- Asegurarse de que las propiedades existen en el objeto dieta -->
                 <h1 class="dieta-title" th:text="${dieta.descripcion}">Nombre de la Dieta</h1>
                 <p class="dieta-info"><strong>Calorías Totales:</strong> <span th:text="${dieta.caloriasTotales}"></span></p>
                 <p class="dieta-info"><strong>Tipo de Alimento:</strong> <span th:text="${dieta.tipoAlimento}"></span></p>
-                <p class="dieta-description"><strong>Descripción:</strong> <span th:text="${dieta.descripcionLarga}">Esta dieta es ideal para...</span></p>
+                <p class="dieta-description"><strong>Descripción:</strong> <span>Esta dieta es ideal para...</span></p>
             </div>
         </div>
-
         <div class="horario-comidas">
             <h2>Horario de Comidas</h2>
-            <div th:each="comida : ${horarioComidas}">
+            <!-- Iteración sobre el mapa horarioComidas -->
+            <div th:each="entry : ${horarioComidas}">
                 <div class="comida">
-                    <h3 th:text="${comida.tipoComida}">Comida</h3>
+                    <!-- Mostrar el tipo de comida (clave del mapa) -->
+                    <h3 th:text="${entry.key}">Comida</h3>
                     <ul>
-                        <li th:each="alimento : ${comida.alimentos}">
+                        <!-- Iterar sobre la lista de alimentos (valor del mapa) -->
+                        <li th:each="alimento : ${entry.value}">
                             <span th:text="${alimento.nombreAlimento}"></span> -
                             <span th:text="${alimento.cantidad}"></span> <span>gr</span>
                         </li>
@@ -32,6 +36,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
 </body>
 </html>
