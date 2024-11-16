@@ -2,6 +2,7 @@ package com.example.activate.controllers;
 
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -11,12 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.activate.models.Alimento;
 import com.example.activate.models.Dieta;
 import com.example.activate.models.Ejercicio;
 import com.example.activate.models.Rutina;
 import com.example.activate.models.RutinaEjercicio;
 import com.example.activate.models.dtos.AlimentoDietaDto;
+import com.example.activate.models.enums.Comida;
 import com.example.activate.repositories.DietaRepository;
 import com.example.activate.repositories.EjercicioRepository;
 import com.example.activate.repositories.RutinaRepository;
@@ -85,13 +86,24 @@ public class ServiciosController {
 
     @GetMapping("activate/servicios/dietas/{idDieta}")
     public String mostrarDieta(@PathVariable Long idDieta, Model model) {
-        Dieta dieta = dietaRepository.findById(idDieta)
-                .orElseThrow(() -> new IllegalArgumentException("Dieta no encontrado: " + idDieta));
-        List<AlimentoDietaDto> alimentos = dietaRepository.findAlimentosByDietaId(idDieta);
+             Dieta dieta = dietaRepository.findById(idDieta)
+                                        .orElseThrow(() -> new RuntimeException("Dieta no encontrada"));
+
+
+        // Obtener el horario de comidas (se puede modificar según cómo tengas organizada la base de datos)
+            List<AlimentoDietaDto> alimentosDieta = dietaRepository.findAlimentosByDietaId(idDieta);
+
+        // Organizar los alimentos por tipo de comida (Desayuno, Almuerzo, Cena, etc.)
+        Map<Comida, List<AlimentoDietaDto>> horarioComidas = alimentosDieta.stream()
+                .collect(Collectors.groupingBy(AlimentoDietaDto::getComida));
+
+        // Añadir los datos al modelo
         model.addAttribute("dieta", dieta);
-        model.addAttribute("alimentos", alimentos);
+        model.addAttribute("horarioComidas", horarioComidas);
 
         return "views/dietaDetalle";
     }
 
+
+   
 }

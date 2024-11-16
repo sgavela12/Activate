@@ -1,10 +1,10 @@
 package com.example.activate.models;
 
-import java.util.PrimitiveIterator;
-
 import com.example.activate.models.enums.Comida;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,23 +22,20 @@ public class DietaAlimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // Identificador único para evitar conflictos de duplicados
 
     @ManyToOne
-    @JoinColumn(name = "id_dieta")
+    @JoinColumn(name = "id_dieta", nullable = false)
     private Dieta dieta;
 
     @ManyToOne
-    @JoinColumn(name = "id_alimento")
+    @JoinColumn(name = "id_alimento", nullable = false)
     private Alimento alimento;
 
-
     private int dia;
-    
+
+    @Enumerated(EnumType.STRING)
     private Comida comida;
 
     private int cantidad;
-
-
-
 }

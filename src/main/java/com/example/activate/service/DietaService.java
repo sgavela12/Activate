@@ -17,4 +17,5 @@ public interface DietaService {
     public void borrar(Long id);
 
     public Dieta calculaDieta(double kcal, TipoAlimento tipoDieta);
+
 }

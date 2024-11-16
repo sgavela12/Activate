@@ -140,66 +140,107 @@ INSERT INTO noticia (id, titulo, cuerpo, ruta_imagen) VALUES
 
 
 
--- Insertar las relaciones entre dietas y alimentos en la tabla 'dieta_alimento'
--- Dieta 1: Energía Vegana
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(1, 1), (1, 2), (1, 3);
+INSERT INTO dieta_alimento (id_dieta, id_alimento, cantidad, dia, comida)
+VALUES
 
--- Dieta 2: Vitalidad Verde
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(2, 4), (2, 5), (2, 6);
+-- -- Dieta 1: Energía Vegana
+-- Día 1
+(1, 1, 100, 1, 'DESAYUNO'),
+(1, 2, 50, 1, 'DESAYUNO'),
+(1, 3, 150, 1, 'DESAYUNO'),
+(1, 4, 200, 1, 'COMIDA'),
+(1, 5, 250, 1, 'COMIDA'),
+(1, 6, 100, 1, 'COMIDA'),
+(1, 7, 75, 1, 'MERIENDA'),
+(1, 8, 50, 1, 'MERIENDA'),
+(1, 9, 100, 1, 'MERIENDA'),
+(1, 10, 150, 1, 'CENA'),
+(1, 11, 200, 1, 'CENA'),
+(1, 12, 100, 1, 'CENA'),
 
--- Dieta 3: Fuerza Plant-Based
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(3, 7), (3, 8), (3, 9);
+-- Día 2
+(1, 2, 120, 2, 'DESAYUNO'),
+(1, 3, 60, 2, 'DESAYUNO'),
+(1, 4, 140, 2, 'DESAYUNO'),
+(1, 5, 220, 2, 'COMIDA'),
+(1, 6, 180, 2, 'COMIDA'),
+(1, 7, 250, 2, 'COMIDA'),
+(1, 8, 80, 2, 'MERIENDA'),
+(1, 9, 90, 2, 'MERIENDA'),
+(1, 10, 70, 2, 'MERIENDA'),
+(1, 11, 160, 2, 'CENA'),
+(1, 12, 210, 2, 'CENA'),
+(1, 13, 110, 2, 'CENA'),
 
--- Dieta 4: Rendimiento Vegetariano
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(4, 37), (4, 38), (4, 39);
+-- Día 3
+(1, 3, 130, 3, 'DESAYUNO'),
+(1, 4, 70, 3, 'DESAYUNO'),
+(1, 5, 160, 3, 'DESAYUNO'),
+(1, 6, 240, 3, 'COMIDA'),
+(1, 7, 200, 3, 'COMIDA'),
+(1, 8, 180, 3, 'COMIDA'),
+(1, 9, 90, 3, 'MERIENDA'),
+(1, 10, 100, 3, 'MERIENDA'),
+(1, 11, 85, 3, 'MERIENDA'),
+(1, 12, 170, 3, 'CENA'),
+(1, 13, 220, 3, 'CENA'),
+(1, 14, 120, 3, 'CENA'),
 
--- Dieta 5: Salud Vegetariana
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(5, 40), (5, 41), (5, 42);
+-- Día 4
+(1, 4, 110, 4, 'DESAYUNO'),
+(1, 5, 50, 4, 'DESAYUNO'),
+(1, 6, 150, 4, 'DESAYUNO'),
+(1, 7, 210, 4, 'COMIDA'),
+(1, 8, 190, 4, 'COMIDA'),
+(1, 9, 230, 4, 'COMIDA'),
+(1, 10, 95, 4, 'MERIENDA'),
+(1, 11, 85, 4, 'MERIENDA'),
+(1, 12, 90, 4, 'MERIENDA'),
+(1, 13, 180, 4, 'CENA'),
+(1, 14, 200, 4, 'CENA'),
+(1, 15, 100, 4, 'CENA'),
 
--- Dieta 6: Nutrición Verdadera
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(6, 43), (6, 44), (6, 45);
+-- Día 5
+(1, 5, 120, 5, 'DESAYUNO'),
+(1, 6, 60, 5, 'DESAYUNO'),
+(1, 7, 140, 5, 'DESAYUNO'),
+(1, 8, 230, 5, 'COMIDA'),
+(1, 9, 200, 5, 'COMIDA'),
+(1, 10, 220, 5, 'COMIDA'),
+(1, 11, 80, 5, 'MERIENDA'),
+(1, 12, 90, 5, 'MERIENDA'),
+(1, 13, 70, 5, 'MERIENDA'),
+(1, 14, 190, 5, 'CENA'),
+(1, 15, 240, 5, 'CENA'),
+(1, 1, 120, 5, 'CENA'),
 
--- Dieta 7: Potencia Proteica
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(7, 61), (7, 62), (7, 63);
+-- Día 6
+(1, 6, 110, 6, 'DESAYUNO'),
+(1, 7, 55, 6, 'DESAYUNO'),
+(1, 8, 170, 6, 'DESAYUNO'),
+(1, 9, 250, 6, 'COMIDA'),
+(1, 10, 180, 6, 'COMIDA'),
+(1, 11, 210, 6, 'COMIDA'),
+(1, 12, 75, 6, 'MERIENDA'),
+(1, 13, 85, 6, 'MERIENDA'),
+(1, 14, 95, 6, 'MERIENDA'),
+(1, 15, 200, 6, 'CENA'),
+(1, 1, 230, 6, 'CENA'),
+(1, 2, 130, 6, 'CENA'),
 
--- Dieta 8: Energía Carnívora
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(8, 64), (8, 65), (8, 66);
-
--- Dieta 9: Fuerza Animal
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(9, 67), (9, 68), (9, 69);
-
--- Dieta 10: Equilibrio Vegano
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(10, 10), (10, 11), (10, 12);
-
--- Dieta 11: Esencia Vegana
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(11, 13), (11, 14), (11, 15);
-
--- Dieta 12: Poder Plant-Based
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(12, 16), (12, 17), (12, 18);
-
--- Dieta 13: Bienestar Vegetariano
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(13, 46), (13, 47), (13, 48);
-
--- Dieta 14: Equilibrio Vegetariano
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(14, 49), (14, 50), (14, 51);
-
--- Dieta 15: Frescura Vegetariana
-INSERT INTO dieta_alimento (id_dieta, id_alimento) VALUES
-(15, 52), (15, 53), (15, 54);
+-- Día 7
+(1, 7, 100, 7, 'DESAYUNO'),
+(1, 8, 50, 7, 'DESAYUNO'),
+(1, 9, 150, 7, 'DESAYUNO'),
+(1, 10, 200, 7, 'COMIDA'),
+(1, 11, 220, 7, 'COMIDA'),
+(1, 12, 190, 7, 'COMIDA'),
+(1, 13, 80, 7, 'MERIENDA'),
+(1, 14, 100, 7, 'MERIENDA'),
+(1, 15, 70, 7, 'MERIENDA'),
+(1, 1, 170, 7, 'CENA'),
+(1, 2, 200, 7, 'CENA'),
+(1, 3, 150, 7, 'CENA');
 
 
 
