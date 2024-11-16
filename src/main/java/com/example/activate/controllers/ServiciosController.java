@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.activate.models.Alimento;
 import com.example.activate.models.Dieta;
 import com.example.activate.models.Ejercicio;
 import com.example.activate.models.Rutina;
@@ -85,8 +86,11 @@ public class ServiciosController {
     public String mostrarDieta(@PathVariable Long idDieta, Model model) {
         Dieta dieta = dietaRepository.findById(idDieta)
                 .orElseThrow(() -> new IllegalArgumentException("Dieta no encontrado: " + idDieta));
+        List<Alimento> alimentos = dietaRepository.findAlimentosByDietaId(idDieta);
         model.addAttribute("dieta", dieta);
+        model.addAttribute("alimentos", alimentos);
 
         return "views/dietaDetalle";
     }
+
 }
