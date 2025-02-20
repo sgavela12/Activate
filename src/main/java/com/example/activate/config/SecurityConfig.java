@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -29,29 +30,39 @@ public class SecurityConfig {
                 return new BCryptPasswordEncoder();
         }
 
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-            http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
-            http.authorizeHttpRequests(auth -> auth
+   @Bean
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    http.headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
 
-                    .requestMatchers("/activate/perfil").hasAnyRole("USUARIO","ADMIN")
-                    .requestMatchers("/activate/admin").hasAnyRole("ADMIN")
-                    .requestMatchers("/activate/contacto").hasAnyRole("USUARIO","ADMIN")
-                    .requestMatchers("/activate/servicios/**").permitAll()
-                    .requestMatchers("/activate/**").permitAll()
+    http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
 
+    http.authorizeHttpRequests(auth -> auth
+            .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+            .requestMatchers("/activate/servicios/**").permitAll()
+            .requestMatchers("/activate/iniciarSesion").permitAll()
+            .requestMatchers("/activate/registrarse").permitAll()
+            .requestMatchers("/activate/contacto").permitAll()
+            .requestMatchers("/activate/perfil").hasAnyRole("USUARIO", "ADMIN")
+            .requestMatchers("/activate/admin").hasAnyRole("ADMIN")
+            .anyRequest().authenticated()
+    );
 
-                    .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                    .anyRequest().authenticated())
-                .formLogin(formLogin -> formLogin
-                    .loginPage("/activate/iniciarSesion")
-                    .loginProcessingUrl("/login")
-                    .defaultSuccessUrl("/activate/perfil", true)
-                    .permitAll())
-                    .logout(logout -> logout.logoutSuccessUrl("/").permitAll());
+    http.formLogin(formLogin -> formLogin
+            .loginPage("/activate/iniciarSesion")
+            .loginProcessingUrl("/login")
+            .defaultSuccessUrl("/activate/perfil", true)
+            .permitAll()
+    );
 
-                    http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/sesion/error"));
-                    return http.build();
-        }
+    http.logout(logout -> logout
+            .logoutSuccessUrl("/")
+            .permitAll()
+    );
+
+    http.exceptionHandling(exceptions -> exceptions.accessDeniedPage("/sesion/error"));
+
+    return http.build();
+}
+
         
 }
