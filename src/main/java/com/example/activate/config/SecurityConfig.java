@@ -39,6 +39,7 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests(auth -> auth
             .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
             .requestMatchers("/activate/servicios/**").permitAll()
+            .requestMatchers("/activate/inicio").permitAll()
             .requestMatchers("/activate/iniciarSesion").permitAll()
             .requestMatchers("/activate/registrarse").permitAll()
             .requestMatchers("/activate/contacto").permitAll()
